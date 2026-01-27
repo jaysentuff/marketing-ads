@@ -33,7 +33,7 @@ export function Sidebar() {
         {navItems.map((item) => {
           const Icon = item.icon;
           const isActive = pathname === item.href;
-          const isHighlight = 'highlight' in item && item.highlight;
+          const isHighlight = 'highlight' in item && (item as { highlight?: boolean }).highlight;
 
           return (
             <Link
