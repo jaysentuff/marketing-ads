@@ -2,7 +2,10 @@
  * API client for the TuffWraps Marketing API.
  */
 
-const API_BASE = '/api';
+// Use backend URL directly if available, otherwise use local proxy
+const API_BASE = typeof window !== 'undefined' && process.env.NEXT_PUBLIC_BACKEND_URL
+  ? `${process.env.NEXT_PUBLIC_BACKEND_URL}/api`
+  : '/api';
 
 async function fetchApi<T>(endpoint: string, options?: RequestInit): Promise<T> {
   const url = `${API_BASE}${endpoint}`;
