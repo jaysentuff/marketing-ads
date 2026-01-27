@@ -1,0 +1,24 @@
+# TuffWraps Marketing Attribution Connectors
+
+# Google Ads
+google-ads>=22.0.0
+
+# Meta/Facebook Ads
+facebook-business>=17.0.0
+
+# HTTP/API
+requests>=2.31.0
+httpx>=0.25.0
+
+# Data handling
+pandas>=2.0.0
+python-dateutil>=2.8.0
+
+# Environment
+python-dotenv>=1.0.0
+
+# Database (optional, for local storage)
+sqlite-utils>=3.35.0
+
+# Async support
+aiohttp>=3.9.0

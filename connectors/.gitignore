@@ -1,0 +1,19 @@
+# Credentials
+.env
+*.json
+!package.json
+
+# Data files
+data/
+
+# Python
+__pycache__/
+*.pyc
+*.pyo
+.venv/
+venv/
+
+# IDE
+.idea/
+.vscode/
+*.swp

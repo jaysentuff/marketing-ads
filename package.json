@@ -1,0 +1,9 @@
+{
+  "name": "marketing-ads",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "shopify": "shopify",
+    "dev": "shopify app dev"
+  }
+}

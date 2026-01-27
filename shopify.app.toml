@@ -1,0 +1,14 @@
+# Shopify App Configuration
+name = "marketing-ads"
+client_id = "463818a03d96ae6e0400a0a3d9343c30"
+application_url = "https://example.com"
+embedded = false
+
+[access_scopes]
+scopes = "read_orders,read_all_orders,read_customers,read_products,read_inventory,read_analytics"
+
+[auth]
+redirect_urls = ["http://localhost:3000/callback"]
+
+[webhooks]
+api_version = "2024-01"
