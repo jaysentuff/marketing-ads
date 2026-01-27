@@ -35,6 +35,8 @@ npm-debug.log*
 coverage/
 
 # Misc
+*.tsbuildinfo
+tsconfig.tsbuildinfo
 nul
 *.tmp
-*.tsbuildinfo
+.git/
