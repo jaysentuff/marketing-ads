@@ -8,13 +8,64 @@ Uses direct Amazon API for real-time Amazon sales data.
 
 import json
 import sys
+import time
+from functools import wraps
 from pathlib import Path
 from datetime import datetime, timedelta
-from typing import Any, Optional
+from typing import Any, Optional, Callable
 from zoneinfo import ZoneInfo
 
 # EST timezone for consistent date handling
 EST = ZoneInfo("America/New_York")
+
+# =============================================================================
+# CACHING SYSTEM - Eliminates redundant file reads and computations
+# =============================================================================
+
+# Global cache storage
+_cache: dict[str, tuple[Any, float]] = {}
+
+# TTL settings (in seconds)
+CACHE_TTL_JSON = 300      # 5 minutes for JSON file loads
+CACHE_TTL_COMPUTED = 600  # 10 minutes for computed summaries
+CACHE_TTL_HEAVY = 900     # 15 minutes for heavy computations
+
+
+def cached(ttl: int = CACHE_TTL_JSON):
+    """
+    Decorator that caches function results with TTL.
+    Cache key is based on function name and arguments.
+    """
+    def decorator(func: Callable) -> Callable:
+        @wraps(func)
+        def wrapper(*args, **kwargs):
+            # Build cache key from function name and args
+            key_parts = [func.__name__]
+            key_parts.extend(str(a) for a in args)
+            key_parts.extend(f"{k}={v}" for k, v in sorted(kwargs.items()))
+            cache_key = ":".join(key_parts)
+
+            now = time.time()
+
+            # Check cache
+            if cache_key in _cache:
+                cached_value, cached_time = _cache[cache_key]
+                if now - cached_time < ttl:
+                    return cached_value
+
+            # Call function and cache result
+            result = func(*args, **kwargs)
+            _cache[cache_key] = (result, now)
+            return result
+        return wrapper
+    return decorator
+
+
+def clear_cache():
+    """Clear all cached data. Call after daily data pull."""
+    global _cache
+    _cache.clear()
+    print("[Cache] All caches cleared")
 
 # Add connectors directory to path for Amazon API access
 CONNECTORS_DIR = Path(__file__).parent.parent.parent / "connectors"
@@ -70,61 +121,73 @@ def save_json(filepath: Path, data: dict | list) -> bool:
         return False
 
 
+@cached(ttl=CACHE_TTL_JSON)
 def get_latest_report() -> Optional[dict]:
     """Get the latest CAM report."""
     return load_json(DATA_DIR / "aggregated" / "latest_report.json")
 
 
+@cached(ttl=CACHE_TTL_JSON)
 def get_kendall_attribution() -> Optional[dict]:
     """Get Kendall attribution by source data."""
     return load_json(DATA_DIR / "kendall" / "attribution_by_source.json")
 
 
+@cached(ttl=CACHE_TTL_JSON)
 def get_kendall_pnl() -> Optional[dict]:
     """Get Kendall profit/loss data."""
     return load_json(DATA_DIR / "kendall" / "profit_loss.json")
 
 
+@cached(ttl=CACHE_TTL_JSON)
 def get_kendall_historical() -> Optional[dict]:
     """Get Kendall historical metrics including first-click attribution."""
     return load_json(DATA_DIR / "kendall" / "historical_metrics.json")
 
 
+@cached(ttl=CACHE_TTL_JSON)
 def get_gsc_branded() -> Optional[dict]:
     """Get Google Search Console branded vs non-branded data."""
     return load_json(DATA_DIR / "gsc" / "branded_vs_nonbranded.json")
 
 
+@cached(ttl=CACHE_TTL_JSON)
 def get_gsc_daily_trend() -> Optional[list]:
     """Get GSC daily branded search trend."""
     return load_json(DATA_DIR / "gsc" / "daily_branded_trend.json")
 
 
+@cached(ttl=CACHE_TTL_JSON)
 def get_shopify_metrics() -> Optional[dict]:
     """Get Shopify metrics."""
     return load_json(DATA_DIR / "shopify" / "metrics_last_30d.json")
 
 
+@cached(ttl=CACHE_TTL_JSON)
 def get_google_ads_campaigns() -> Optional[list]:
     """Get Google Ads campaign data."""
     return load_json(DATA_DIR / "google_ads" / "campaigns_last_30d.json")
 
 
+@cached(ttl=CACHE_TTL_JSON)
 def get_meta_ads_campaigns() -> Optional[list]:
     """Get Meta Ads campaign data."""
     return load_json(DATA_DIR / "meta_ads" / "campaigns_last_30d.json")
 
 
+@cached(ttl=CACHE_TTL_JSON)
 def get_ga4_summary() -> Optional[dict]:
     """Get GA4 summary data."""
     return load_json(DATA_DIR / "ga4" / "summary_last_30d.json")
 
 
+@cached(ttl=CACHE_TTL_JSON)
 def get_ga4_traffic() -> Optional[list]:
     """Get GA4 daily traffic data."""
     return load_json(DATA_DIR / "ga4" / "daily_traffic.json")
 
 
+@cached(ttl=CACHE_TTL_JSON)
 def get_klaviyo_summary() -> Optional[dict]:
     """Get Klaviyo summary data."""
     return load_json(DATA_DIR / "klaviyo" / "summary_last_30d.json")
@@ -267,6 +330,7 @@ def get_channel_campaigns(channel: str) -> list[dict]:
     return campaigns
 
 
+@cached(ttl=CACHE_TTL_COMPUTED)
 def get_blended_metrics() -> dict:
     """Get blended metrics from Kendall historical data."""
     historical = get_kendall_historical()
@@ -400,6 +464,7 @@ def check_shipping_reminder() -> Optional[dict]:
     }
 
 
+@cached(ttl=CACHE_TTL_COMPUTED)
 def get_decision_signals() -> dict:
     """Analyze current data and return decision signals."""
     report = get_latest_report()
@@ -572,6 +637,7 @@ def filter_by_date(items: list, days: int, date_field: str = "date") -> list:
     return [item for item in items if item.get(date_field, "") >= cutoff]
 
 
+@cached(ttl=CACHE_TTL_COMPUTED)
 def get_historical_metrics_for_timeframe(days: int = 30) -> dict:
     """Get aggregated metrics from historical data for a specific timeframe."""
     historical = get_kendall_historical()
@@ -823,6 +889,7 @@ def get_halo_effect_trend(days: int = 30) -> dict:
     }
 
 
+@cached(ttl=CACHE_TTL_HEAVY)
 def get_spend_outcome_correlation(days: int = 14) -> dict:
     """
     Analyze the correlation between ad spend changes and actual business outcomes.
@@ -1048,6 +1115,7 @@ def get_spend_outcome_correlation(days: int = 14) -> dict:
     }
 
 
+@cached(ttl=CACHE_TTL_HEAVY)
 def get_channel_correlation(days: int = 14) -> dict:
     """
     Break down spend-to-outcome correlation by channel (Google vs Meta).
@@ -1121,6 +1189,7 @@ def get_channel_correlation(days: int = 14) -> dict:
     }
 
 
+@cached(ttl=CACHE_TTL_HEAVY)
 def get_budget_recommendations(days: int = 7) -> dict:
     """
     Generate actionable budget recommendations based on triangulation data.
@@ -1348,6 +1417,7 @@ def get_budget_recommendations(days: int = 7) -> dict:
     }
 
 
+@cached(ttl=CACHE_TTL_COMPUTED)
 def get_timeframe_summary(days: int = 30) -> dict:
     """
     Get a comprehensive summary for the specified timeframe.
