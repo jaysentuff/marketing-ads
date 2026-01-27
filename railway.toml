@@ -2,4 +2,4 @@
 builder = "nixpacks"
 
 [deploy]
-startCommand = "cd frontend && node .next/standalone/server.js"
+startCommand = "cd frontend && PORT=$PORT node .next/standalone/server.js"
