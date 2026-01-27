@@ -1,5 +1,2 @@
 [build]
 builder = "nixpacks"
-
-[deploy]
-startCommand = "cd frontend && npx next start -p $PORT"

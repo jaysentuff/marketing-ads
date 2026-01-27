@@ -70,7 +70,13 @@
       "Bash(sort:*)",
       "Bash(ls:*)",
       "Bash(grep:*)",
-      "Bash(git add:*)"
+      "Bash(git add:*)",
+      "Bash(git push:*)",
+      "Bash(powershell.exe -Command \"Get-Process python* 2>$null | Select-Object Id, ProcessName, Path\")",
+      "Bash(powershell.exe -Command \"Start-Sleep -Seconds 2; netstat -ano | Select-String 8000\")",
+      "Bash(powershell.exe -Command \"Stop-Process -Id 346440 -Force\")",
+      "Bash(powershell.exe -Command \"Start-Sleep -Seconds 3; netstat -ano | Select-String 8000\")",
+      "Bash(test:*)"
     ]
   }
 }
