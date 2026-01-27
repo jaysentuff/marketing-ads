@@ -5,20 +5,47 @@
 const API_BASE = '/api';
 
 async function fetchApi<T>(endpoint: string, options?: RequestInit): Promise<T> {
-  const response = await fetch(`${API_BASE}${endpoint}`, {
-    headers: {
-      'Content-Type': 'application/json',
-      ...options?.headers,
-    },
-    ...options,
-  });
+  const url = `${API_BASE}${endpoint}`;
 
-  if (!response.ok) {
-    const error = await response.json().catch(() => ({ detail: 'Unknown error' }));
-    throw new Error(error.detail || `API error: ${response.status}`);
+  try {
+    const response = await fetch(url, {
+      headers: {
+        'Content-Type': 'application/json',
+        ...options?.headers,
+      },
+      ...options,
+    });
+
+    if (!response.ok) {
+      // Try to get error details from response
+      const errorText = await response.text();
+      let errorDetail = `API error: ${response.status} ${response.statusText}`;
+
+      try {
+        const errorJson = JSON.parse(errorText);
+        errorDetail = errorJson.detail || errorJson.message || errorDetail;
+      } catch {
+        // If not JSON, check for common issues
+        if (response.status === 502 || response.status === 503) {
+          errorDetail = 'Backend server is unavailable. Please check if the backend is running.';
+        } else if (response.status === 404) {
+          errorDetail = `Endpoint not found: ${endpoint}`;
+        } else if (errorText) {
+          errorDetail = errorText.substring(0, 200);
+        }
+      }
+
+      throw new Error(errorDetail);
+    }
+
+    return response.json();
+  } catch (err) {
+    // Handle network errors (no response at all)
+    if (err instanceof TypeError && err.message.includes('fetch')) {
+      throw new Error('Network error: Cannot connect to the API server. Please check your connection.');
+    }
+    throw err;
   }
-
-  return response.json();
 }
 
 // Types
