@@ -1,0 +1,250 @@
+[
+  {
+    "date": "2025-12-28",
+    "sessions": 2961,
+    "users": 2907,
+    "new_users": 2342,
+    "conversions": 69.0,
+    "revenue": 4204.6900000000005
+  },
+  {
+    "date": "2025-12-29",
+    "sessions": 3178,
+    "users": 3181,
+    "new_users": 2621,
+    "conversions": 81.0,
+    "revenue": 4572.1
+  },
+  {
+    "date": "2025-12-30",
+    "sessions": 4114,
+    "users": 3989,
+    "new_users": 3095,
+    "conversions": 111.0,
+    "revenue": 6022.66
+  },
+  {
+    "date": "2025-12-31",
+    "sessions": 4011,
+    "users": 3900,
+    "new_users": 3116,
+    "conversions": 136.0,
+    "revenue": 8674.22
+  },
+  {
+    "date": "2026-01-01",
+    "sessions": 3837,
+    "users": 3662,
+    "new_users": 2887,
+    "conversions": 142.0,
+    "revenue": 9953.58
+  },
+  {
+    "date": "2026-01-02",
+    "sessions": 3454,
+    "users": 3365,
+    "new_users": 2645,
+    "conversions": 132.0,
+    "revenue": 8157.25
+  },
+  {
+    "date": "2026-01-03",
+    "sessions": 3357,
+    "users": 3289,
+    "new_users": 2645,
+    "conversions": 115.0,
+    "revenue": 6932.17
+  },
+  {
+    "date": "2026-01-04",
+    "sessions": 3266,
+    "users": 3089,
+    "new_users": 2466,
+    "conversions": 103.0,
+    "revenue": 5622.2
+  },
+  {
+    "date": "2026-01-05",
+    "sessions": 3476,
+    "users": 3352,
+    "new_users": 2667,
+    "conversions": 112.0,
+    "revenue": 6094.34
+  },
+  {
+    "date": "2026-01-06",
+    "sessions": 3596,
+    "users": 3450,
+    "new_users": 2702,
+    "conversions": 108.0,
+    "revenue": 7482.33
+  },
+  {
+    "date": "2026-01-07",
+    "sessions": 3666,
+    "users": 3494,
+    "new_users": 2813,
+    "conversions": 95.0,
+    "revenue": 5188.5199999999995
+  },
+  {
+    "date": "2026-01-08",
+    "sessions": 3560,
+    "users": 3383,
+    "new_users": 2718,
+    "conversions": 122.0,
+    "revenue": 6735.38
+  },
+  {
+    "date": "2026-01-09",
+    "sessions": 3177,
+    "users": 3003,
+    "new_users": 2350,
+    "conversions": 106.0,
+    "revenue": 6260.03
+  },
+  {
+    "date": "2026-01-10",
+    "sessions": 3303,
+    "users": 3144,
+    "new_users": 2464,
+    "conversions": 112.0,
+    "revenue": 6215.74
+  },
+  {
+    "date": "2026-01-11",
+    "sessions": 3123,
+    "users": 3096,
+    "new_users": 2441,
+    "conversions": 98.0,
+    "revenue": 5689.950000000001
+  },
+  {
+    "date": "2026-01-12",
+    "sessions": 2799,
+    "users": 2698,
+    "new_users": 2136,
+    "conversions": 72.0,
+    "revenue": 4884.55
+  },
+  {
+    "date": "2026-01-13",
+    "sessions": 3055,
+    "users": 2972,
+    "new_users": 2363,
+    "conversions": 67.0,
+    "revenue": 4322.05
+  },
+  {
+    "date": "2026-01-14",
+    "sessions": 2887,
+    "users": 2792,
+    "new_users": 2276,
+    "conversions": 75.0,
+    "revenue": 4420.17
+  },
+  {
+    "date": "2026-01-15",
+    "sessions": 2732,
+    "users": 2630,
+    "new_users": 2125,
+    "conversions": 74.0,
+    "revenue": 4895.5
+  },
+  {
+    "date": "2026-01-16",
+    "sessions": 3009,
+    "users": 2937,
+    "new_users": 2393,
+    "conversions": 72.0,
+    "revenue": 4553.26
+  },
+  {
+    "date": "2026-01-17",
+    "sessions": 2660,
+    "users": 2556,
+    "new_users": 2067,
+    "conversions": 68.0,
+    "revenue": 4915.42
+  },
+  {
+    "date": "2026-01-18",
+    "sessions": 2815,
+    "users": 2784,
+    "new_users": 2312,
+    "conversions": 78.0,
+    "revenue": 5132.049999999999
+  },
+  {
+    "date": "2026-01-19",
+    "sessions": 2808,
+    "users": 2709,
+    "new_users": 2208,
+    "conversions": 87.0,
+    "revenue": 5735.95
+  },
+  {
+    "date": "2026-01-20",
+    "sessions": 3002,
+    "users": 2864,
+    "new_users": 2373,
+    "conversions": 70.0,
+    "revenue": 4569.56
+  },
+  {
+    "date": "2026-01-21",
+    "sessions": 2879,
+    "users": 2831,
+    "new_users": 2291,
+    "conversions": 86.0,
+    "revenue": 4665.68
+  },
+  {
+    "date": "2026-01-22",
+    "sessions": 2881,
+    "users": 2768,
+    "new_users": 2266,
+    "conversions": 70.0,
+    "revenue": 3494.14
+  },
+  {
+    "date": "2026-01-23",
+    "sessions": 2650,
+    "users": 2522,
+    "new_users": 1996,
+    "conversions": 78.0,
+    "revenue": 4533.26
+  },
+  {
+    "date": "2026-01-24",
+    "sessions": 2616,
+    "users": 2513,
+    "new_users": 2070,
+    "conversions": 54.0,
+    "revenue": 3332.77
+  },
+  {
+    "date": "2026-01-25",
+    "sessions": 2835,
+    "users": 2711,
+    "new_users": 2243,
+    "conversions": 52.0,
+    "revenue": 3302.25
+  },
+  {
+    "date": "2026-01-26",
+    "sessions": 3433,
+    "users": 3299,
+    "new_users": 2743,
+    "conversions": 69.0,
+    "revenue": 3951.95
+  },
+  {
+    "date": "2026-01-27",
+    "sessions": 651,
+    "users": 640,
+    "new_users": 518,
+    "conversions": 12.0,
+    "revenue": 746.13
+  }
+]

@@ -1,0 +1,20 @@
+{
+  "sessions": [
+    {
+      "id": "3a67b6fb-452f-42aa-90b9-84f93e7fad54",
+      "title": "So yesterday's campaign give you the information y...",
+      "created_at": "2026-01-27T08:44:23.196435",
+      "updated_at": "2026-01-27T08:44:33.395195",
+      "messages": [
+        {
+          "role": "user",
+          "content": "So yesterday's campaign give you the information you said that it was performing well at 3x how did you come to that conclusion? TOF Testing - CBO - Prospecting  Meta  3.00x ROAS  $959.01 revenue"
+        },
+        {
+          "role": "assistant",
+          "content": "Looking at your data, I need to clarify something important: **I cannot see yesterday's specific TOF campaign performance** in the data you provided. The Meta channel shows $0 spend, which suggests this might be aggregated or incomplete data.\n\nHowever, regarding your TOF campaign with 3x ROAS and $959 revenue - here's the key point:\n\n**For TOF campaigns, 3x ROAS is actually IRRELEVANT for performance evaluation.**\n\nHere's why that 3x doesn't tell the real story:\n\n1. **Attribution Gap**: TOF prospects often don't buy immediately. They see your ad, then Google \"TuffWraps\" later and convert through organic/branded search. Your 20.7% branded search rate suggests this is happening.\n\n2. **Platform Over-Attribution**: Your data shows platforms are over-claiming revenue by 45%. That 3x ROAS is likely inflated.\n\n3. **True TOF Metrics**: Your blended NCAC of $22.90 (well below the $50 target) and strong branded search percentage indicate TOF is actually performing well.\n\n**The real question for your TOF campaign isn't the 3x ROAS - it's:**\n- What's the true new customer acquisition cost?\n- Is it driving incremental branded searches?\n- How's it contributing to your overall $24.62 CAM per order (which is 23% above target)?\n\nCan you share the specific spend amount for that TOF campaign so I can calculate the actual metrics that matter?"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,1379 @@
+[
+  {
+    "source": "google",
+    "medium": "organic",
+    "sessions": 23753,
+    "users": 19571,
+    "new_users": 18407,
+    "conversions": 363.0,
+    "revenue": 27461.45
+  },
+  {
+    "source": "(direct)",
+    "medium": "(none)",
+    "sessions": 18679,
+    "users": 17579,
+    "new_users": 17099,
+    "conversions": 435.0,
+    "revenue": 25869.11
+  },
+  {
+    "source": "facebook",
+    "medium": "paid",
+    "sessions": 18208,
+    "users": 15142,
+    "new_users": 13032,
+    "conversions": 291.0,
+    "revenue": 17637.1
+  },
+  {
+    "source": "google",
+    "medium": "cpc",
+    "sessions": 17846,
+    "users": 15256,
+    "new_users": 14114,
+    "conversions": 791.0,
+    "revenue": 47289.579999999994
+  },
+  {
+    "source": "Klaviyo",
+    "medium": "email",
+    "sessions": 6148,
+    "users": 4199,
+    "new_users": 3075,
+    "conversions": 247.0,
+    "revenue": 17594.19
+  },
+  {
+    "source": "linktree",
+    "medium": "social",
+    "sessions": 1779,
+    "users": 1584,
+    "new_users": 1396,
+    "conversions": 64.0,
+    "revenue": 4228.950000000001
+  },
+  {
+    "source": "facebook",
+    "medium": "referral",
+    "sessions": 1342,
+    "users": 1341,
+    "new_users": 1335,
+    "conversions": 0.0,
+    "revenue": 0.0
+  },
+  {
+    "source": "yahoo",
+    "medium": "organic",
+    "sessions": 971,
+    "users": 904,
+    "new_users": 860,
+    "conversions": 2.0,
+    "revenue": 75.32
+  },
+  {
+    "source": "ig",
+    "medium": "paid",
+    "sessions": 935,
+    "users": 856,
+    "new_users": 708,
+    "conversions": 17.0,
+    "revenue": 765.02
+  },
+  {
+    "source": "fb",
+    "medium": "paid",
+    "sessions": 827,
+    "users": 774,
+    "new_users": 663,
+    "conversions": 8.0,
+    "revenue": 485.37
+  },
+  {
+    "source": "bing",
+    "medium": "organic",
+    "sessions": 735,
+    "users": 660,
+    "new_users": 633,
+    "conversions": 16.0,
+    "revenue": 1013.62
+  },
+  {
+    "source": "m.facebook.com",
+    "medium": "referral",
+    "sessions": 601,
+    "users": 565,
+    "new_users": 453,
+    "conversions": 19.0,
+    "revenue": 1179.67
+  },
+  {
+    "source": "Facebook",
+    "medium": "banner",
+    "sessions": 592,
+    "users": 546,
+    "new_users": 379,
+    "conversions": 9.0,
+    "revenue": 468.87000000000006
+  },
+  {
+    "source": "(not set)",
+    "medium": "(not set)",
+    "sessions": 531,
+    "users": 905,
+    "new_users": 0,
+    "conversions": 12.0,
+    "revenue": 866.88
+  },
+  {
+    "source": "facebook",
+    "medium": "(not set)",
+    "sessions": 249,
+    "users": 247,
+    "new_users": 242,
+    "conversions": 3.0,
+    "revenue": 88.07
+  },
+  {
+    "source": "organic-referral",
+    "medium": "ambassador",
+    "sessions": 242,
+    "users": 241,
+    "new_users": 240,
+    "conversions": 0.0,
+    "revenue": 0.0
+  },
+  {
+    "source": "Shopify",
+    "medium": "Amazon by Codisto - US",
+    "sessions": 234,
+    "users": 231,
+    "new_users": 234,
+    "conversions": 234.0,
+    "revenue": 9538.179999999998
+  },
+  {
+    "source": "(data not available)",
+    "medium": "(data not available)",
+    "sessions": 232,
+    "users": 232,
+    "new_users": 232,
+    "conversions": 19.0,
+    "revenue": 1154.5400000000002
+  },
+  {
+    "source": "an",
+    "medium": "paid",
+    "sessions": 210,
+    "users": 151,
+    "new_users": 136,
+    "conversions": 0.0,
+    "revenue": 0.0
+  },
+  {
+    "source": "chatgpt.com",
+    "medium": "(not set)",
+    "sessions": 140,
+    "users": 132,
+    "new_users": 127,
+    "conversions": 4.0,
+    "revenue": 368.32
+  },
+  {
+    "source": "ig",
+    "medium": "social",
+    "sessions": 128,
+    "users": 101,
+    "new_users": 94,
+    "conversions": 1.0,
+    "revenue": 51.26
+  },
+  {
+    "source": "duckduckgo",
+    "medium": "organic",
+    "sessions": 118,
+    "users": 108,
+    "new_users": 100,
+    "conversions": 0.0,
+    "revenue": 0.0
+  },
+  {
+    "source": "shop_app",
+    "medium": "(not set)",
+    "sessions": 90,
+    "users": 84,
+    "new_users": 71,
+    "conversions": 1.0,
+    "revenue": 49.96
+  },
+  {
+    "source": "auth.govx.com",
+    "medium": "referral",
+    "sessions": 80,
+    "users": 50,
+    "new_users": 20,
+    "conversions": 11.0,
+    "revenue": 634.5799999999999
+  },
+  {
+    "source": "Shopify",
+    "medium": "TikTok",
+    "sessions": 78,
+    "users": 76,
+    "new_users": 78,
+    "conversions": 78.0,
+    "revenue": 1312.43
+  },
+  {
+    "source": "l.facebook.com",
+    "medium": "referral",
+    "sessions": 75,
+    "users": 66,
+    "new_users": 40,
+    "conversions": 3.0,
+    "revenue": 229.93
+  },
+  {
+    "source": "refersion",
+    "medium": "affiliate",
+    "sessions": 58,
+    "users": 56,
+    "new_users": 56,
+    "conversions": 1.0,
+    "revenue": 85.41
+  },
+  {
+    "source": "Shopify",
+    "medium": "Web",
+    "sessions": 57,
+    "users": 55,
+    "new_users": 53,
+    "conversions": 57.0,
+    "revenue": 3799.67
+  },
+  {
+    "source": "chatgpt.com",
+    "medium": "referral",
+    "sessions": 54,
+    "users": 48,
+    "new_users": 41,
+    "conversions": 1.0,
+    "revenue": 50.11
+  },
+  {
+    "source": "l.instagram.com",
+    "medium": "referral",
+    "sessions": 37,
+    "users": 34,
+    "new_users": 30,
+    "conversions": 1.0,
+    "revenue": 34.82
+  },
+  {
+    "source": "loyaltylion",
+    "medium": "email",
+    "sessions": 37,
+    "users": 31,
+    "new_users": 19,
+    "conversions": 5.0,
+    "revenue": 374.40999999999997
+  },
+  {
+    "source": "klarna",
+    "medium": "referral",
+    "sessions": 33,
+    "users": 29,
+    "new_users": 27,
+    "conversions": 6.0,
+    "revenue": 379.44
+  },
+  {
+    "source": "tuffwraps.worthepenny.com",
+    "medium": "referral",
+    "sessions": 29,
+    "users": 15,
+    "new_users": 5,
+    "conversions": 3.0,
+    "revenue": 574.2199999999999
+  },
+  {
+    "source": "fb-SiteLink",
+    "medium": "paid",
+    "sessions": 28,
+    "users": 27,
+    "new_users": 20,
+    "conversions": 0.0,
+    "revenue": 0.0
+  },
+  {
+    "source": "service.smt.docomo.ne.jp",
+    "medium": "referral",
+    "sessions": 25,
+    "users": 25,
+    "new_users": 25,
+    "conversions": 0.0,
+    "revenue": 0.0
+  },
+  {
+    "source": "facebook.com",
+    "medium": "referral",
+    "sessions": 24,
+    "users": 22,
+    "new_users": 20,
+    "conversions": 0.0,
+    "revenue": 0.0
+  },
+  {
+    "source": "perplexity",
+    "medium": "(not set)",
+    "sessions": 23,
+    "users": 22,
+    "new_users": 22,
+    "conversions": 2.0,
+    "revenue": 213.4
+  },
+  {
+    "source": "uspa.net",
+    "medium": "referral",
+    "sessions": 21,
+    "users": 18,
+    "new_users": 16,
+    "conversions": 0.0,
+    "revenue": 0.0
+  },
+  {
+    "source": "instagram.com",
+    "medium": "referral",
+    "sessions": 20,
+    "users": 20,
+    "new_users": 12,
+    "conversions": 2.0,
+    "revenue": 85.89
+  },
+  {
+    "source": "tiktok.com",
+    "medium": "referral",
+    "sessions": 20,
+    "users": 19,
+    "new_users": 19,
+    "conversions": 0.0,
+    "revenue": 0.0
+  },
+  {
+    "source": "IGShopping",
+    "medium": "Social",
+    "sessions": 19,
+    "users": 18,
+    "new_users": 15,
+    "conversions": 1.0,
+    "revenue": 78.47
+  },
+  {
+    "source": "drawnames.co.uk",
+    "medium": "referral",
+    "sessions": 19,
+    "users": 2,
+    "new_users": 1,
+    "conversions": 0.0,
+    "revenue": 0.0
+  },
+  {
+    "source": "ecosia.org",
+    "medium": "organic",
+    "sessions": 19,
+    "users": 18,
+    "new_users": 18,
+    "conversions": 0.0,
+    "revenue": 0.0
+  },
+  {
+    "source": "store.torokhtiy.com",
+    "medium": "referral",
+    "sessions": 15,
+    "users": 10,
+    "new_users": 10,
+    "conversions": 1.0,
+    "revenue": 66.46
+  },
+  {
+    "source": "admin.shopify.com",
+    "medium": "referral",
+    "sessions": 14,
+    "users": 3,
+    "new_users": 0,
+    "conversions": 0.0,
+    "revenue": 0.0
+  },
+  {
+    "source": "m.search.naver.com",
+    "medium": "referral",
+    "sessions": 14,
+    "users": 1,
+    "new_users": 1,
+    "conversions": 1.0,
+    "revenue": 146.57
+  },
+  {
+    "source": "lm.facebook.com",
+    "medium": "referral",
+    "sessions": 12,
+    "users": 11,
+    "new_users": 10,
+    "conversions": 0.0,
+    "revenue": 0.0
+  },
+  {
+    "source": "shop.app",
+    "medium": "referral",
+    "sessions": 11,
+    "users": 10,
+    "new_users": 3,
+    "conversions": 0.0,
+    "revenue": 0.0
+  },
+  {
+    "source": "tuffwraps.typeform.com",
+    "medium": "referral",
+    "sessions": 11,
+    "users": 7,
+    "new_users": 4,
+    "conversions": 0.0,
+    "revenue": 0.0
+  },
+  {
+    "source": "Klaviyo",
+    "medium": "(not set)",
+    "sessions": 10,
+    "users": 5,
+    "new_users": 1,
+    "conversions": 0.0,
+    "revenue": 0.0
+  },
+  {
+    "source": "capitaloneshopping.com",
+    "medium": "referral",
+    "sessions": 10,
+    "users": 4,
+    "new_users": 0,
+    "conversions": 3.0,
+    "revenue": 126.07999999999998
+  },
+  {
+    "source": "cuposales.com",
+    "medium": "referral",
+    "sessions": 10,
+    "users": 3,
+    "new_users": 0,
+    "conversions": 1.0,
+    "revenue": 122.86
+  },
+  {
+    "source": "okendo.reviews",
+    "medium": "referral",
+    "sessions": 10,
+    "users": 7,
+    "new_users": 2,
+    "conversions": 0.0,
+    "revenue": 0.0
+  },
+  {
+    "source": "app.clickup.com",
+    "medium": "referral",
+    "sessions": 9,
+    "users": 3,
+    "new_users": 0,
+    "conversions": 0.0,
+    "revenue": 0.0
+  },
+  {
+    "source": "gemini.google.com",
+    "medium": "referral",
+    "sessions": 9,
+    "users": 8,
+    "new_users": 7,
+    "conversions": 0.0,
+    "revenue": 0.0
+  },
+  {
+    "source": "verywellfit.com",
+    "medium": "referral",
+    "sessions": 9,
+    "users": 7,
+    "new_users": 6,
+    "conversions": 3.0,
+    "revenue": 189.43
+  },
+  {
+    "source": "yahoo.com",
+    "medium": "referral",
+    "sessions": 9,
+    "users": 9,
+    "new_users": 9,
+    "conversions": 0.0,
+    "revenue": 0.0
+  },
+  {
+    "source": "zipchat",
+    "medium": "chat_bubble",
+    "sessions": 9,
+    "users": 6,
+    "new_users": 0,
+    "conversions": 0.0,
+    "revenue": 0.0
+  },
+  {
+    "source": "www-tuffwraps-com.translate.goog",
+    "medium": "referral",
+    "sessions": 8,
+    "users": 8,
+    "new_users": 7,
+    "conversions": 0.0,
+    "revenue": 0.0
+  },
+  {
+    "source": "facebook",
+    "medium": "cpc",
+    "sessions": 7,
+    "users": 5,
+    "new_users": 4,
+    "conversions": 0.0,
+    "revenue": 0.0
+  },
+  {
+    "source": "tuffwrapscom.knoji.com",
+    "medium": "referral",
+    "sessions": 7,
+    "users": 4,
+    "new_users": 0,
+    "conversions": 1.0,
+    "revenue": 95.72
+  },
+  {
+    "source": "checkmate",
+    "medium": "(not set)",
+    "sessions": 6,
+    "users": 4,
+    "new_users": 1,
+    "conversions": 0.0,
+    "revenue": 0.0
+  },
+  {
+    "source": "checkmate",
+    "medium": "checkmate",
+    "sessions": 6,
+    "users": 3,
+    "new_users": 2,
+    "conversions": 1.0,
+    "revenue": 106.73
+  },
+  {
+    "source": "uk.search.yahoo.com",
+    "medium": "referral",
+    "sessions": 6,
+    "users": 6,
+    "new_users": 5,
+    "conversions": 0.0,
+    "revenue": 0.0
+  },
+  {
+    "source": "websearch.rakuten.co.jp",
+    "medium": "referral",
+    "sessions": 6,
+    "users": 4,
+    "new_users": 3,
+    "conversions": 0.0,
+    "revenue": 0.0
+  },
+  {
+    "source": "2. Abandoned Cart for 2nd & 3rd Order",
+    "medium": "email",
+    "sessions": 5,
+    "users": 1,
+    "new_users": 0,
+    "conversions": 0.0,
+    "revenue": 0.0
+  },
+  {
+    "source": "instabio.cc",
+    "medium": "referral",
+    "sessions": 5,
+    "users": 5,
+    "new_users": 5,
+    "conversions": 0.0,
+    "revenue": 0.0
+  },
+  {
+    "source": "perplexity.ai",
+    "medium": "referral",
+    "sessions": 5,
+    "users": 4,
+    "new_users": 4,
+    "conversions": 0.0,
+    "revenue": 0.0
+  },
+  {
+    "source": "redo",
+    "medium": "email",
+    "sessions": 5,
+    "users": 5,
+    "new_users": 2,
+    "conversions": 0.0,
+    "revenue": 0.0
+  },
+  {
+    "source": "search.fenrir-inc.com",
+    "medium": "referral",
+    "sessions": 5,
+    "users": 5,
+    "new_users": 4,
+    "conversions": 0.0,
+    "revenue": 0.0
+  },
+  {
+    "source": "strongfirst.com",
+    "medium": "referral",
+    "sessions": 5,
+    "users": 5,
+    "new_users": 4,
+    "conversions": 0.0,
+    "revenue": 0.0
+  },
+  {
+    "source": "th",
+    "medium": "paid",
+    "sessions": 5,
+    "users": 5,
+    "new_users": 5,
+    "conversions": 0.0,
+    "revenue": 0.0
+  },
+  {
+    "source": "drawnames.com",
+    "medium": "referral",
+    "sessions": 4,
+    "users": 2,
+    "new_users": 2,
+    "conversions": 2.0,
+    "revenue": 119.43
+  },
+  {
+    "source": "giftful.com",
+    "medium": "referral",
+    "sessions": 4,
+    "users": 3,
+    "new_users": 2,
+    "conversions": 1.0,
+    "revenue": 54.74
+  },
+  {
+    "source": "innatefit.com",
+    "medium": "referral",
+    "sessions": 4,
+    "users": 2,
+    "new_users": 2,
+    "conversions": 0.0,
+    "revenue": 0.0
+  },
+  {
+    "source": "mail.google.com",
+    "medium": "referral",
+    "sessions": 4,
+    "users": 3,
+    "new_users": 1,
+    "conversions": 1.0,
+    "revenue": 49.27
+  },
+  {
+    "source": "mail.yahoo.com",
+    "medium": "referral",
+    "sessions": 4,
+    "users": 4,
+    "new_users": 3,
+    "conversions": 0.0,
+    "revenue": 0.0
+  },
+  {
+    "source": "upwork.com",
+    "medium": "referral",
+    "sessions": 4,
+    "users": 1,
+    "new_users": 0,
+    "conversions": 0.0,
+    "revenue": 0.0
+  },
+  {
+    "source": "(not set)",
+    "medium": "social",
+    "sessions": 3,
+    "users": 3,
+    "new_users": 1,
+    "conversions": 1.0,
+    "revenue": 54.46
+  },
+  {
+    "source": "amazon.com",
+    "medium": "referral",
+    "sessions": 3,
+    "users": 3,
+    "new_users": 2,
+    "conversions": 0.0,
+    "revenue": 0.0
+  },
+  {
+    "source": "au.search.yahoo.com",
+    "medium": "referral",
+    "sessions": 3,
+    "users": 2,
+    "new_users": 2,
+    "conversions": 0.0,
+    "revenue": 0.0
+  },
+  {
+    "source": "bing",
+    "medium": "cpc",
+    "sessions": 3,
+    "users": 3,
+    "new_users": 3,
+    "conversions": 0.0,
+    "revenue": 0.0
+  },
+  {
+    "source": "kagi.com",
+    "medium": "referral",
+    "sessions": 3,
+    "users": 3,
+    "new_users": 3,
+    "conversions": 0.0,
+    "revenue": 0.0
+  },
+  {
+    "source": "realcodes.org",
+    "medium": "referral",
+    "sessions": 3,
+    "users": 3,
+    "new_users": 2,
+    "conversions": 0.0,
+    "revenue": 0.0
+  },
+  {
+    "source": "statics.teams.cdn.office.net",
+    "medium": "referral",
+    "sessions": 3,
+    "users": 2,
+    "new_users": 2,
+    "conversions": 0.0,
+    "revenue": 0.0
+  },
+  {
+    "source": "tuffwraps.reamaze.com",
+    "medium": "referral",
+    "sessions": 3,
+    "users": 1,
+    "new_users": 0,
+    "conversions": 0.0,
+    "revenue": 0.0
+  },
+  {
+    "source": "youtube.com",
+    "medium": "referral",
+    "sessions": 3,
+    "users": 3,
+    "new_users": 3,
+    "conversions": 0.0,
+    "revenue": 0.0
+  },
+  {
+    "source": "(not set)",
+    "medium": "paid",
+    "sessions": 2,
+    "users": 2,
+    "new_users": 2,
+    "conversions": 0.0,
+    "revenue": 0.0
+  },
+  {
+    "source": "7. Winback NEW",
+    "medium": "email",
+    "sessions": 2,
+    "users": 1,
+    "new_users": 1,
+    "conversions": 0.0,
+    "revenue": 0.0
+  },
+  {
+    "source": "Klaviyo",
+    "medium": "(none)",
+    "sessions": 2,
+    "users": 1,
+    "new_users": 0,
+    "conversions": 1.0,
+    "revenue": 15.49
+  },
+  {
+    "source": "ca.search.yahoo.com",
+    "medium": "referral",
+    "sessions": 2,
+    "users": 1,
+    "new_users": 1,
+    "conversions": 1.0,
+    "revenue": 53.08
+  },
+  {
+    "source": "chatgpt.com",
+    "medium": "(none)",
+    "sessions": 2,
+    "users": 2,
+    "new_users": 0,
+    "conversions": 0.0,
+    "revenue": 0.0
+  },
+  {
+    "source": "groupmgmt.lightning.force.com",
+    "medium": "referral",
+    "sessions": 2,
+    "users": 1,
+    "new_users": 0,
+    "conversions": 0.0,
+    "revenue": 0.0
+  },
+  {
+    "source": "mywishlist.online",
+    "medium": "referral",
+    "sessions": 2,
+    "users": 2,
+    "new_users": 1,
+    "conversions": 0.0,
+    "revenue": 0.0
+  },
+  {
+    "source": "nhaphangmy.com",
+    "medium": "referral",
+    "sessions": 2,
+    "users": 2,
+    "new_users": 1,
+    "conversions": 0.0,
+    "revenue": 0.0
+  },
+  {
+    "source": "privacywall.org",
+    "medium": "referral",
+    "sessions": 2,
+    "users": 1,
+    "new_users": 1,
+    "conversions": 0.0,
+    "revenue": 0.0
+  },
+  {
+    "source": "prod.frontend.giftbox.giftkart.app",
+    "medium": "referral",
+    "sessions": 2,
+    "users": 1,
+    "new_users": 0,
+    "conversions": 0.0,
+    "revenue": 0.0
+  },
+  {
+    "source": "search.portal.auone.jp",
+    "medium": "referral",
+    "sessions": 2,
+    "users": 2,
+    "new_users": 2,
+    "conversions": 0.0,
+    "revenue": 0.0
+  },
+  {
+    "source": "yandex.ru",
+    "medium": "referral",
+    "sessions": 2,
+    "users": 2,
+    "new_users": 2,
+    "conversions": 0.0,
+    "revenue": 0.0
+  },
+  {
+    "source": "1a. Buy or Die New 2022",
+    "medium": "email",
+    "sessions": 1,
+    "users": 1,
+    "new_users": 0,
+    "conversions": 0.0,
+    "revenue": 0.0
+  },
+  {
+    "source": "Engaged",
+    "medium": "email",
+    "sessions": 1,
+    "users": 1,
+    "new_users": 1,
+    "conversions": 0.0,
+    "revenue": 0.0
+  },
+  {
+    "source": "Klaviyo&utm_medium=email&utm_campaign=NY Sale 3 - Lifting essentials (01KDS2RNFJ8099B34NZDXA7EV9)&utm_id=01KDS2RNFJ8099B34NZDXA7EV9&utm_term=01F9T82NP3VM8W12QPBD7PR9VT&_kx=52rBb_3mibWxacxhT4q7QFzZm5UFhazKPoO5QIDQz1nDR6TPzf2jrBuRjVT4Ytxd.cdS8cA",
+    "medium": "(not set)",
+    "sessions": 1,
+    "users": 1,
+    "new_users": 0,
+    "conversions": 0.0,
+    "revenue": 0.0
+  },
+  {
+    "source": "accounts.google.com",
+    "medium": "referral",
+    "sessions": 1,
+    "users": 1,
+    "new_users": 1,
+    "conversions": 0.0,
+    "revenue": 0.0
+  },
+  {
+    "source": "ahrefs.com",
+    "medium": "referral",
+    "sessions": 1,
+    "users": 1,
+    "new_users": 1,
+    "conversions": 0.0,
+    "revenue": 0.0
+  },
+  {
+    "source": "analyticsinsight.net",
+    "medium": "referral",
+    "sessions": 1,
+    "users": 1,
+    "new_users": 1,
+    "conversions": 0.0,
+    "revenue": 0.0
+  },
+  {
+    "source": "benzinga.com",
+    "medium": "referral",
+    "sessions": 1,
+    "users": 1,
+    "new_users": 1,
+    "conversions": 0.0,
+    "revenue": 0.0
+  },
+  {
+    "source": "bio.link",
+    "medium": "referral",
+    "sessions": 1,
+    "users": 1,
+    "new_users": 1,
+    "conversions": 0.0,
+    "revenue": 0.0
+  },
+  {
+    "source": "chat.qwen.ai",
+    "medium": "referral",
+    "sessions": 1,
+    "users": 1,
+    "new_users": 1,
+    "conversions": 0.0,
+    "revenue": 0.0
+  },
+  {
+    "source": "cl.search.yahoo.com",
+    "medium": "referral",
+    "sessions": 1,
+    "users": 1,
+    "new_users": 1,
+    "conversions": 0.0,
+    "revenue": 0.0
+  },
+  {
+    "source": "copilot.microsoft.com",
+    "medium": "referral",
+    "sessions": 1,
+    "users": 1,
+    "new_users": 1,
+    "conversions": 0.0,
+    "revenue": 0.0
+  },
+  {
+    "source": "crm.astoragehub.com",
+    "medium": "referral",
+    "sessions": 1,
+    "users": 1,
+    "new_users": 1,
+    "conversions": 0.0,
+    "revenue": 0.0
+  },
+  {
+    "source": "dealspotr.com",
+    "medium": "referral",
+    "sessions": 1,
+    "users": 1,
+    "new_users": 0,
+    "conversions": 1.0,
+    "revenue": 21.29
+  },
+  {
+    "source": "diychatroom.com",
+    "medium": "referral",
+    "sessions": 1,
+    "users": 1,
+    "new_users": 1,
+    "conversions": 0.0,
+    "revenue": 0.0
+  },
+  {
+    "source": "dk.search.yahoo.com",
+    "medium": "referral",
+    "sessions": 1,
+    "users": 1,
+    "new_users": 1,
+    "conversions": 0.0,
+    "revenue": 0.0
+  },
+  {
+    "source": "dka3dqtjjog7y.cloudfront.net",
+    "medium": "referral",
+    "sessions": 1,
+    "users": 1,
+    "new_users": 1,
+    "conversions": 0.0,
+    "revenue": 0.0
+  },
+  {
+    "source": "docs.google.com",
+    "medium": "referral",
+    "sessions": 1,
+    "users": 1,
+    "new_users": 1,
+    "conversions": 0.0,
+    "revenue": 0.0
+  },
+  {
+    "source": "eluvitypro.sg.larksuite.com",
+    "medium": "referral",
+    "sessions": 1,
+    "users": 1,
+    "new_users": 1,
+    "conversions": 0.0,
+    "revenue": 0.0
+  },
+  {
+    "source": "es.search.yahoo.com",
+    "medium": "referral",
+    "sessions": 1,
+    "users": 1,
+    "new_users": 1,
+    "conversions": 0.0,
+    "revenue": 0.0
+  },
+  {
+    "source": "findgift.com",
+    "medium": "referral",
+    "sessions": 1,
+    "users": 1,
+    "new_users": 1,
+    "conversions": 0.0,
+    "revenue": 0.0
+  },
+  {
+    "source": "ghideas.com",
+    "medium": "referral",
+    "sessions": 1,
+    "users": 1,
+    "new_users": 1,
+    "conversions": 0.0,
+    "revenue": 0.0
+  },
+  {
+    "source": "gibiru.com",
+    "medium": "referral",
+    "sessions": 1,
+    "users": 1,
+    "new_users": 1,
+    "conversions": 0.0,
+    "revenue": 0.0
+  },
+  {
+    "source": "gowish.com",
+    "medium": "referral",
+    "sessions": 1,
+    "users": 1,
+    "new_users": 1,
+    "conversions": 0.0,
+    "revenue": 0.0
+  },
+  {
+    "source": "hoobe",
+    "medium": "social",
+    "sessions": 1,
+    "users": 1,
+    "new_users": 1,
+    "conversions": 0.0,
+    "revenue": 0.0
+  },
+  {
+    "source": "images.search.yahoo.com",
+    "medium": "referral",
+    "sessions": 1,
+    "users": 1,
+    "new_users": 1,
+    "conversions": 0.0,
+    "revenue": 0.0
+  },
+  {
+    "source": "kaikatsu.jword.jp",
+    "medium": "referral",
+    "sessions": 1,
+    "users": 1,
+    "new_users": 1,
+    "conversions": 0.0,
+    "revenue": 0.0
+  },
+  {
+    "source": "l.threads.com",
+    "medium": "referral",
+    "sessions": 1,
+    "users": 1,
+    "new_users": 1,
+    "conversions": 0.0,
+    "revenue": 0.0
+  },
+  {
+    "source": "metacrawler.com",
+    "medium": "referral",
+    "sessions": 1,
+    "users": 1,
+    "new_users": 1,
+    "conversions": 0.0,
+    "revenue": 0.0
+  },
+  {
+    "source": "moast.io",
+    "medium": "referral",
+    "sessions": 1,
+    "users": 1,
+    "new_users": 1,
+    "conversions": 0.0,
+    "revenue": 0.0
+  },
+  {
+    "source": "mx.search.yahoo.com",
+    "medium": "referral",
+    "sessions": 1,
+    "users": 1,
+    "new_users": 1,
+    "conversions": 0.0,
+    "revenue": 0.0
+  },
+  {
+    "source": "myadp.lightning.force.com",
+    "medium": "referral",
+    "sessions": 1,
+    "users": 1,
+    "new_users": 1,
+    "conversions": 0.0,
+    "revenue": 0.0
+  },
+  {
+    "source": "nextgeeker.com",
+    "medium": "referral",
+    "sessions": 1,
+    "users": 1,
+    "new_users": 1,
+    "conversions": 0.0,
+    "revenue": 0.0
+  },
+  {
+    "source": "nl.search.yahoo.com",
+    "medium": "referral",
+    "sessions": 1,
+    "users": 1,
+    "new_users": 1,
+    "conversions": 0.0,
+    "revenue": 0.0
+  },
+  {
+    "source": "nordiclifting.com",
+    "medium": "referral",
+    "sessions": 1,
+    "users": 1,
+    "new_users": 1,
+    "conversions": 0.0,
+    "revenue": 0.0
+  },
+  {
+    "source": "perplexity",
+    "medium": "referral",
+    "sessions": 1,
+    "users": 1,
+    "new_users": 1,
+    "conversions": 0.0,
+    "revenue": 0.0
+  },
+  {
+    "source": "prod.frontend.echofixedbundle.giftkart.app",
+    "medium": "referral",
+    "sessions": 1,
+    "users": 1,
+    "new_users": 0,
+    "conversions": 0.0,
+    "revenue": 0.0
+  },
+  {
+    "source": "rebuyengine1.lightning.force.com",
+    "medium": "referral",
+    "sessions": 1,
+    "users": 1,
+    "new_users": 1,
+    "conversions": 0.0,
+    "revenue": 0.0
+  },
+  {
+    "source": "reddit.lightning.force.com",
+    "medium": "referral",
+    "sessions": 1,
+    "users": 1,
+    "new_users": 1,
+    "conversions": 0.0,
+    "revenue": 0.0
+  },
+  {
+    "source": "search.brave.com",
+    "medium": "referral",
+    "sessions": 1,
+    "users": 1,
+    "new_users": 1,
+    "conversions": 0.0,
+    "revenue": 0.0
+  },
+  {
+    "source": "sem1.visionseotools.com",
+    "medium": "referral",
+    "sessions": 1,
+    "users": 1,
+    "new_users": 1,
+    "conversions": 0.0,
+    "revenue": 0.0
+  },
+  {
+    "source": "semrush.com",
+    "medium": "referral",
+    "sessions": 1,
+    "users": 1,
+    "new_users": 1,
+    "conversions": 0.0,
+    "revenue": 0.0
+  },
+  {
+    "source": "shop-website",
+    "medium": "website",
+    "sessions": 1,
+    "users": 1,
+    "new_users": 1,
+    "conversions": 0.0,
+    "revenue": 0.0
+  },
+  {
+    "source": "shop_app",
+    "medium": "(none)",
+    "sessions": 1,
+    "users": 1,
+    "new_users": 0,
+    "conversions": 0.0,
+    "revenue": 0.0
+  },
+  {
+    "source": "shopmy",
+    "medium": "(not set)",
+    "sessions": 1,
+    "users": 1,
+    "new_users": 1,
+    "conversions": 0.0,
+    "revenue": 0.0
+  },
+  {
+    "source": "snapchat.com",
+    "medium": "referral",
+    "sessions": 1,
+    "users": 1,
+    "new_users": 1,
+    "conversions": 0.0,
+    "revenue": 0.0
+  },
+  {
+    "source": "sp-search.jp",
+    "medium": "referral",
+    "sessions": 1,
+    "users": 1,
+    "new_users": 1,
+    "conversions": 0.0,
+    "revenue": 0.0
+  },
+  {
+    "source": "storeleads.app",
+    "medium": "referral",
+    "sessions": 1,
+    "users": 1,
+    "new_users": 1,
+    "conversions": 0.0,
+    "revenue": 0.0
+  },
+  {
+    "source": "t.co",
+    "medium": "referral",
+    "sessions": 1,
+    "users": 1,
+    "new_users": 1,
+    "conversions": 0.0,
+    "revenue": 0.0
+  },
+  {
+    "source": "trxtraining.com",
+    "medium": "referral",
+    "sessions": 1,
+    "users": 1,
+    "new_users": 1,
+    "conversions": 0.0,
+    "revenue": 0.0
+  },
+  {
+    "source": "v2.giaonhan247.com",
+    "medium": "referral",
+    "sessions": 1,
+    "users": 1,
+    "new_users": 1,
+    "conversions": 0.0,
+    "revenue": 0.0
+  },
+  {
+    "source": "webmail.centurylink.net",
+    "medium": "referral",
+    "sessions": 1,
+    "users": 1,
+    "new_users": 1,
+    "conversions": 0.0,
+    "revenue": 0.0
+  },
+  {
+    "source": "wwex2.lightning.force.com",
+    "medium": "referral",
+    "sessions": 1,
+    "users": 1,
+    "new_users": 0,
+    "conversions": 0.0,
+    "revenue": 0.0
+  },
+  {
+    "source": "xanhlo.com",
+    "medium": "referral",
+    "sessions": 1,
+    "users": 1,
+    "new_users": 0,
+    "conversions": 0.0,
+    "revenue": 0.0
+  },
+  {
+    "source": "yandex.kz",
+    "medium": "referral",
+    "sessions": 1,
+    "users": 1,
+    "new_users": 1,
+    "conversions": 0.0,
+    "revenue": 0.0
+  }
+]

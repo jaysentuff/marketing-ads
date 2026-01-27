@@ -1,10 +1,7 @@
 # Credentials
 .env
-*.json
-!package.json
 
-# Data files
-data/
+# Python
 
 # Python
 __pycache__/

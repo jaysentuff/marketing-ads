@@ -1,0 +1,1336 @@
+[
+  {
+    "type": "flow",
+    "id": "KjhhEy",
+    "attributes": {
+      "name": "1a. Buy or Die",
+      "status": "live",
+      "archived": false,
+      "created": "2017-03-13T20:53:14+00:00",
+      "updated": "2025-07-25T01:00:08+00:00",
+      "trigger_type": "Added to List"
+    },
+    "relationships": {
+      "flow-actions": {
+        "links": {
+          "self": "https://a.klaviyo.com/api/flows/KjhhEy/relationships/flow-actions/",
+          "related": "https://a.klaviyo.com/api/flows/KjhhEy/flow-actions/"
+        }
+      },
+      "tags": {
+        "links": {
+          "self": "https://a.klaviyo.com/api/flows/KjhhEy/relationships/tags/",
+          "related": "https://a.klaviyo.com/api/flows/KjhhEy/tags/"
+        }
+      }
+    },
+    "links": {
+      "self": "https://a.klaviyo.com/api/flows/KjhhEy/"
+    }
+  },
+  {
+    "type": "flow",
+    "id": "KqR7rD",
+    "attributes": {
+      "name": "Tag First Purchase Date - Enrich Contact Profiles",
+      "status": "live",
+      "archived": false,
+      "created": "2018-06-27T21:43:31+00:00",
+      "updated": "2018-06-27T21:43:31+00:00",
+      "trigger_type": "Metric"
+    },
+    "relationships": {
+      "flow-actions": {
+        "links": {
+          "self": "https://a.klaviyo.com/api/flows/KqR7rD/relationships/flow-actions/",
+          "related": "https://a.klaviyo.com/api/flows/KqR7rD/flow-actions/"
+        }
+      },
+      "tags": {
+        "links": {
+          "self": "https://a.klaviyo.com/api/flows/KqR7rD/relationships/tags/",
+          "related": "https://a.klaviyo.com/api/flows/KqR7rD/tags/"
+        }
+      }
+    },
+    "links": {
+      "self": "https://a.klaviyo.com/api/flows/KqR7rD/"
+    }
+  },
+  {
+    "type": "flow",
+    "id": "LacHs5",
+    "attributes": {
+      "name": "3b. Okendo 1 and 2 Star Review Flow",
+      "status": "live",
+      "archived": false,
+      "created": "2020-03-10T18:46:16+00:00",
+      "updated": "2020-03-10T18:51:27+00:00",
+      "trigger_type": "Metric"
+    },
+    "relationships": {
+      "flow-actions": {
+        "links": {
+          "self": "https://a.klaviyo.com/api/flows/LacHs5/relationships/flow-actions/",
+          "related": "https://a.klaviyo.com/api/flows/LacHs5/flow-actions/"
+        }
+      },
+      "tags": {
+        "links": {
+          "self": "https://a.klaviyo.com/api/flows/LacHs5/relationships/tags/",
+          "related": "https://a.klaviyo.com/api/flows/LacHs5/tags/"
+        }
+      }
+    },
+    "links": {
+      "self": "https://a.klaviyo.com/api/flows/LacHs5/"
+    }
+  },
+  {
+    "type": "flow",
+    "id": "Mpiqxg",
+    "attributes": {
+      "name": "Birthday Series",
+      "status": "draft",
+      "archived": false,
+      "created": "2020-02-25T17:23:39+00:00",
+      "updated": "2020-10-27T20:26:42+00:00",
+      "trigger_type": "Date Based"
+    },
+    "relationships": {
+      "flow-actions": {
+        "links": {
+          "self": "https://a.klaviyo.com/api/flows/Mpiqxg/relationships/flow-actions/",
+          "related": "https://a.klaviyo.com/api/flows/Mpiqxg/flow-actions/"
+        }
+      },
+      "tags": {
+        "links": {
+          "self": "https://a.klaviyo.com/api/flows/Mpiqxg/relationships/tags/",
+          "related": "https://a.klaviyo.com/api/flows/Mpiqxg/tags/"
+        }
+      }
+    },
+    "links": {
+      "self": "https://a.klaviyo.com/api/flows/Mpiqxg/"
+    }
+  },
+  {
+    "type": "flow",
+    "id": "QYLYGP",
+    "attributes": {
+      "name": "Essential Flow Recommendation_",
+      "status": "draft",
+      "archived": false,
+      "created": "2025-09-05T01:22:57+00:00",
+      "updated": "2025-09-05T01:22:57+00:00",
+      "trigger_type": "Unconfigured"
+    },
+    "relationships": {
+      "flow-actions": {
+        "links": {
+          "self": "https://a.klaviyo.com/api/flows/QYLYGP/relationships/flow-actions/",
+          "related": "https://a.klaviyo.com/api/flows/QYLYGP/flow-actions/"
+        }
+      },
+      "tags": {
+        "links": {
+          "self": "https://a.klaviyo.com/api/flows/QYLYGP/relationships/tags/",
+          "related": "https://a.klaviyo.com/api/flows/QYLYGP/tags/"
+        }
+      }
+    },
+    "links": {
+      "self": "https://a.klaviyo.com/api/flows/QYLYGP/"
+    }
+  },
+  {
+    "type": "flow",
+    "id": "RLj6uN",
+    "attributes": {
+      "name": "NEW Loyalty Achievement Flow",
+      "status": "live",
+      "archived": false,
+      "created": "2023-07-03T19:30:55+00:00",
+      "updated": "2023-07-03T20:58:05+00:00",
+      "trigger_type": "Metric"
+    },
+    "relationships": {
+      "flow-actions": {
+        "links": {
+          "self": "https://a.klaviyo.com/api/flows/RLj6uN/relationships/flow-actions/",
+          "related": "https://a.klaviyo.com/api/flows/RLj6uN/flow-actions/"
+        }
+      },
+      "tags": {
+        "links": {
+          "self": "https://a.klaviyo.com/api/flows/RLj6uN/relationships/tags/",
+          "related": "https://a.klaviyo.com/api/flows/RLj6uN/tags/"
+        }
+      }
+    },
+    "links": {
+      "self": "https://a.klaviyo.com/api/flows/RLj6uN/"
+    }
+  },
+  {
+    "type": "flow",
+    "id": "RTahEV",
+    "attributes": {
+      "name": "(Non customer) Added to Cart",
+      "status": "live",
+      "archived": false,
+      "created": "2025-06-18T09:14:48+00:00",
+      "updated": "2025-09-03T02:18:18+00:00",
+      "trigger_type": "Metric"
+    },
+    "relationships": {
+      "flow-actions": {
+        "links": {
+          "self": "https://a.klaviyo.com/api/flows/RTahEV/relationships/flow-actions/",
+          "related": "https://a.klaviyo.com/api/flows/RTahEV/flow-actions/"
+        }
+      },
+      "tags": {
+        "links": {
+          "self": "https://a.klaviyo.com/api/flows/RTahEV/relationships/tags/",
+          "related": "https://a.klaviyo.com/api/flows/RTahEV/tags/"
+        }
+      }
+    },
+    "links": {
+      "self": "https://a.klaviyo.com/api/flows/RTahEV/"
+    }
+  },
+  {
+    "type": "flow",
+    "id": "RgPHiZ",
+    "attributes": {
+      "name": "Sale Event Abandoned Cart",
+      "status": "draft",
+      "archived": false,
+      "created": "2025-05-22T14:46:28+00:00",
+      "updated": "2025-09-03T02:20:51+00:00",
+      "trigger_type": "Metric"
+    },
+    "relationships": {
+      "flow-actions": {
+        "links": {
+          "self": "https://a.klaviyo.com/api/flows/RgPHiZ/relationships/flow-actions/",
+          "related": "https://a.klaviyo.com/api/flows/RgPHiZ/flow-actions/"
+        }
+      },
+      "tags": {
+        "links": {
+          "self": "https://a.klaviyo.com/api/flows/RgPHiZ/relationships/tags/",
+          "related": "https://a.klaviyo.com/api/flows/RgPHiZ/tags/"
+        }
+      }
+    },
+    "links": {
+      "self": "https://a.klaviyo.com/api/flows/RgPHiZ/"
+    }
+  },
+  {
+    "type": "flow",
+    "id": "SAikfB",
+    "attributes": {
+      "name": "DBS Flow",
+      "status": "live",
+      "archived": false,
+      "created": "2025-02-19T07:31:59+00:00",
+      "updated": "2025-07-06T13:05:04+00:00",
+      "trigger_type": "Added to List"
+    },
+    "relationships": {
+      "flow-actions": {
+        "links": {
+          "self": "https://a.klaviyo.com/api/flows/SAikfB/relationships/flow-actions/",
+          "related": "https://a.klaviyo.com/api/flows/SAikfB/flow-actions/"
+        }
+      },
+      "tags": {
+        "links": {
+          "self": "https://a.klaviyo.com/api/flows/SAikfB/relationships/tags/",
+          "related": "https://a.klaviyo.com/api/flows/SAikfB/tags/"
+        }
+      }
+    },
+    "links": {
+      "self": "https://a.klaviyo.com/api/flows/SAikfB/"
+    }
+  },
+  {
+    "type": "flow",
+    "id": "SLpsxt",
+    "attributes": {
+      "name": "Back In Stock Flow",
+      "status": "live",
+      "archived": false,
+      "created": "2021-08-29T20:55:05+00:00",
+      "updated": "2024-12-20T11:21:56+00:00",
+      "trigger_type": "Metric"
+    },
+    "relationships": {
+      "flow-actions": {
+        "links": {
+          "self": "https://a.klaviyo.com/api/flows/SLpsxt/relationships/flow-actions/",
+          "related": "https://a.klaviyo.com/api/flows/SLpsxt/flow-actions/"
+        }
+      },
+      "tags": {
+        "links": {
+          "self": "https://a.klaviyo.com/api/flows/SLpsxt/relationships/tags/",
+          "related": "https://a.klaviyo.com/api/flows/SLpsxt/tags/"
+        }
+      }
+    },
+    "links": {
+      "self": "https://a.klaviyo.com/api/flows/SLpsxt/"
+    }
+  },
+  {
+    "type": "flow",
+    "id": "SX2Y4S",
+    "attributes": {
+      "name": "One-Time Wraps Buyers",
+      "status": "live",
+      "archived": false,
+      "created": "2025-06-06T01:38:10+00:00",
+      "updated": "2025-07-23T01:31:28+00:00",
+      "trigger_type": "Metric"
+    },
+    "relationships": {
+      "flow-actions": {
+        "links": {
+          "self": "https://a.klaviyo.com/api/flows/SX2Y4S/relationships/flow-actions/",
+          "related": "https://a.klaviyo.com/api/flows/SX2Y4S/flow-actions/"
+        }
+      },
+      "tags": {
+        "links": {
+          "self": "https://a.klaviyo.com/api/flows/SX2Y4S/relationships/tags/",
+          "related": "https://a.klaviyo.com/api/flows/SX2Y4S/tags/"
+        }
+      }
+    },
+    "links": {
+      "self": "https://a.klaviyo.com/api/flows/SX2Y4S/"
+    }
+  },
+  {
+    "type": "flow",
+    "id": "SagA9y",
+    "attributes": {
+      "name": "(Non customer) Checkout Abandonment Flow - DZD",
+      "status": "live",
+      "archived": false,
+      "created": "2024-03-11T03:32:15+00:00",
+      "updated": "2025-09-03T02:17:54+00:00",
+      "trigger_type": "Metric"
+    },
+    "relationships": {
+      "flow-actions": {
+        "links": {
+          "self": "https://a.klaviyo.com/api/flows/SagA9y/relationships/flow-actions/",
+          "related": "https://a.klaviyo.com/api/flows/SagA9y/flow-actions/"
+        }
+      },
+      "tags": {
+        "links": {
+          "self": "https://a.klaviyo.com/api/flows/SagA9y/relationships/tags/",
+          "related": "https://a.klaviyo.com/api/flows/SagA9y/tags/"
+        }
+      }
+    },
+    "links": {
+      "self": "https://a.klaviyo.com/api/flows/SagA9y/"
+    }
+  },
+  {
+    "type": "flow",
+    "id": "SdXBdB",
+    "attributes": {
+      "name": "Browse Abandonment Flow - DZD",
+      "status": "live",
+      "archived": false,
+      "created": "2024-05-08T07:22:06+00:00",
+      "updated": "2025-06-29T11:58:32+00:00",
+      "trigger_type": "Metric"
+    },
+    "relationships": {
+      "flow-actions": {
+        "links": {
+          "self": "https://a.klaviyo.com/api/flows/SdXBdB/relationships/flow-actions/",
+          "related": "https://a.klaviyo.com/api/flows/SdXBdB/flow-actions/"
+        }
+      },
+      "tags": {
+        "links": {
+          "self": "https://a.klaviyo.com/api/flows/SdXBdB/relationships/tags/",
+          "related": "https://a.klaviyo.com/api/flows/SdXBdB/tags/"
+        }
+      }
+    },
+    "links": {
+      "self": "https://a.klaviyo.com/api/flows/SdXBdB/"
+    }
+  },
+  {
+    "type": "flow",
+    "id": "Sdpp4B",
+    "attributes": {
+      "name": "TUFFbassador Flow",
+      "status": "draft",
+      "archived": false,
+      "created": "2025-07-02T12:43:42+00:00",
+      "updated": "2025-10-08T13:52:44+00:00",
+      "trigger_type": "Added to List"
+    },
+    "relationships": {
+      "flow-actions": {
+        "links": {
+          "self": "https://a.klaviyo.com/api/flows/Sdpp4B/relationships/flow-actions/",
+          "related": "https://a.klaviyo.com/api/flows/Sdpp4B/flow-actions/"
+        }
+      },
+      "tags": {
+        "links": {
+          "self": "https://a.klaviyo.com/api/flows/Sdpp4B/relationships/tags/",
+          "related": "https://a.klaviyo.com/api/flows/Sdpp4B/tags/"
+        }
+      }
+    },
+    "links": {
+      "self": "https://a.klaviyo.com/api/flows/Sdpp4B/"
+    }
+  },
+  {
+    "type": "flow",
+    "id": "TDSygi",
+    "attributes": {
+      "name": "Welcome Flow - Up to 60% OFF",
+      "status": "draft",
+      "archived": false,
+      "created": "2025-06-19T16:09:48+00:00",
+      "updated": "2025-11-14T04:04:43+00:00",
+      "trigger_type": "Added to List"
+    },
+    "relationships": {
+      "flow-actions": {
+        "links": {
+          "self": "https://a.klaviyo.com/api/flows/TDSygi/relationships/flow-actions/",
+          "related": "https://a.klaviyo.com/api/flows/TDSygi/flow-actions/"
+        }
+      },
+      "tags": {
+        "links": {
+          "self": "https://a.klaviyo.com/api/flows/TDSygi/relationships/tags/",
+          "related": "https://a.klaviyo.com/api/flows/TDSygi/tags/"
+        }
+      }
+    },
+    "links": {
+      "self": "https://a.klaviyo.com/api/flows/TDSygi/"
+    }
+  },
+  {
+    "type": "flow",
+    "id": "TM8Mv7",
+    "attributes": {
+      "name": "Review Request Flow - DZD",
+      "status": "live",
+      "archived": false,
+      "created": "2024-07-03T07:44:23+00:00",
+      "updated": "2025-07-23T02:06:58+00:00",
+      "trigger_type": "Metric"
+    },
+    "relationships": {
+      "flow-actions": {
+        "links": {
+          "self": "https://a.klaviyo.com/api/flows/TM8Mv7/relationships/flow-actions/",
+          "related": "https://a.klaviyo.com/api/flows/TM8Mv7/flow-actions/"
+        }
+      },
+      "tags": {
+        "links": {
+          "self": "https://a.klaviyo.com/api/flows/TM8Mv7/relationships/tags/",
+          "related": "https://a.klaviyo.com/api/flows/TM8Mv7/tags/"
+        }
+      }
+    },
+    "links": {
+      "self": "https://a.klaviyo.com/api/flows/TM8Mv7/"
+    }
+  },
+  {
+    "type": "flow",
+    "id": "TMPgF5",
+    "attributes": {
+      "name": "Post-Purchase Flow (Repeat Buyers)",
+      "status": "live",
+      "archived": false,
+      "created": "2024-06-12T10:43:30+00:00",
+      "updated": "2025-06-29T11:56:57+00:00",
+      "trigger_type": "Metric"
+    },
+    "relationships": {
+      "flow-actions": {
+        "links": {
+          "self": "https://a.klaviyo.com/api/flows/TMPgF5/relationships/flow-actions/",
+          "related": "https://a.klaviyo.com/api/flows/TMPgF5/flow-actions/"
+        }
+      },
+      "tags": {
+        "links": {
+          "self": "https://a.klaviyo.com/api/flows/TMPgF5/relationships/tags/",
+          "related": "https://a.klaviyo.com/api/flows/TMPgF5/tags/"
+        }
+      }
+    },
+    "links": {
+      "self": "https://a.klaviyo.com/api/flows/TMPgF5/"
+    }
+  },
+  {
+    "type": "flow",
+    "id": "TTBEdj",
+    "attributes": {
+      "name": "(Customer) Checkout Abandonment Flow - DZD",
+      "status": "live",
+      "archived": false,
+      "created": "2024-03-27T16:22:21+00:00",
+      "updated": "2025-09-03T02:18:34+00:00",
+      "trigger_type": "Metric"
+    },
+    "relationships": {
+      "flow-actions": {
+        "links": {
+          "self": "https://a.klaviyo.com/api/flows/TTBEdj/relationships/flow-actions/",
+          "related": "https://a.klaviyo.com/api/flows/TTBEdj/flow-actions/"
+        }
+      },
+      "tags": {
+        "links": {
+          "self": "https://a.klaviyo.com/api/flows/TTBEdj/relationships/tags/",
+          "related": "https://a.klaviyo.com/api/flows/TTBEdj/tags/"
+        }
+      }
+    },
+    "links": {
+      "self": "https://a.klaviyo.com/api/flows/TTBEdj/"
+    }
+  },
+  {
+    "type": "flow",
+    "id": "TWgPBM",
+    "attributes": {
+      "name": "Winback Flow - DZD",
+      "status": "live",
+      "archived": false,
+      "created": "2024-09-04T11:33:39+00:00",
+      "updated": "2025-09-03T02:19:20+00:00",
+      "trigger_type": "Metric"
+    },
+    "relationships": {
+      "flow-actions": {
+        "links": {
+          "self": "https://a.klaviyo.com/api/flows/TWgPBM/relationships/flow-actions/",
+          "related": "https://a.klaviyo.com/api/flows/TWgPBM/flow-actions/"
+        }
+      },
+      "tags": {
+        "links": {
+          "self": "https://a.klaviyo.com/api/flows/TWgPBM/relationships/tags/",
+          "related": "https://a.klaviyo.com/api/flows/TWgPBM/tags/"
+        }
+      }
+    },
+    "links": {
+      "self": "https://a.klaviyo.com/api/flows/TWgPBM/"
+    }
+  },
+  {
+    "type": "flow",
+    "id": "TWrE48",
+    "attributes": {
+      "name": "Downsell",
+      "status": "live",
+      "archived": false,
+      "created": "2025-02-28T15:33:17+00:00",
+      "updated": "2025-07-28T03:55:32+00:00",
+      "trigger_type": "Metric"
+    },
+    "relationships": {
+      "flow-actions": {
+        "links": {
+          "self": "https://a.klaviyo.com/api/flows/TWrE48/relationships/flow-actions/",
+          "related": "https://a.klaviyo.com/api/flows/TWrE48/flow-actions/"
+        }
+      },
+      "tags": {
+        "links": {
+          "self": "https://a.klaviyo.com/api/flows/TWrE48/relationships/tags/",
+          "related": "https://a.klaviyo.com/api/flows/TWrE48/tags/"
+        }
+      }
+    },
+    "links": {
+      "self": "https://a.klaviyo.com/api/flows/TWrE48/"
+    }
+  },
+  {
+    "type": "flow",
+    "id": "TmGsw3",
+    "attributes": {
+      "name": "TEST Post-Purchase Bounce Back - After First Purchase",
+      "status": "draft",
+      "archived": false,
+      "created": "2025-07-05T21:24:07+00:00",
+      "updated": "2025-07-05T21:24:09+00:00",
+      "trigger_type": "Metric"
+    },
+    "relationships": {
+      "flow-actions": {
+        "links": {
+          "self": "https://a.klaviyo.com/api/flows/TmGsw3/relationships/flow-actions/",
+          "related": "https://a.klaviyo.com/api/flows/TmGsw3/flow-actions/"
+        }
+      },
+      "tags": {
+        "links": {
+          "self": "https://a.klaviyo.com/api/flows/TmGsw3/relationships/tags/",
+          "related": "https://a.klaviyo.com/api/flows/TmGsw3/tags/"
+        }
+      }
+    },
+    "links": {
+      "self": "https://a.klaviyo.com/api/flows/TmGsw3/"
+    }
+  },
+  {
+    "type": "flow",
+    "id": "UFabnS",
+    "attributes": {
+      "name": "Rewards Program (Upgraded/Downgraded Premium Tier)",
+      "status": "live",
+      "archived": false,
+      "created": "2022-10-13T14:50:13+00:00",
+      "updated": "2022-10-13T14:50:47+00:00",
+      "trigger_type": "Added to List"
+    },
+    "relationships": {
+      "flow-actions": {
+        "links": {
+          "self": "https://a.klaviyo.com/api/flows/UFabnS/relationships/flow-actions/",
+          "related": "https://a.klaviyo.com/api/flows/UFabnS/flow-actions/"
+        }
+      },
+      "tags": {
+        "links": {
+          "self": "https://a.klaviyo.com/api/flows/UFabnS/relationships/tags/",
+          "related": "https://a.klaviyo.com/api/flows/UFabnS/tags/"
+        }
+      }
+    },
+    "links": {
+      "self": "https://a.klaviyo.com/api/flows/UFabnS/"
+    }
+  },
+  {
+    "type": "flow",
+    "id": "UGmNmS",
+    "attributes": {
+      "name": "Flash Drop (Wraps Only)",
+      "status": "live",
+      "archived": false,
+      "created": "2025-03-20T10:32:07+00:00",
+      "updated": "2025-09-03T02:16:36+00:00",
+      "trigger_type": "Added to List"
+    },
+    "relationships": {
+      "flow-actions": {
+        "links": {
+          "self": "https://a.klaviyo.com/api/flows/UGmNmS/relationships/flow-actions/",
+          "related": "https://a.klaviyo.com/api/flows/UGmNmS/flow-actions/"
+        }
+      },
+      "tags": {
+        "links": {
+          "self": "https://a.klaviyo.com/api/flows/UGmNmS/relationships/tags/",
+          "related": "https://a.klaviyo.com/api/flows/UGmNmS/tags/"
+        }
+      }
+    },
+    "links": {
+      "self": "https://a.klaviyo.com/api/flows/UGmNmS/"
+    }
+  },
+  {
+    "type": "flow",
+    "id": "UJqzCT",
+    "attributes": {
+      "name": "Affiliate Flow",
+      "status": "draft",
+      "archived": false,
+      "created": "2025-07-02T12:35:07+00:00",
+      "updated": "2025-07-02T12:38:03+00:00",
+      "trigger_type": "Added to List"
+    },
+    "relationships": {
+      "flow-actions": {
+        "links": {
+          "self": "https://a.klaviyo.com/api/flows/UJqzCT/relationships/flow-actions/",
+          "related": "https://a.klaviyo.com/api/flows/UJqzCT/flow-actions/"
+        }
+      },
+      "tags": {
+        "links": {
+          "self": "https://a.klaviyo.com/api/flows/UJqzCT/relationships/tags/",
+          "related": "https://a.klaviyo.com/api/flows/UJqzCT/tags/"
+        }
+      }
+    },
+    "links": {
+      "self": "https://a.klaviyo.com/api/flows/UJqzCT/"
+    }
+  },
+  {
+    "type": "flow",
+    "id": "UQKUFD",
+    "attributes": {
+      "name": "Aftercare Flow",
+      "status": "live",
+      "archived": false,
+      "created": "2025-06-23T10:22:24+00:00",
+      "updated": "2025-06-27T10:35:52+00:00",
+      "trigger_type": "Metric"
+    },
+    "relationships": {
+      "flow-actions": {
+        "links": {
+          "self": "https://a.klaviyo.com/api/flows/UQKUFD/relationships/flow-actions/",
+          "related": "https://a.klaviyo.com/api/flows/UQKUFD/flow-actions/"
+        }
+      },
+      "tags": {
+        "links": {
+          "self": "https://a.klaviyo.com/api/flows/UQKUFD/relationships/tags/",
+          "related": "https://a.klaviyo.com/api/flows/UQKUFD/tags/"
+        }
+      }
+    },
+    "links": {
+      "self": "https://a.klaviyo.com/api/flows/UQKUFD/"
+    }
+  },
+  {
+    "type": "flow",
+    "id": "UQuySE",
+    "attributes": {
+      "name": "Buy or Die Quiz",
+      "status": "live",
+      "archived": false,
+      "created": "2024-12-11T11:18:46+00:00",
+      "updated": "2025-08-28T14:03:15+00:00",
+      "trigger_type": "Metric"
+    },
+    "relationships": {
+      "flow-actions": {
+        "links": {
+          "self": "https://a.klaviyo.com/api/flows/UQuySE/relationships/flow-actions/",
+          "related": "https://a.klaviyo.com/api/flows/UQuySE/flow-actions/"
+        }
+      },
+      "tags": {
+        "links": {
+          "self": "https://a.klaviyo.com/api/flows/UQuySE/relationships/tags/",
+          "related": "https://a.klaviyo.com/api/flows/UQuySE/tags/"
+        }
+      }
+    },
+    "links": {
+      "self": "https://a.klaviyo.com/api/flows/UQuySE/"
+    }
+  },
+  {
+    "type": "flow",
+    "id": "URSLgt",
+    "attributes": {
+      "name": "Elevar - Browse Abandonment (Product Viewed)",
+      "status": "live",
+      "archived": false,
+      "created": "2024-03-19T09:47:05+00:00",
+      "updated": "2025-06-29T11:51:50+00:00",
+      "trigger_type": "Metric"
+    },
+    "relationships": {
+      "flow-actions": {
+        "links": {
+          "self": "https://a.klaviyo.com/api/flows/URSLgt/relationships/flow-actions/",
+          "related": "https://a.klaviyo.com/api/flows/URSLgt/flow-actions/"
+        }
+      },
+      "tags": {
+        "links": {
+          "self": "https://a.klaviyo.com/api/flows/URSLgt/relationships/tags/",
+          "related": "https://a.klaviyo.com/api/flows/URSLgt/tags/"
+        }
+      }
+    },
+    "links": {
+      "self": "https://a.klaviyo.com/api/flows/URSLgt/"
+    }
+  },
+  {
+    "type": "flow",
+    "id": "UiDqtC",
+    "attributes": {
+      "name": "(Customer) Added to Cart",
+      "status": "live",
+      "archived": false,
+      "created": "2025-03-14T13:13:22+00:00",
+      "updated": "2025-09-23T00:38:13+00:00",
+      "trigger_type": "Metric"
+    },
+    "relationships": {
+      "flow-actions": {
+        "links": {
+          "self": "https://a.klaviyo.com/api/flows/UiDqtC/relationships/flow-actions/",
+          "related": "https://a.klaviyo.com/api/flows/UiDqtC/flow-actions/"
+        }
+      },
+      "tags": {
+        "links": {
+          "self": "https://a.klaviyo.com/api/flows/UiDqtC/relationships/tags/",
+          "related": "https://a.klaviyo.com/api/flows/UiDqtC/tags/"
+        }
+      }
+    },
+    "links": {
+      "self": "https://a.klaviyo.com/api/flows/UiDqtC/"
+    }
+  },
+  {
+    "type": "flow",
+    "id": "UxHc5w",
+    "attributes": {
+      "name": "Post-Purchase Flow (One-time Buyers)",
+      "status": "live",
+      "archived": false,
+      "created": "2025-06-25T13:39:36+00:00",
+      "updated": "2025-08-27T14:18:09+00:00",
+      "trigger_type": "Metric"
+    },
+    "relationships": {
+      "flow-actions": {
+        "links": {
+          "self": "https://a.klaviyo.com/api/flows/UxHc5w/relationships/flow-actions/",
+          "related": "https://a.klaviyo.com/api/flows/UxHc5w/flow-actions/"
+        }
+      },
+      "tags": {
+        "links": {
+          "self": "https://a.klaviyo.com/api/flows/UxHc5w/relationships/tags/",
+          "related": "https://a.klaviyo.com/api/flows/UxHc5w/tags/"
+        }
+      }
+    },
+    "links": {
+      "self": "https://a.klaviyo.com/api/flows/UxHc5w/"
+    }
+  },
+  {
+    "type": "flow",
+    "id": "VDFN9f",
+    "attributes": {
+      "name": "Paid Opportunity Flow",
+      "status": "live",
+      "archived": false,
+      "created": "2025-11-28T13:15:40+00:00",
+      "updated": "2025-11-28T13:17:05+00:00",
+      "trigger_type": "Metric"
+    },
+    "relationships": {
+      "flow-actions": {
+        "links": {
+          "self": "https://a.klaviyo.com/api/flows/VDFN9f/relationships/flow-actions/",
+          "related": "https://a.klaviyo.com/api/flows/VDFN9f/flow-actions/"
+        }
+      },
+      "tags": {
+        "links": {
+          "self": "https://a.klaviyo.com/api/flows/VDFN9f/relationships/tags/",
+          "related": "https://a.klaviyo.com/api/flows/VDFN9f/tags/"
+        }
+      }
+    },
+    "links": {
+      "self": "https://a.klaviyo.com/api/flows/VDFN9f/"
+    }
+  },
+  {
+    "type": "flow",
+    "id": "Vaqxiy",
+    "attributes": {
+      "name": "Welcome Flow - TEST",
+      "status": "draft",
+      "archived": false,
+      "created": "2025-07-13T17:43:26+00:00",
+      "updated": "2025-07-13T17:43:34+00:00",
+      "trigger_type": "Added to List"
+    },
+    "relationships": {
+      "flow-actions": {
+        "links": {
+          "self": "https://a.klaviyo.com/api/flows/Vaqxiy/relationships/flow-actions/",
+          "related": "https://a.klaviyo.com/api/flows/Vaqxiy/flow-actions/"
+        }
+      },
+      "tags": {
+        "links": {
+          "self": "https://a.klaviyo.com/api/flows/Vaqxiy/relationships/tags/",
+          "related": "https://a.klaviyo.com/api/flows/Vaqxiy/tags/"
+        }
+      }
+    },
+    "links": {
+      "self": "https://a.klaviyo.com/api/flows/Vaqxiy/"
+    }
+  },
+  {
+    "type": "flow",
+    "id": "Vh3hWU",
+    "attributes": {
+      "name": "Elevar - Abandoned Cart",
+      "status": "live",
+      "archived": false,
+      "created": "2024-03-19T10:01:01+00:00",
+      "updated": "2025-09-03T02:17:37+00:00",
+      "trigger_type": "Metric"
+    },
+    "relationships": {
+      "flow-actions": {
+        "links": {
+          "self": "https://a.klaviyo.com/api/flows/Vh3hWU/relationships/flow-actions/",
+          "related": "https://a.klaviyo.com/api/flows/Vh3hWU/flow-actions/"
+        }
+      },
+      "tags": {
+        "links": {
+          "self": "https://a.klaviyo.com/api/flows/Vh3hWU/relationships/tags/",
+          "related": "https://a.klaviyo.com/api/flows/Vh3hWU/tags/"
+        }
+      }
+    },
+    "links": {
+      "self": "https://a.klaviyo.com/api/flows/Vh3hWU/"
+    }
+  },
+  {
+    "type": "flow",
+    "id": "WBEaFx",
+    "attributes": {
+      "name": "Sunset Flow - DZD",
+      "status": "draft",
+      "archived": false,
+      "created": "2024-09-23T14:21:47+00:00",
+      "updated": "2024-09-24T06:32:29+00:00",
+      "trigger_type": "Added to List"
+    },
+    "relationships": {
+      "flow-actions": {
+        "links": {
+          "self": "https://a.klaviyo.com/api/flows/WBEaFx/relationships/flow-actions/",
+          "related": "https://a.klaviyo.com/api/flows/WBEaFx/flow-actions/"
+        }
+      },
+      "tags": {
+        "links": {
+          "self": "https://a.klaviyo.com/api/flows/WBEaFx/relationships/tags/",
+          "related": "https://a.klaviyo.com/api/flows/WBEaFx/tags/"
+        }
+      }
+    },
+    "links": {
+      "self": "https://a.klaviyo.com/api/flows/WBEaFx/"
+    }
+  },
+  {
+    "type": "flow",
+    "id": "WEv7sg",
+    "attributes": {
+      "name": "Cross-sell Flow",
+      "status": "live",
+      "archived": false,
+      "created": "2025-02-28T15:27:58+00:00",
+      "updated": "2025-05-09T06:41:42+00:00",
+      "trigger_type": "Metric"
+    },
+    "relationships": {
+      "flow-actions": {
+        "links": {
+          "self": "https://a.klaviyo.com/api/flows/WEv7sg/relationships/flow-actions/",
+          "related": "https://a.klaviyo.com/api/flows/WEv7sg/flow-actions/"
+        }
+      },
+      "tags": {
+        "links": {
+          "self": "https://a.klaviyo.com/api/flows/WEv7sg/relationships/tags/",
+          "related": "https://a.klaviyo.com/api/flows/WEv7sg/tags/"
+        }
+      }
+    },
+    "links": {
+      "self": "https://a.klaviyo.com/api/flows/WEv7sg/"
+    }
+  },
+  {
+    "type": "flow",
+    "id": "WUVr5H",
+    "attributes": {
+      "name": "New Post Purchase",
+      "status": "draft",
+      "archived": false,
+      "created": "2025-07-03T03:54:43+00:00",
+      "updated": "2025-07-03T03:54:46+00:00",
+      "trigger_type": "Metric"
+    },
+    "relationships": {
+      "flow-actions": {
+        "links": {
+          "self": "https://a.klaviyo.com/api/flows/WUVr5H/relationships/flow-actions/",
+          "related": "https://a.klaviyo.com/api/flows/WUVr5H/flow-actions/"
+        }
+      },
+      "tags": {
+        "links": {
+          "self": "https://a.klaviyo.com/api/flows/WUVr5H/relationships/tags/",
+          "related": "https://a.klaviyo.com/api/flows/WUVr5H/tags/"
+        }
+      }
+    },
+    "links": {
+      "self": "https://a.klaviyo.com/api/flows/WUVr5H/"
+    }
+  },
+  {
+    "type": "flow",
+    "id": "WbwG2z",
+    "attributes": {
+      "name": "Loyalty: Rewards Booster Flow",
+      "status": "live",
+      "archived": false,
+      "created": "2023-01-20T19:37:05+00:00",
+      "updated": "2025-09-03T12:54:34+00:00",
+      "trigger_type": "Added to List"
+    },
+    "relationships": {
+      "flow-actions": {
+        "links": {
+          "self": "https://a.klaviyo.com/api/flows/WbwG2z/relationships/flow-actions/",
+          "related": "https://a.klaviyo.com/api/flows/WbwG2z/flow-actions/"
+        }
+      },
+      "tags": {
+        "links": {
+          "self": "https://a.klaviyo.com/api/flows/WbwG2z/relationships/tags/",
+          "related": "https://a.klaviyo.com/api/flows/WbwG2z/tags/"
+        }
+      }
+    },
+    "links": {
+      "self": "https://a.klaviyo.com/api/flows/WbwG2z/"
+    }
+  },
+  {
+    "type": "flow",
+    "id": "WdqsXN",
+    "attributes": {
+      "name": "7. Winback NEW",
+      "status": "live",
+      "archived": false,
+      "created": "2021-08-29T20:53:35+00:00",
+      "updated": "2025-09-03T02:19:41+00:00",
+      "trigger_type": "Metric"
+    },
+    "relationships": {
+      "flow-actions": {
+        "links": {
+          "self": "https://a.klaviyo.com/api/flows/WdqsXN/relationships/flow-actions/",
+          "related": "https://a.klaviyo.com/api/flows/WdqsXN/flow-actions/"
+        }
+      },
+      "tags": {
+        "links": {
+          "self": "https://a.klaviyo.com/api/flows/WdqsXN/relationships/tags/",
+          "related": "https://a.klaviyo.com/api/flows/WdqsXN/tags/"
+        }
+      }
+    },
+    "links": {
+      "self": "https://a.klaviyo.com/api/flows/WdqsXN/"
+    }
+  },
+  {
+    "type": "flow",
+    "id": "XBAzx4",
+    "attributes": {
+      "name": "$10 Gift Card",
+      "status": "live",
+      "archived": false,
+      "created": "2025-06-06T01:45:14+00:00",
+      "updated": "2025-06-06T01:45:40+00:00",
+      "trigger_type": "Added to List"
+    },
+    "relationships": {
+      "flow-actions": {
+        "links": {
+          "self": "https://a.klaviyo.com/api/flows/XBAzx4/relationships/flow-actions/",
+          "related": "https://a.klaviyo.com/api/flows/XBAzx4/flow-actions/"
+        }
+      },
+      "tags": {
+        "links": {
+          "self": "https://a.klaviyo.com/api/flows/XBAzx4/relationships/tags/",
+          "related": "https://a.klaviyo.com/api/flows/XBAzx4/tags/"
+        }
+      }
+    },
+    "links": {
+      "self": "https://a.klaviyo.com/api/flows/XBAzx4/"
+    }
+  },
+  {
+    "type": "flow",
+    "id": "XQuXZj",
+    "attributes": {
+      "name": "Welcome Flow - DZD (Clone)",
+      "status": "draft",
+      "archived": false,
+      "created": "2025-10-01T08:17:01+00:00",
+      "updated": "2025-10-01T08:17:17+00:00",
+      "trigger_type": "Added to List"
+    },
+    "relationships": {
+      "flow-actions": {
+        "links": {
+          "self": "https://a.klaviyo.com/api/flows/XQuXZj/relationships/flow-actions/",
+          "related": "https://a.klaviyo.com/api/flows/XQuXZj/flow-actions/"
+        }
+      },
+      "tags": {
+        "links": {
+          "self": "https://a.klaviyo.com/api/flows/XQuXZj/relationships/tags/",
+          "related": "https://a.klaviyo.com/api/flows/XQuXZj/tags/"
+        }
+      }
+    },
+    "links": {
+      "self": "https://a.klaviyo.com/api/flows/XQuXZj/"
+    }
+  },
+  {
+    "type": "flow",
+    "id": "XRx2M8",
+    "attributes": {
+      "name": "Flash Drop (Wraps Only - Checkout)",
+      "status": "draft",
+      "archived": false,
+      "created": "2025-03-31T09:12:50+00:00",
+      "updated": "2025-09-03T02:17:19+00:00",
+      "trigger_type": "Added to List"
+    },
+    "relationships": {
+      "flow-actions": {
+        "links": {
+          "self": "https://a.klaviyo.com/api/flows/XRx2M8/relationships/flow-actions/",
+          "related": "https://a.klaviyo.com/api/flows/XRx2M8/flow-actions/"
+        }
+      },
+      "tags": {
+        "links": {
+          "self": "https://a.klaviyo.com/api/flows/XRx2M8/relationships/tags/",
+          "related": "https://a.klaviyo.com/api/flows/XRx2M8/tags/"
+        }
+      }
+    },
+    "links": {
+      "self": "https://a.klaviyo.com/api/flows/XRx2M8/"
+    }
+  },
+  {
+    "type": "flow",
+    "id": "XqKvDc",
+    "attributes": {
+      "name": "Welcome Flow - DZD (SMS)",
+      "status": "live",
+      "archived": false,
+      "created": "2024-07-18T10:34:01+00:00",
+      "updated": "2024-07-18T10:35:28+00:00",
+      "trigger_type": "Added to List"
+    },
+    "relationships": {
+      "flow-actions": {
+        "links": {
+          "self": "https://a.klaviyo.com/api/flows/XqKvDc/relationships/flow-actions/",
+          "related": "https://a.klaviyo.com/api/flows/XqKvDc/flow-actions/"
+        }
+      },
+      "tags": {
+        "links": {
+          "self": "https://a.klaviyo.com/api/flows/XqKvDc/relationships/tags/",
+          "related": "https://a.klaviyo.com/api/flows/XqKvDc/tags/"
+        }
+      }
+    },
+    "links": {
+      "self": "https://a.klaviyo.com/api/flows/XqKvDc/"
+    }
+  },
+  {
+    "type": "flow",
+    "id": "XqNfZ4",
+    "attributes": {
+      "name": "Welcome Flow - DZD",
+      "status": "live",
+      "archived": false,
+      "created": "2024-02-22T14:11:20+00:00",
+      "updated": "2025-08-08T15:46:11+00:00",
+      "trigger_type": "Added to List"
+    },
+    "relationships": {
+      "flow-actions": {
+        "links": {
+          "self": "https://a.klaviyo.com/api/flows/XqNfZ4/relationships/flow-actions/",
+          "related": "https://a.klaviyo.com/api/flows/XqNfZ4/flow-actions/"
+        }
+      },
+      "tags": {
+        "links": {
+          "self": "https://a.klaviyo.com/api/flows/XqNfZ4/relationships/tags/",
+          "related": "https://a.klaviyo.com/api/flows/XqNfZ4/tags/"
+        }
+      }
+    },
+    "links": {
+      "self": "https://a.klaviyo.com/api/flows/XqNfZ4/"
+    }
+  },
+  {
+    "type": "flow",
+    "id": "Xrcr59",
+    "attributes": {
+      "name": "Sale Event Checkout Abandonment Flow",
+      "status": "draft",
+      "archived": false,
+      "created": "2025-05-22T14:45:49+00:00",
+      "updated": "2025-09-03T02:21:19+00:00",
+      "trigger_type": "Metric"
+    },
+    "relationships": {
+      "flow-actions": {
+        "links": {
+          "self": "https://a.klaviyo.com/api/flows/Xrcr59/relationships/flow-actions/",
+          "related": "https://a.klaviyo.com/api/flows/Xrcr59/flow-actions/"
+        }
+      },
+      "tags": {
+        "links": {
+          "self": "https://a.klaviyo.com/api/flows/Xrcr59/relationships/tags/",
+          "related": "https://a.klaviyo.com/api/flows/Xrcr59/tags/"
+        }
+      }
+    },
+    "links": {
+      "self": "https://a.klaviyo.com/api/flows/Xrcr59/"
+    }
+  },
+  {
+    "type": "flow",
+    "id": "Y2YjGH",
+    "attributes": {
+      "name": "Loyalty: Welcome Flow",
+      "status": "live",
+      "archived": false,
+      "created": "2022-08-03T16:47:12+00:00",
+      "updated": "2023-01-20T19:38:29+00:00",
+      "trigger_type": "Added to List"
+    },
+    "relationships": {
+      "flow-actions": {
+        "links": {
+          "self": "https://a.klaviyo.com/api/flows/Y2YjGH/relationships/flow-actions/",
+          "related": "https://a.klaviyo.com/api/flows/Y2YjGH/flow-actions/"
+        }
+      },
+      "tags": {
+        "links": {
+          "self": "https://a.klaviyo.com/api/flows/Y2YjGH/relationships/tags/",
+          "related": "https://a.klaviyo.com/api/flows/Y2YjGH/tags/"
+        }
+      }
+    },
+    "links": {
+      "self": "https://a.klaviyo.com/api/flows/Y2YjGH/"
+    }
+  },
+  {
+    "type": "flow",
+    "id": "Yz54Uk",
+    "attributes": {
+      "name": "PostPilot Flow",
+      "status": "live",
+      "archived": false,
+      "created": "2025-02-14T10:36:53+00:00",
+      "updated": "2025-07-31T00:01:54+00:00",
+      "trigger_type": "Added to List"
+    },
+    "relationships": {
+      "flow-actions": {
+        "links": {
+          "self": "https://a.klaviyo.com/api/flows/Yz54Uk/relationships/flow-actions/",
+          "related": "https://a.klaviyo.com/api/flows/Yz54Uk/flow-actions/"
+        }
+      },
+      "tags": {
+        "links": {
+          "self": "https://a.klaviyo.com/api/flows/Yz54Uk/relationships/tags/",
+          "related": "https://a.klaviyo.com/api/flows/Yz54Uk/tags/"
+        }
+      }
+    },
+    "links": {
+      "self": "https://a.klaviyo.com/api/flows/Yz54Uk/"
+    }
+  },
+  {
+    "type": "flow",
+    "id": "YzPiJr",
+    "attributes": {
+      "name": "Upsell Flow",
+      "status": "live",
+      "archived": false,
+      "created": "2025-07-25T00:41:31+00:00",
+      "updated": "2025-07-25T00:41:34+00:00",
+      "trigger_type": "Metric"
+    },
+    "relationships": {
+      "flow-actions": {
+        "links": {
+          "self": "https://a.klaviyo.com/api/flows/YzPiJr/relationships/flow-actions/",
+          "related": "https://a.klaviyo.com/api/flows/YzPiJr/flow-actions/"
+        }
+      },
+      "tags": {
+        "links": {
+          "self": "https://a.klaviyo.com/api/flows/YzPiJr/relationships/tags/",
+          "related": "https://a.klaviyo.com/api/flows/YzPiJr/tags/"
+        }
+      }
+    },
+    "links": {
+      "self": "https://a.klaviyo.com/api/flows/YzPiJr/"
+    }
+  }
+]

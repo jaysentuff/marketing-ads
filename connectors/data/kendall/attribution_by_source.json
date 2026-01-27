@@ -1,0 +1,1390 @@
+{
+  "_fields": {
+    "src": "Source",
+    "breakdown": "Campaign/Referrer",
+    "orders": "Orders",
+    "sales": "Sales",
+    "nc_orders": "New Customer Orders",
+    "nc_sales": "New Customer Sales",
+    "rc_orders": "Returning Customer Orders",
+    "rc_sales": "Returning Customer Sales",
+    "nc_pct": "New Customer %",
+    "subs": "Subscriptions",
+    "nc_subs": "New Customer Subscriptions",
+    "sub_pct": "Subscription %",
+    "nc_sub_pct": "NC Subscription %",
+    "roas": "ROAS",
+    "nc_roas": "NC ROAS"
+  },
+  "filters_applied": {
+    "min_orders": 0,
+    "limit_per_source": 20,
+    "include_breakdowns": true,
+    "sort_by": "orders"
+  },
+  "chatgpt.com": {
+    "breakdowns": {
+      "(none)": {
+        "orders": 5,
+        "sales": 234.46,
+        "nc_orders": 5,
+        "nc_sales": 234.46,
+        "rc_orders": 0,
+        "nc_pct": 1,
+        "subs": 0,
+        "nc_subs": 0,
+        "sub_pct": 0,
+        "nc_sub_pct": 0
+      }
+    },
+    "total": {
+      "orders": 5,
+      "sales": 234.46,
+      "nc_orders": 5,
+      "nc_sales": 234.46,
+      "rc_orders": 0,
+      "nc_pct": 1,
+      "subs": 0,
+      "nc_subs": 0,
+      "sub_pct": 0,
+      "nc_sub_pct": 0
+    }
+  },
+  "checkmate": {
+    "breakdowns": {
+      "(none)": {
+        "orders": 4,
+        "sales": 227.26,
+        "nc_orders": 2,
+        "nc_sales": 134.78,
+        "rc_orders": 2,
+        "rc_sales": 92.48,
+        "nc_pct": 0.5,
+        "subs": 0,
+        "nc_subs": 0,
+        "sub_pct": 0,
+        "nc_sub_pct": 0
+      },
+      "checkmate": {
+        "orders": 1,
+        "sales": 118.5,
+        "nc_orders": 0,
+        "rc_orders": 1,
+        "rc_sales": 118.5,
+        "nc_pct": 0,
+        "subs": 0,
+        "nc_subs": 0,
+        "sub_pct": 0
+      }
+    },
+    "total": {
+      "orders": 5,
+      "sales": 345.76,
+      "nc_orders": 2,
+      "nc_sales": 134.78,
+      "rc_orders": 3,
+      "rc_sales": 210.98,
+      "nc_pct": 0.4,
+      "subs": 0,
+      "nc_subs": 0,
+      "sub_pct": 0,
+      "nc_sub_pct": 0
+    }
+  },
+  "facebook": {
+    "breakdowns": {
+      "{{campaign.id}}": {
+        "orders": 3,
+        "sales": 264,
+        "nc_orders": 2,
+        "nc_sales": 142.93,
+        "rc_orders": 1,
+        "rc_sales": 121.07,
+        "nc_pct": 0.67,
+        "subs": 0,
+        "nc_subs": 0,
+        "sub_pct": 0,
+        "nc_sub_pct": 0
+      },
+      "(none)": {
+        "orders": 3,
+        "sales": 105.28,
+        "nc_orders": 2,
+        "nc_sales": 68.86,
+        "rc_orders": 1,
+        "rc_sales": 36.42,
+        "nc_pct": 0.67,
+        "subs": 0,
+        "nc_subs": 0,
+        "sub_pct": 0,
+        "nc_sub_pct": 0
+      }
+    },
+    "total": {
+      "orders": 6,
+      "sales": 369.28,
+      "nc_orders": 4,
+      "nc_sales": 211.79,
+      "rc_orders": 2,
+      "rc_sales": 157.49,
+      "nc_pct": 0.67,
+      "subs": 0,
+      "nc_subs": 0,
+      "sub_pct": 0,
+      "nc_sub_pct": 0
+    }
+  },
+  "Facebook": {
+    "breakdowns": {
+      "{{campaign.name}}": {
+        "orders": 1,
+        "sales": 29.79,
+        "nc_orders": 1,
+        "nc_sales": 29.79,
+        "rc_orders": 0,
+        "nc_pct": 1,
+        "subs": 0,
+        "nc_subs": 0,
+        "sub_pct": 0,
+        "nc_sub_pct": 0
+      }
+    },
+    "total": {
+      "orders": 1,
+      "sales": 29.79,
+      "nc_orders": 1,
+      "nc_sales": 29.79,
+      "rc_orders": 0,
+      "nc_pct": 1,
+      "subs": 0,
+      "nc_subs": 0,
+      "sub_pct": 0,
+      "nc_sub_pct": 0
+    }
+  },
+  "fbig": {
+    "breakdowns": {
+      "A+ | Prospecting | Purchases | Catalog": {
+        "orders": 1,
+        "sales": 19.06,
+        "nc_orders": 0,
+        "rc_orders": 1,
+        "rc_sales": 19.06,
+        "nc_pct": 0,
+        "subs": 0,
+        "nc_subs": 0,
+        "sub_pct": 0
+      }
+    },
+    "total": {
+      "orders": 1,
+      "sales": 19.06,
+      "nc_orders": 0,
+      "rc_orders": 1,
+      "rc_sales": 19.06,
+      "nc_pct": 0,
+      "subs": 0,
+      "nc_subs": 0,
+      "sub_pct": 0
+    }
+  },
+  "google": {
+    "breakdowns": {
+      "Google Shopping": {
+        "orders": 53,
+        "sales": 2850.48,
+        "nc_orders": 43,
+        "nc_sales": 2237.47,
+        "rc_orders": 10,
+        "rc_sales": 613.01,
+        "nc_pct": 0.81,
+        "subs": 0,
+        "nc_subs": 0,
+        "sub_pct": 0,
+        "nc_sub_pct": 0
+      },
+      "(none)": {
+        "orders": 2,
+        "sales": 114.02,
+        "nc_orders": 0,
+        "rc_orders": 2,
+        "rc_sales": 114.02,
+        "nc_pct": 0,
+        "subs": 0,
+        "nc_subs": 0,
+        "sub_pct": 0
+      }
+    },
+    "total": {
+      "orders": 55,
+      "sales": 2964.5,
+      "nc_orders": 43,
+      "nc_sales": 2237.47,
+      "rc_orders": 12,
+      "rc_sales": 727.03,
+      "nc_pct": 0.78,
+      "subs": 0,
+      "nc_subs": 0,
+      "sub_pct": 0,
+      "nc_sub_pct": 0
+    }
+  },
+  "Google Ads": {
+    "breakdowns": {
+      "PMax | Shopping All - tROAS (ID: 17543774397)": {
+        "orders": 1207,
+        "sales": 66160.24,
+        "nc_orders": 978,
+        "nc_sales": 51356.16,
+        "rc_orders": 229,
+        "rc_sales": 14804.08,
+        "nc_pct": 0.81,
+        "subs": 0,
+        "nc_subs": 0,
+        "sub_pct": 0,
+        "nc_sub_pct": 0,
+        "roas": 2.34,
+        "nc_roas": 1.81
+      },
+      "Shopping | Lifting Straps | USA (ID: 21342512806)": {
+        "orders": 1033,
+        "sales": 65025.09,
+        "nc_orders": 851,
+        "nc_sales": 53188.91,
+        "rc_orders": 182,
+        "rc_sales": 11836.18,
+        "nc_pct": 0.82,
+        "subs": 0,
+        "nc_subs": 0,
+        "sub_pct": 0,
+        "nc_sub_pct": 0,
+        "roas": 2.39,
+        "nc_roas": 1.96
+      },
+      "Branded Search - TuffWraps (ID: 22453284862)": {
+        "orders": 779,
+        "sales": 53636.57,
+        "nc_orders": 409,
+        "nc_sales": 25765.92,
+        "rc_orders": 370,
+        "rc_sales": 27870.65,
+        "nc_pct": 0.53,
+        "subs": 0,
+        "nc_subs": 0,
+        "sub_pct": 0,
+        "nc_sub_pct": 0,
+        "roas": 44.85,
+        "nc_roas": 21.54
+      }
+    },
+    "total": {
+      "orders": 3019,
+      "sales": 184821.9,
+      "nc_orders": 2238,
+      "nc_sales": 130310.99,
+      "rc_orders": 781,
+      "rc_sales": 54510.91,
+      "nc_pct": 0.74,
+      "subs": 0,
+      "nc_subs": 0,
+      "sub_pct": 0,
+      "nc_sub_pct": 0,
+      "roas": 3.26,
+      "nc_roas": 2.3
+    }
+  },
+  "ig": {
+    "breakdowns": {
+      "(none)": {
+        "orders": 10,
+        "sales": 580.6,
+        "nc_orders": 10,
+        "nc_sales": 580.6,
+        "rc_orders": 0,
+        "nc_pct": 1,
+        "subs": 0,
+        "nc_subs": 0,
+        "sub_pct": 0,
+        "nc_sub_pct": 0
+      }
+    },
+    "total": {
+      "orders": 10,
+      "sales": 580.6,
+      "nc_orders": 10,
+      "nc_sales": 580.6,
+      "rc_orders": 0,
+      "nc_pct": 1,
+      "subs": 0,
+      "nc_subs": 0,
+      "sub_pct": 0,
+      "nc_sub_pct": 0
+    }
+  },
+  "IGShopping": {
+    "breakdowns": {
+      "(none)": {
+        "orders": 11,
+        "sales": 619.61,
+        "nc_orders": 8,
+        "nc_sales": 518.77,
+        "rc_orders": 3,
+        "rc_sales": 100.84,
+        "nc_pct": 0.73,
+        "subs": 0,
+        "nc_subs": 0,
+        "sub_pct": 0,
+        "nc_sub_pct": 0
+      }
+    },
+    "total": {
+      "orders": 11,
+      "sales": 619.61,
+      "nc_orders": 8,
+      "nc_sales": 518.77,
+      "rc_orders": 3,
+      "rc_sales": 100.84,
+      "nc_pct": 0.73,
+      "subs": 0,
+      "nc_subs": 0,
+      "sub_pct": 0,
+      "nc_sub_pct": 0
+    }
+  },
+  "klarna": {
+    "breakdowns": {
+      "klarna-merchantboost": {
+        "orders": 18,
+        "sales": 1678,
+        "nc_orders": 11,
+        "nc_sales": 929.58,
+        "rc_orders": 7,
+        "rc_sales": 748.42,
+        "nc_pct": 0.61,
+        "subs": 0,
+        "nc_subs": 0,
+        "sub_pct": 0,
+        "nc_sub_pct": 0
+      }
+    },
+    "total": {
+      "orders": 18,
+      "sales": 1678,
+      "nc_orders": 11,
+      "nc_sales": 929.58,
+      "rc_orders": 7,
+      "rc_sales": 748.42,
+      "nc_pct": 0.61,
+      "subs": 0,
+      "nc_subs": 0,
+      "sub_pct": 0,
+      "nc_sub_pct": 0
+    }
+  },
+  "Klaviyo": {
+    "breakdowns": {
+      "Email #1 (VsirLM)": {
+        "orders": 106,
+        "sales": 6637.93,
+        "nc_orders": 80,
+        "nc_sales": 4712.86,
+        "rc_orders": 26,
+        "rc_sales": 1925.07,
+        "nc_pct": 0.75,
+        "subs": 0,
+        "nc_subs": 0,
+        "sub_pct": 0,
+        "nc_sub_pct": 0
+      },
+      "Email #1 (TcVsmt)": {
+        "orders": 47,
+        "sales": 2978.52,
+        "nc_orders": 41,
+        "nc_sales": 2599.91,
+        "rc_orders": 6,
+        "rc_sales": 378.61,
+        "nc_pct": 0.87,
+        "subs": 0,
+        "nc_subs": 0,
+        "sub_pct": 0,
+        "nc_sub_pct": 0
+      },
+      "Black Friday - Gear collection (01KB6NTWBK9RE4BQJHHB3X9HKW)": {
+        "orders": 27,
+        "sales": 2022.15,
+        "nc_orders": 11,
+        "nc_sales": 739.98,
+        "rc_orders": 16,
+        "rc_sales": 1282.17,
+        "nc_pct": 0.41,
+        "subs": 0,
+        "nc_subs": 0,
+        "sub_pct": 0,
+        "nc_sub_pct": 0
+      },
+      "SMS #1 (WPwd9D)": {
+        "orders": 25,
+        "sales": 1348.81,
+        "nc_orders": 25,
+        "nc_sales": 1348.81,
+        "rc_orders": 0,
+        "nc_pct": 1,
+        "subs": 0,
+        "nc_subs": 0,
+        "sub_pct": 0,
+        "nc_sub_pct": 0
+      },
+      "Email #1 (YsxfkV)": {
+        "orders": 23,
+        "sales": 1859.83,
+        "nc_orders": 16,
+        "nc_sales": 1343.49,
+        "rc_orders": 7,
+        "rc_sales": 516.34,
+        "nc_pct": 0.7,
+        "subs": 0,
+        "nc_subs": 0,
+        "sub_pct": 0,
+        "nc_sub_pct": 0
+      },
+      "BFCM + 10% OFF Wrist Wraps (01KB4Q390B0FEYM4PKXTFTRZ2M)": {
+        "orders": 19,
+        "sales": 1144.33,
+        "nc_orders": 7,
+        "nc_sales": 489.21,
+        "rc_orders": 12,
+        "rc_sales": 655.12,
+        "nc_pct": 0.37,
+        "subs": 0,
+        "nc_subs": 0,
+        "sub_pct": 0,
+        "nc_sub_pct": 0
+      },
+      "Cyber Monday 2 - EXTENDED (01KB2ZBWADKXJD1086WMVZ2J1H)": {
+        "orders": 19,
+        "sales": 1137.34,
+        "nc_orders": 9,
+        "nc_sales": 599.45,
+        "rc_orders": 10,
+        "rc_sales": 537.89,
+        "nc_pct": 0.47,
+        "subs": 0,
+        "nc_subs": 0,
+        "sub_pct": 0,
+        "nc_sub_pct": 0
+      },
+      "Black Friday Sale 2 - Knee Sleeves & Elbow Sleeves + 20% off (01KB4K11BCD4EFMXNT975PTS2A)": {
+        "orders": 18,
+        "sales": 1402.26,
+        "nc_orders": 7,
+        "nc_sales": 492,
+        "rc_orders": 11,
+        "rc_sales": 910.26,
+        "nc_pct": 0.39,
+        "subs": 0,
+        "nc_subs": 0,
+        "sub_pct": 0,
+        "nc_sub_pct": 0
+      },
+      "Black Friday SMS (01KB2YFZ8G3F9S1BCT98KMMYBN)": {
+        "orders": 18,
+        "sales": 1478.96,
+        "nc_orders": 4,
+        "nc_sales": 278.55,
+        "rc_orders": 14,
+        "rc_sales": 1200.41,
+        "nc_pct": 0.22,
+        "subs": 0,
+        "nc_subs": 0,
+        "sub_pct": 0,
+        "nc_sub_pct": 0
+      },
+      "NY Sale (01KDQJYW99HDQ06RH00X2Z084C)": {
+        "orders": 18,
+        "sales": 1171.01,
+        "nc_orders": 5,
+        "nc_sales": 275.02,
+        "rc_orders": 13,
+        "rc_sales": 895.99,
+        "nc_pct": 0.28,
+        "subs": 0,
+        "nc_subs": 0,
+        "sub_pct": 0,
+        "nc_sub_pct": 0
+      },
+      "Black Friday Sale - up to 60% off (01KB2VXFDXQKNRRJ6TZ6098ECF)": {
+        "orders": 17,
+        "sales": 1050.42,
+        "nc_orders": 3,
+        "nc_sales": 193.74,
+        "rc_orders": 14,
+        "rc_sales": 856.68,
+        "nc_pct": 0.18,
+        "subs": 0,
+        "nc_subs": 0,
+        "sub_pct": 0,
+        "nc_sub_pct": 0
+      },
+      "Cyber Monday Final Reminder [Plain text] (01KB2YWHH4H7S2XNG6JB3CA7BN)": {
+        "orders": 17,
+        "sales": 1088.34,
+        "nc_orders": 8,
+        "nc_sales": 601.19,
+        "rc_orders": 9,
+        "rc_sales": 487.15,
+        "nc_pct": 0.47,
+        "subs": 0,
+        "nc_subs": 0,
+        "sub_pct": 0,
+        "nc_sub_pct": 0
+      },
+      "NY Sale 2 - Plain text (01KDS15EG06JASMBXB1Z8GRPNV)": {
+        "orders": 17,
+        "sales": 1371.62,
+        "nc_orders": 4,
+        "nc_sales": 219.4,
+        "rc_orders": 13,
+        "rc_sales": 1152.22,
+        "nc_pct": 0.24,
+        "subs": 0,
+        "nc_subs": 0,
+        "sub_pct": 0,
+        "nc_sub_pct": 0
+      },
+      "Holiday sale (01KCFPWBMGN8ZFBBYRFWQDVGTM)": {
+        "orders": 16,
+        "sales": 1088.68,
+        "nc_orders": 4,
+        "nc_sales": 379,
+        "rc_orders": 12,
+        "rc_sales": 709.68,
+        "nc_pct": 0.25,
+        "subs": 0,
+        "nc_subs": 0,
+        "sub_pct": 0,
+        "nc_sub_pct": 0
+      },
+      "Stronger Things Final Nudge (01KB1DT1PKNP81HBVXD8RTYVJA)": {
+        "orders": 14,
+        "sales": 1108.05,
+        "nc_orders": 9,
+        "nc_sales": 746.82,
+        "rc_orders": 5,
+        "rc_sales": 361.23,
+        "nc_pct": 0.64,
+        "subs": 0,
+        "nc_subs": 0,
+        "sub_pct": 0,
+        "nc_sub_pct": 0
+      },
+      "Thanksgiving SMS (01KB2WTCXXPGRSZQJJR09Z669N)": {
+        "orders": 14,
+        "sales": 1025.21,
+        "nc_orders": 2,
+        "nc_sales": 84.79,
+        "rc_orders": 12,
+        "rc_sales": 940.42,
+        "nc_pct": 0.14,
+        "subs": 0,
+        "nc_subs": 0,
+        "sub_pct": 0,
+        "nc_sub_pct": 0
+      },
+      "Gift Guide 2025 (01KCKPK8B2GA5CBE9HRMTRDF4N)": {
+        "orders": 13,
+        "sales": 844.61,
+        "nc_orders": 5,
+        "nc_sales": 480.16,
+        "rc_orders": 8,
+        "rc_sales": 364.45,
+        "nc_pct": 0.38,
+        "subs": 0,
+        "nc_subs": 0,
+        "sub_pct": 0,
+        "nc_sub_pct": 0
+      },
+      "Cyber Monday SMS (01KB2YQ09E4PBAFGJM38B4G37W)": {
+        "orders": 12,
+        "sales": 849.98,
+        "nc_orders": 3,
+        "nc_sales": 170.62,
+        "rc_orders": 9,
+        "rc_sales": 679.36,
+        "nc_pct": 0.25,
+        "subs": 0,
+        "nc_subs": 0,
+        "sub_pct": 0,
+        "nc_sub_pct": 0
+      },
+      "Wrong elbow support (01KBQCG85ZM30MR2TJHV1TWJ5P)": {
+        "orders": 12,
+        "sales": 576.19,
+        "nc_orders": 1,
+        "nc_sales": 41.51,
+        "rc_orders": 11,
+        "rc_sales": 534.68,
+        "nc_pct": 0.08,
+        "subs": 0,
+        "nc_subs": 0,
+        "sub_pct": 0,
+        "nc_sub_pct": 0
+      },
+      "SMS #1b - (Right Side) (QZpNp9)": {
+        "orders": 10,
+        "sales": 654.18,
+        "nc_orders": 5,
+        "nc_sales": 395.89,
+        "rc_orders": 5,
+        "rc_sales": 258.29,
+        "nc_pct": 0.5,
+        "subs": 0,
+        "nc_subs": 0,
+        "sub_pct": 0,
+        "nc_sub_pct": 0
+      }
+    },
+    "total": {
+      "orders": 700,
+      "sales": 48001.77,
+      "nc_orders": 345,
+      "nc_sales": 23193.78,
+      "rc_orders": 355,
+      "rc_sales": 24807.99,
+      "nc_pct": 0.49,
+      "subs": 0,
+      "nc_subs": 0,
+      "sub_pct": 0,
+      "nc_sub_pct": 0
+    }
+  },
+  "linktree": {
+    "breakdowns": {
+      "shop now": {
+        "orders": 151,
+        "sales": 10664.51,
+        "nc_orders": 100,
+        "nc_sales": 6384.9,
+        "rc_orders": 51,
+        "rc_sales": 4279.61,
+        "nc_pct": 0.66,
+        "subs": 0,
+        "nc_subs": 0,
+        "sub_pct": 0,
+        "nc_sub_pct": 0
+      },
+      "15% off your first order!": {
+        "orders": 28,
+        "sales": 2153.05,
+        "nc_orders": 20,
+        "nc_sales": 1412.9,
+        "rc_orders": 8,
+        "rc_sales": 740.15,
+        "nc_pct": 0.71,
+        "subs": 0,
+        "nc_subs": 0,
+        "sub_pct": 0,
+        "nc_sub_pct": 0
+      },
+      "military & first responder discounts": {
+        "orders": 8,
+        "sales": 542.51,
+        "nc_orders": 4,
+        "nc_sales": 239.58,
+        "rc_orders": 4,
+        "rc_sales": 302.93,
+        "nc_pct": 0.5,
+        "subs": 0,
+        "nc_subs": 0,
+        "sub_pct": 0,
+        "nc_sub_pct": 0
+      },
+      "ambassador application": {
+        "orders": 1,
+        "sales": 31.23,
+        "nc_orders": 1,
+        "nc_sales": 31.23,
+        "rc_orders": 0,
+        "nc_pct": 1,
+        "subs": 0,
+        "nc_subs": 0,
+        "sub_pct": 0,
+        "nc_sub_pct": 0
+      }
+    },
+    "total": {
+      "orders": 188,
+      "sales": 13391.3,
+      "nc_orders": 125,
+      "nc_sales": 8068.61,
+      "rc_orders": 63,
+      "rc_sales": 5322.69,
+      "nc_pct": 0.66,
+      "subs": 0,
+      "nc_subs": 0,
+      "sub_pct": 0,
+      "nc_sub_pct": 0
+    }
+  },
+  "loyaltylion": {
+    "breakdowns": {
+      "ll_monthly_statement_reward_available": {
+        "orders": 6,
+        "sales": 426.48,
+        "nc_orders": 0,
+        "rc_orders": 6,
+        "rc_sales": 426.48,
+        "nc_pct": 0,
+        "subs": 0,
+        "nc_subs": 0,
+        "sub_pct": 0
+      },
+      "ll_triggered_reward_available_reminder": {
+        "orders": 3,
+        "sales": 139.76,
+        "nc_orders": 1,
+        "nc_sales": 44.06,
+        "rc_orders": 2,
+        "rc_sales": 95.7,
+        "nc_pct": 0.33,
+        "subs": 0,
+        "nc_subs": 0,
+        "sub_pct": 0,
+        "nc_sub_pct": 0
+      }
+    },
+    "total": {
+      "orders": 9,
+      "sales": 566.24,
+      "nc_orders": 1,
+      "nc_sales": 44.06,
+      "rc_orders": 8,
+      "rc_sales": 522.18,
+      "nc_pct": 0.11,
+      "subs": 0,
+      "nc_subs": 0,
+      "sub_pct": 0,
+      "nc_sub_pct": 0
+    }
+  },
+  "Meta Ads": {
+    "breakdowns": {
+      "TOF Testing - CBO - Prospecting (ID: 6581148434547)": {
+        "orders": 673,
+        "sales": 41107.58,
+        "nc_orders": 581,
+        "nc_sales": 35036.99,
+        "rc_orders": 92,
+        "rc_sales": 6070.59,
+        "nc_pct": 0.86,
+        "subs": 0,
+        "nc_subs": 0,
+        "sub_pct": 0,
+        "nc_sub_pct": 0,
+        "roas": 1.32,
+        "nc_roas": 1.13
+      },
+      "Retention - Past Customers (ID: 6643115389547)": {
+        "orders": 505,
+        "sales": 36193.97,
+        "nc_orders": 64,
+        "nc_sales": 4753.88,
+        "rc_orders": 441,
+        "rc_sales": 31440.09,
+        "nc_pct": 0.13,
+        "subs": 0,
+        "nc_subs": 0,
+        "sub_pct": 0,
+        "nc_sub_pct": 0,
+        "roas": 3.23,
+        "nc_roas": 0.42
+      },
+      "MOF/BOF - CBO - Retargeting (ID: 6708367305147)": {
+        "orders": 297,
+        "sales": 19335.29,
+        "nc_orders": 248,
+        "nc_sales": 15285.71,
+        "rc_orders": 49,
+        "rc_sales": 4049.58,
+        "nc_pct": 0.84,
+        "subs": 0,
+        "nc_subs": 0,
+        "sub_pct": 0,
+        "nc_sub_pct": 0,
+        "roas": 2.2,
+        "nc_roas": 1.74
+      },
+      "MOF/BOF - CBO - Retargeting - All Countries (US Excluded) (ID: 6793988280747)": {
+        "orders": 51,
+        "sales": 4398.12,
+        "nc_orders": 44,
+        "nc_sales": 3512.33,
+        "rc_orders": 7,
+        "rc_sales": 885.79,
+        "nc_pct": 0.86,
+        "subs": 0,
+        "nc_subs": 0,
+        "sub_pct": 0,
+        "nc_sub_pct": 0,
+        "roas": 2.43,
+        "nc_roas": 1.94
+      },
+      "Retention - Past Customers - All Countries - US Excluded (ID: 6793989369147)": {
+        "orders": 24,
+        "sales": 2964.07,
+        "nc_orders": 5,
+        "nc_sales": 341.52,
+        "rc_orders": 19,
+        "rc_sales": 2622.55,
+        "nc_pct": 0.21,
+        "subs": 0,
+        "nc_subs": 0,
+        "sub_pct": 0,
+        "nc_sub_pct": 0,
+        "roas": 2.48,
+        "nc_roas": 0.29
+      },
+      "TOF Testing - CBO - Prosspecting [2026 NEW] (ID: 6968299445547)": {
+        "orders": 0,
+        "sales": 0,
+        "roas": 0
+      }
+    },
+    "total": {
+      "orders": 1550,
+      "sales": 103999.03,
+      "nc_orders": 942,
+      "nc_sales": 58930.43,
+      "rc_orders": 608,
+      "rc_sales": 45068.6,
+      "nc_pct": 0.61,
+      "subs": 0,
+      "nc_subs": 0,
+      "sub_pct": 0,
+      "nc_sub_pct": 0,
+      "roas": 1.92,
+      "nc_roas": 1.09
+    }
+  },
+  "Organic": {
+    "breakdowns": {
+      "Direct": {
+        "orders": 2541,
+        "sales": 163635.3,
+        "nc_orders": 1734,
+        "nc_sales": 105956.42,
+        "rc_orders": 807,
+        "rc_sales": 57678.88,
+        "nc_pct": 0.68,
+        "subs": 0,
+        "nc_subs": 0,
+        "sub_pct": 0,
+        "nc_sub_pct": 0
+      },
+      "www.google.com": {
+        "orders": 866,
+        "sales": 55851.92,
+        "nc_orders": 624,
+        "nc_sales": 39424.52,
+        "rc_orders": 242,
+        "rc_sales": 16427.4,
+        "nc_pct": 0.72,
+        "subs": 0,
+        "nc_subs": 0,
+        "sub_pct": 0,
+        "nc_sub_pct": 0
+      },
+      "auth.govx.com": {
+        "orders": 220,
+        "sales": 14794.85,
+        "nc_orders": 140,
+        "nc_sales": 9251.37,
+        "rc_orders": 80,
+        "rc_sales": 5543.48,
+        "nc_pct": 0.64,
+        "subs": 0,
+        "nc_subs": 0,
+        "sub_pct": 0,
+        "nc_sub_pct": 0
+      },
+      "shop.app": {
+        "orders": 94,
+        "sales": 6711.72,
+        "nc_orders": 31,
+        "nc_sales": 1859.66,
+        "rc_orders": 63,
+        "rc_sales": 4852.06,
+        "nc_pct": 0.33,
+        "subs": 0,
+        "nc_subs": 0,
+        "sub_pct": 0,
+        "nc_sub_pct": 0
+      },
+      "m.facebook.com": {
+        "orders": 65,
+        "sales": 4603.05,
+        "nc_orders": 41,
+        "nc_sales": 2696.97,
+        "rc_orders": 24,
+        "rc_sales": 1906.08,
+        "nc_pct": 0.63,
+        "subs": 0,
+        "nc_subs": 0,
+        "sub_pct": 0,
+        "nc_sub_pct": 0
+      },
+      "www.bing.com": {
+        "orders": 38,
+        "sales": 2543.29,
+        "nc_orders": 26,
+        "nc_sales": 1553.77,
+        "rc_orders": 12,
+        "rc_sales": 989.52,
+        "nc_pct": 0.68,
+        "subs": 0,
+        "nc_subs": 0,
+        "sub_pct": 0,
+        "nc_sub_pct": 0
+      },
+      "apay-us.amazon.com": {
+        "orders": 29,
+        "sales": 1922.39,
+        "nc_orders": 23,
+        "nc_sales": 1319.86,
+        "rc_orders": 6,
+        "rc_sales": 602.53,
+        "nc_pct": 0.79,
+        "subs": 0,
+        "nc_subs": 0,
+        "sub_pct": 0,
+        "nc_sub_pct": 0
+      },
+      "tuffwraps.worthepenny.com": {
+        "orders": 29,
+        "sales": 1940.55,
+        "nc_orders": 19,
+        "nc_sales": 1107.15,
+        "rc_orders": 10,
+        "rc_sales": 833.4,
+        "nc_pct": 0.66,
+        "subs": 0,
+        "nc_subs": 0,
+        "sub_pct": 0,
+        "nc_sub_pct": 0
+      },
+      "capitaloneshopping.com": {
+        "orders": 26,
+        "sales": 1773.88,
+        "nc_orders": 20,
+        "nc_sales": 1263.56,
+        "rc_orders": 6,
+        "rc_sales": 510.32,
+        "nc_pct": 0.77,
+        "subs": 0,
+        "nc_subs": 0,
+        "sub_pct": 0,
+        "nc_sub_pct": 0
+      },
+      "giftful.com": {
+        "orders": 12,
+        "sales": 597.74,
+        "nc_orders": 12,
+        "nc_sales": 597.74,
+        "rc_orders": 0,
+        "nc_pct": 1,
+        "subs": 0,
+        "nc_subs": 0,
+        "sub_pct": 0,
+        "nc_sub_pct": 0
+      },
+      "search.yahoo.com": {
+        "orders": 12,
+        "sales": 607.98,
+        "nc_orders": 9,
+        "nc_sales": 462.54,
+        "rc_orders": 3,
+        "rc_sales": 145.44,
+        "nc_pct": 0.75,
+        "subs": 0,
+        "nc_subs": 0,
+        "sub_pct": 0,
+        "nc_sub_pct": 0
+      },
+      "tuffwrapscom.knoji.com": {
+        "orders": 12,
+        "sales": 1065.05,
+        "nc_orders": 8,
+        "nc_sales": 537.64,
+        "rc_orders": 4,
+        "rc_sales": 527.41,
+        "nc_pct": 0.67,
+        "subs": 0,
+        "nc_subs": 0,
+        "sub_pct": 0,
+        "nc_sub_pct": 0
+      },
+      "duckduckgo.com": {
+        "orders": 10,
+        "sales": 680.14,
+        "nc_orders": 7,
+        "nc_sales": 362.54,
+        "rc_orders": 3,
+        "rc_sales": 317.6,
+        "nc_pct": 0.7,
+        "subs": 0,
+        "nc_subs": 0,
+        "sub_pct": 0,
+        "nc_sub_pct": 0
+      },
+      "www.paypal.com": {
+        "orders": 10,
+        "sales": 785.23,
+        "nc_orders": 10,
+        "nc_sales": 785.23,
+        "rc_orders": 0,
+        "nc_pct": 1,
+        "subs": 0,
+        "nc_subs": 0,
+        "sub_pct": 0,
+        "nc_sub_pct": 0
+      },
+      "upgradedreviews.co": {
+        "orders": 9,
+        "sales": 875.24,
+        "nc_orders": 7,
+        "nc_sales": 741.62,
+        "rc_orders": 2,
+        "rc_sales": 133.62,
+        "nc_pct": 0.78,
+        "subs": 0,
+        "nc_subs": 0,
+        "sub_pct": 0,
+        "nc_sub_pct": 0
+      },
+      "l.facebook.com": {
+        "orders": 8,
+        "sales": 544.13,
+        "nc_orders": 6,
+        "nc_sales": 355.72,
+        "rc_orders": 2,
+        "rc_sales": 188.41,
+        "nc_pct": 0.75,
+        "subs": 0,
+        "nc_subs": 0,
+        "sub_pct": 0,
+        "nc_sub_pct": 0
+      },
+      "www.drawnames.com": {
+        "orders": 8,
+        "sales": 352.98,
+        "nc_orders": 8,
+        "nc_sales": 352.98,
+        "rc_orders": 0,
+        "nc_pct": 1,
+        "subs": 0,
+        "nc_subs": 0,
+        "sub_pct": 0,
+        "nc_sub_pct": 0
+      },
+      "pay.klarna.com": {
+        "orders": 7,
+        "sales": 531.96,
+        "nc_orders": 7,
+        "nc_sales": 531.96,
+        "rc_orders": 0,
+        "nc_pct": 1,
+        "subs": 0,
+        "nc_subs": 0,
+        "sub_pct": 0,
+        "nc_sub_pct": 0
+      },
+      "www.realcodes.org": {
+        "orders": 7,
+        "sales": 462.39,
+        "nc_orders": 6,
+        "nc_sales": 355.77,
+        "rc_orders": 1,
+        "rc_sales": 106.62,
+        "nc_pct": 0.86,
+        "subs": 0,
+        "nc_subs": 0,
+        "sub_pct": 0,
+        "nc_sub_pct": 0
+      },
+      "cuposales.com": {
+        "orders": 6,
+        "sales": 244.2,
+        "nc_orders": 4,
+        "nc_sales": 151.2,
+        "rc_orders": 2,
+        "rc_sales": 93,
+        "nc_pct": 0.67,
+        "subs": 0,
+        "nc_subs": 0,
+        "sub_pct": 0,
+        "nc_sub_pct": 0
+      }
+    },
+    "total": {
+      "orders": 4058,
+      "sales": 263934.79,
+      "nc_orders": 2779,
+      "nc_sales": 172178.86,
+      "rc_orders": 1279,
+      "rc_sales": 91755.93,
+      "nc_pct": 0.68,
+      "subs": 0,
+      "nc_subs": 0,
+      "sub_pct": 0,
+      "nc_sub_pct": 0
+    }
+  },
+  "organic-referral": {
+    "breakdowns": {
+      "JimmyDoheny-7907": {
+        "orders": 6,
+        "sales": 503.31,
+        "nc_orders": 3,
+        "nc_sales": 240.77,
+        "rc_orders": 3,
+        "rc_sales": 262.54,
+        "nc_pct": 0.5,
+        "subs": 0,
+        "nc_subs": 0,
+        "sub_pct": 0,
+        "nc_sub_pct": 0
+      }
+    },
+    "total": {
+      "orders": 6,
+      "sales": 503.31,
+      "nc_orders": 3,
+      "nc_sales": 240.77,
+      "rc_orders": 3,
+      "rc_sales": 262.54,
+      "nc_pct": 0.5,
+      "subs": 0,
+      "nc_subs": 0,
+      "sub_pct": 0,
+      "nc_sub_pct": 0
+    }
+  },
+  "perplexity": {
+    "breakdowns": {
+      "(none)": {
+        "orders": 1,
+        "sales": 90,
+        "nc_orders": 1,
+        "nc_sales": 90,
+        "rc_orders": 0,
+        "nc_pct": 1,
+        "subs": 0,
+        "nc_subs": 0,
+        "sub_pct": 0,
+        "nc_sub_pct": 0
+      }
+    },
+    "total": {
+      "orders": 1,
+      "sales": 90,
+      "nc_orders": 1,
+      "nc_sales": 90,
+      "rc_orders": 0,
+      "nc_pct": 1,
+      "subs": 0,
+      "nc_subs": 0,
+      "sub_pct": 0,
+      "nc_sub_pct": 0
+    }
+  },
+  "refersion": {
+    "breakdowns": {
+      "7948075.911551": {
+        "orders": 1,
+        "sales": 85.41,
+        "nc_orders": 1,
+        "nc_sales": 85.41,
+        "rc_orders": 0,
+        "nc_pct": 1,
+        "subs": 0,
+        "nc_subs": 0,
+        "sub_pct": 0,
+        "nc_sub_pct": 0
+      }
+    },
+    "total": {
+      "orders": 1,
+      "sales": 85.41,
+      "nc_orders": 1,
+      "nc_sales": 85.41,
+      "rc_orders": 0,
+      "nc_pct": 1,
+      "subs": 0,
+      "nc_subs": 0,
+      "sub_pct": 0,
+      "nc_sub_pct": 0
+    }
+  },
+  "shop_app": {
+    "breakdowns": {
+      "(none)": {
+        "orders": 4,
+        "sales": 303.19,
+        "nc_orders": 0,
+        "rc_orders": 4,
+        "rc_sales": 303.19,
+        "nc_pct": 0,
+        "subs": 0,
+        "nc_subs": 0,
+        "sub_pct": 0
+      }
+    },
+    "total": {
+      "orders": 4,
+      "sales": 303.19,
+      "nc_orders": 0,
+      "rc_orders": 4,
+      "rc_sales": 303.19,
+      "nc_pct": 0,
+      "subs": 0,
+      "nc_subs": 0,
+      "sub_pct": 0
+    }
+  },
+  "zipchat": {
+    "breakdowns": {
+      "(none)": {
+        "orders": 8,
+        "sales": 681.23,
+        "nc_orders": 6,
+        "nc_sales": 514.15,
+        "rc_orders": 2,
+        "rc_sales": 167.08,
+        "nc_pct": 0.75,
+        "subs": 0,
+        "nc_subs": 0,
+        "sub_pct": 0,
+        "nc_sub_pct": 0
+      }
+    },
+    "total": {
+      "orders": 8,
+      "sales": 681.23,
+      "nc_orders": 6,
+      "nc_sales": 514.15,
+      "rc_orders": 2,
+      "rc_sales": 167.08,
+      "nc_pct": 0.75,
+      "subs": 0,
+      "nc_subs": 0,
+      "sub_pct": 0,
+      "nc_sub_pct": 0
+    }
+  },
+  "null": {
+    "breakdowns": {
+      "SP-EXACT-Scale-Premium-WristWraps (ID: 64293222465764)": {
+        "orders": 0,
+        "sales": 0,
+        "roas": 0
+      },
+      "TUFF-AUTO-PWW (ID: 486672234028039)": {
+        "orders": 0,
+        "sales": 0,
+        "roas": 0
+      },
+      "TUFF-AUTO-TEMP (ID: 415032137288538)": {
+        "orders": 0,
+        "sales": 0,
+        "roas": 0
+      },
+      "TUFF-Banner AD (ID: 317090773185982)": {
+        "orders": 0,
+        "sales": 0
+      },
+      "TUFF BN - EXACT - ALL PRODUCTS (ID: 552205847855964)": {
+        "orders": 0,
+        "sales": 0,
+        "roas": 0
+      },
+      "TUFF-COREWW-AUTO (ID: 291268650845810)": {
+        "orders": 0,
+        "sales": 0,
+        "roas": 0
+      },
+      "TUFF-COREWW-Manual (ID: 479313769517679)": {
+        "orders": 0,
+        "sales": 0,
+        "roas": 0
+      },
+      "TUFF-COREWW-OTHERASINTARGETING (ID: 366714016249246)": {
+        "orders": 0,
+        "sales": 0,
+        "roas": 0
+      },
+      "TUFF-COREWW-OWNASINTARGETING (ID: 436292246200877)": {
+        "orders": 0,
+        "sales": 0,
+        "roas": 0
+      },
+      "TUFF-CWW-EXACT (ID: 208385642232086)": {
+        "orders": 0,
+        "sales": 0,
+        "roas": 0
+      },
+      "TUFF-HOOKS-AUTO (ID: 446878399622313)": {
+        "orders": 0,
+        "sales": 0,
+        "roas": 0
+      },
+      "TUFF-LS-AUTO (ID: 352728155257819)": {
+        "orders": 0,
+        "sales": 0,
+        "roas": 0
+      },
+      "TUFF-LS-CWW TARGETING (ID: 458312142308449)": {
+        "orders": 0,
+        "sales": 0,
+        "roas": 0
+      },
+      "TUFF-MANUAL-TEMP (ID: 423861196361805)": {
+        "orders": 0,
+        "sales": 0,
+        "roas": 0
+      },
+      "TUFF-PREMIUMWWFBM-AUTO (ID: 307279596305774)": {
+        "orders": 0,
+        "sales": 0,
+        "roas": 0
+      },
+      "TUFF-PREMIUMWW-Manual-HVKW (ID: 495394981681290)": {
+        "orders": 0,
+        "sales": 0,
+        "roas": 0
+      },
+      "TUFF-PWW-AUTO (ID: 378805744795496)": {
+        "orders": 0,
+        "sales": 0,
+        "roas": 0
+      },
+      "TUFF-PWW-EXACT (ID: 268909054301009)": {
+        "orders": 0,
+        "sales": 0,
+        "roas": 0
+      },
+      "TUFF-SPB-CORELINE-KW (ID: 458086856860963)": {
+        "orders": 0,
+        "sales": 0,
+        "roas": 0
+      },
+      "Villain Wrist Wraps (ID: 231236100237375)": {
+        "orders": 0,
+        "sales": 0
+      }
+    },
+    "total": {
+      "orders": 0,
+      "sales": 0,
+      "roas": 0
+    }
+  }
+}

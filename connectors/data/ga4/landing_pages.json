@@ -1,0 +1,352 @@
+[
+  {
+    "landing_page": "/",
+    "sessions": 13872,
+    "conversions": 625.0,
+    "revenue": 45389.18000000001,
+    "bounce_rate": 0.2200836216839677
+  },
+  {
+    "landing_page": "/collections/powerlifting-wrist-wraps",
+    "sessions": 2591,
+    "conversions": 62.0,
+    "revenue": 3310.57,
+    "bounce_rate": 0.2238517946738711
+  },
+  {
+    "landing_page": "/products/tuff-lifting-hooks",
+    "sessions": 2105,
+    "conversions": 54.0,
+    "revenue": 2471.82,
+    "bounce_rate": 0.5871733966745843
+  },
+  {
+    "landing_page": "/collections/best-selling-lifting-gear",
+    "sessions": 1735,
+    "conversions": 32.0,
+    "revenue": 2468.06,
+    "bounce_rate": 0.2518731988472622
+  },
+  {
+    "landing_page": "/products/pink-teal-villain-wrist-wraps-16",
+    "sessions": 1565,
+    "conversions": 28.0,
+    "revenue": 1353.71,
+    "bounce_rate": 0.3853035143769968
+  },
+  {
+    "landing_page": "/collections/mens-t-shirts",
+    "sessions": 1431,
+    "conversions": 28.0,
+    "revenue": 2077.3300000000004,
+    "bounce_rate": 0.2620545073375262
+  },
+  {
+    "landing_page": "(not set)",
+    "sessions": 1409,
+    "conversions": 510.0,
+    "revenue": 21350.720000000005,
+    "bounce_rate": 0.6295244854506742
+  },
+  {
+    "landing_page": "/products/stone-wash-essentials-crew-sweatshirt-mens",
+    "sessions": 1124,
+    "conversions": 23.0,
+    "revenue": 1688.64,
+    "bounce_rate": 0.48398576512455516
+  },
+  {
+    "landing_page": "/cart",
+    "sessions": 1008,
+    "conversions": 109.0,
+    "revenue": 8203.829999999998,
+    "bounce_rate": 0.42063492063492064
+  },
+  {
+    "landing_page": "/products/maryland-villain-wrist-wraps-16",
+    "sessions": 972,
+    "conversions": 27.0,
+    "revenue": 1386.1600000000003,
+    "bounce_rate": 0.39094650205761317
+  },
+  {
+    "landing_page": "/pages/using-your-villain-wrist-wraps",
+    "sessions": 932,
+    "conversions": 1.0,
+    "revenue": 42.47,
+    "bounce_rate": 0.5579399141630901
+  },
+  {
+    "landing_page": "/collections/stronger-things-collection",
+    "sessions": 885,
+    "conversions": 10.0,
+    "revenue": 615.34,
+    "bounce_rate": 0.23163841807909605
+  },
+  {
+    "landing_page": "/products/bench-row-records-raw-edge-muscle-tank",
+    "sessions": 867,
+    "conversions": 16.0,
+    "revenue": 1073.18,
+    "bounce_rate": 0.46482122260668973
+  },
+  {
+    "landing_page": "/collections/16-wrist-wraps",
+    "sessions": 797,
+    "conversions": 21.0,
+    "revenue": 1091.31,
+    "bounce_rate": 0.37892095357590966
+  },
+  {
+    "landing_page": "/ja-jp/blogs/news/leg-press-vs-hack-squat",
+    "sessions": 752,
+    "conversions": 0.0,
+    "revenue": 0.0,
+    "bounce_rate": 0.1875
+  },
+  {
+    "landing_page": "/products/tuff-blackout-villain-script-tee",
+    "sessions": 731,
+    "conversions": 19.0,
+    "revenue": 816.5900000000001,
+    "bounce_rate": 0.5034199726402189
+  },
+  {
+    "landing_page": "/products/bench-row-records-tee",
+    "sessions": 725,
+    "conversions": 18.0,
+    "revenue": 999.2200000000001,
+    "bounce_rate": 0.5075862068965518
+  },
+  {
+    "landing_page": "/blogs/news/gear-in-bodybuilding",
+    "sessions": 696,
+    "conversions": 0.0,
+    "revenue": 0.0,
+    "bounce_rate": 0.2744252873563218
+  },
+  {
+    "landing_page": "/collections/newest-arrivals",
+    "sessions": 695,
+    "conversions": 0.0,
+    "revenue": 0.0,
+    "bounce_rate": 0.27913669064748203
+  },
+  {
+    "landing_page": "/products/blackout-villain-wrist-wraps-16",
+    "sessions": 683,
+    "conversions": 45.0,
+    "revenue": 2324.26,
+    "bounce_rate": 0.3616398243045388
+  },
+  {
+    "landing_page": "/pages/20-off-first-time-customer",
+    "sessions": 671,
+    "conversions": 11.0,
+    "revenue": 556.8799999999999,
+    "bounce_rate": 0.37555886736214605
+  },
+  {
+    "landing_page": "/products/black-camo-v2-villain-wrist-wraps-16",
+    "sessions": 649,
+    "conversions": 28.0,
+    "revenue": 1238.4900000000002,
+    "bounce_rate": 0.4052388289676425
+  },
+  {
+    "landing_page": "/products/tuff-glove-skinz",
+    "sessions": 636,
+    "conversions": 6.0,
+    "revenue": 231.44,
+    "bounce_rate": 0.360062893081761
+  },
+  {
+    "landing_page": "/products/mens-tuff-essential-joggers",
+    "sessions": 581,
+    "conversions": 13.0,
+    "revenue": 1397.9900000000002,
+    "bounce_rate": 0.306368330464716
+  },
+  {
+    "landing_page": "/collections/mens-hoodies",
+    "sessions": 575,
+    "conversions": 4.0,
+    "revenue": 352.34,
+    "bounce_rate": 0.3269565217391304
+  },
+  {
+    "landing_page": "/products/tuff-shin-savers",
+    "sessions": 549,
+    "conversions": 22.0,
+    "revenue": 952.6400000000001,
+    "bounce_rate": 0.39344262295081966
+  },
+  {
+    "landing_page": "/products/tuff-elbow-sleeves-5mm-black-camo-pair",
+    "sessions": 542,
+    "conversions": 19.0,
+    "revenue": 1492.66,
+    "bounce_rate": 0.34501845018450183
+  },
+  {
+    "landing_page": "/collections/best-selling-apparel-basics",
+    "sessions": 530,
+    "conversions": 0.0,
+    "revenue": 0.0,
+    "bounce_rate": 0.3264150943396226
+  },
+  {
+    "landing_page": "/products/heavyweight-oversize-tee",
+    "sessions": 527,
+    "conversions": 9.0,
+    "revenue": 541.5,
+    "bounce_rate": 0.3092979127134725
+  },
+  {
+    "landing_page": "/products/tuff-quick-locking-weightlifting-belt",
+    "sessions": 525,
+    "conversions": 14.0,
+    "revenue": 720.54,
+    "bounce_rate": 0.3523809523809524
+  },
+  {
+    "landing_page": "/blogs/news/peptides-in-bodybuilding-a-comprehensive-guide-to-maximizing-results",
+    "sessions": 510,
+    "conversions": 0.0,
+    "revenue": 0.0,
+    "bounce_rate": 0.3764705882352941
+  },
+  {
+    "landing_page": "/collections/lifting-belts",
+    "sessions": 504,
+    "conversions": 11.0,
+    "revenue": 926.51,
+    "bounce_rate": 0.2857142857142857
+  },
+  {
+    "landing_page": "/collections/apparel",
+    "sessions": 501,
+    "conversions": 22.0,
+    "revenue": 2195.15,
+    "bounce_rate": 0.26746506986027946
+  },
+  {
+    "landing_page": "/products/tuff-elbow-sleeves-5mm-all-black-pair",
+    "sessions": 496,
+    "conversions": 16.0,
+    "revenue": 1172.6000000000001,
+    "bounce_rate": 0.46975806451612906
+  },
+  {
+    "landing_page": "/collections/mens-muscle-tank-tops",
+    "sessions": 491,
+    "conversions": 11.0,
+    "revenue": 869.85,
+    "bounce_rate": 0.3604887983706721
+  },
+  {
+    "landing_page": "/collections/elbow-supports",
+    "sessions": 485,
+    "conversions": 10.0,
+    "revenue": 810.66,
+    "bounce_rate": 0.2288659793814433
+  },
+  {
+    "landing_page": "/products/stone-wash-essentials-tee",
+    "sessions": 483,
+    "conversions": 11.0,
+    "revenue": 641.72,
+    "bounce_rate": 0.4554865424430642
+  },
+  {
+    "landing_page": "/products/16-villain-wrist-wraps-stronger-things",
+    "sessions": 471,
+    "conversions": 7.0,
+    "revenue": 281.05,
+    "bounce_rate": 0.564755838641189
+  },
+  {
+    "landing_page": "/products/stronger-things-tee",
+    "sessions": 450,
+    "conversions": 15.0,
+    "revenue": 1117.0,
+    "bounce_rate": 0.5355555555555556
+  },
+  {
+    "landing_page": "/blogs/news/deadlift-on-leg-or-back-day",
+    "sessions": 425,
+    "conversions": 0.0,
+    "revenue": 0.0,
+    "bounce_rate": 0.2964705882352941
+  },
+  {
+    "landing_page": "/products/villain-elbow-wraps-all-black",
+    "sessions": 423,
+    "conversions": 11.0,
+    "revenue": 812.3900000000001,
+    "bounce_rate": 0.46099290780141844
+  },
+  {
+    "landing_page": "/products/checkerboard-villain-wrist-wraps-16",
+    "sessions": 412,
+    "conversions": 3.0,
+    "revenue": 134.37,
+    "bounce_rate": 0.5631067961165048
+  },
+  {
+    "landing_page": "/products/stronger-things-iron-of-the-underrealm-tee",
+    "sessions": 410,
+    "conversions": 5.0,
+    "revenue": 261.9,
+    "bounce_rate": 0.5439024390243903
+  },
+  {
+    "landing_page": "/products/villains-creed-raw-edge-muscle-tank",
+    "sessions": 407,
+    "conversions": 9.0,
+    "revenue": 449.12,
+    "bounce_rate": 0.547911547911548
+  },
+  {
+    "landing_page": "/products/villain-smelling-salts",
+    "sessions": 399,
+    "conversions": 41.0,
+    "revenue": 1203.77,
+    "bounce_rate": 0.3634085213032581
+  },
+  {
+    "landing_page": "/collections/powerlifting-wrist-wraps-1",
+    "sessions": 391,
+    "conversions": 12.0,
+    "revenue": 770.49,
+    "bounce_rate": 0.289002557544757
+  },
+  {
+    "landing_page": "/collections/lifting-straps",
+    "sessions": 382,
+    "conversions": 9.0,
+    "revenue": 436.55,
+    "bounce_rate": 0.3900523560209424
+  },
+  {
+    "landing_page": "/products/padded-lifting-straps",
+    "sessions": 372,
+    "conversions": 14.0,
+    "revenue": 489.39000000000004,
+    "bounce_rate": 0.510752688172043
+  },
+  {
+    "landing_page": "/products/tuff-double-ply-elbow-sleeves",
+    "sessions": 370,
+    "conversions": 12.0,
+    "revenue": 711.05,
+    "bounce_rate": 0.4
+  },
+  {
+    "landing_page": "/products/solid-gray-villain-wrist-wraps-16",
+    "sessions": 349,
+    "conversions": 13.0,
+    "revenue": 587.95,
+    "bounce_rate": 0.45558739255014324
+  }
+]

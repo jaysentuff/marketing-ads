@@ -1,0 +1,122 @@
+{
+  "period": {
+    "start": "2025-12-28",
+    "end": "2026-01-27"
+  },
+  "total_sessions": 95718,
+  "total_users": 82328,
+  "total_conversions": 2726.0,
+  "total_revenue": 165259.85,
+  "top_sources": [
+    {
+      "source": "google",
+      "medium": "organic",
+      "sessions": 23753,
+      "users": 19571,
+      "new_users": 18407,
+      "conversions": 363.0,
+      "revenue": 27461.45
+    },
+    {
+      "source": "(direct)",
+      "medium": "(none)",
+      "sessions": 18679,
+      "users": 17579,
+      "new_users": 17099,
+      "conversions": 435.0,
+      "revenue": 25869.11
+    },
+    {
+      "source": "facebook",
+      "medium": "paid",
+      "sessions": 18208,
+      "users": 15142,
+      "new_users": 13032,
+      "conversions": 291.0,
+      "revenue": 17637.1
+    },
+    {
+      "source": "google",
+      "medium": "cpc",
+      "sessions": 17846,
+      "users": 15256,
+      "new_users": 14114,
+      "conversions": 791.0,
+      "revenue": 47289.579999999994
+    },
+    {
+      "source": "Klaviyo",
+      "medium": "email",
+      "sessions": 6148,
+      "users": 4199,
+      "new_users": 3075,
+      "conversions": 247.0,
+      "revenue": 17594.19
+    },
+    {
+      "source": "linktree",
+      "medium": "social",
+      "sessions": 1779,
+      "users": 1584,
+      "new_users": 1396,
+      "conversions": 64.0,
+      "revenue": 4228.950000000001
+    },
+    {
+      "source": "facebook",
+      "medium": "referral",
+      "sessions": 1342,
+      "users": 1341,
+      "new_users": 1335,
+      "conversions": 0.0,
+      "revenue": 0.0
+    },
+    {
+      "source": "yahoo",
+      "medium": "organic",
+      "sessions": 971,
+      "users": 904,
+      "new_users": 860,
+      "conversions": 2.0,
+      "revenue": 75.32
+    },
+    {
+      "source": "ig",
+      "medium": "paid",
+      "sessions": 935,
+      "users": 856,
+      "new_users": 708,
+      "conversions": 17.0,
+      "revenue": 765.02
+    },
+    {
+      "source": "fb",
+      "medium": "paid",
+      "sessions": 827,
+      "users": 774,
+      "new_users": 663,
+      "conversions": 8.0,
+      "revenue": 485.37
+    }
+  ],
+  "devices": [
+    {
+      "device": "mobile",
+      "sessions": 71750,
+      "conversions": 2038.0,
+      "revenue": 130696.54000000001
+    },
+    {
+      "device": "desktop",
+      "sessions": 23598,
+      "conversions": 675.0,
+      "revenue": 33264.24
+    },
+    {
+      "device": "tablet",
+      "sessions": 672,
+      "conversions": 13.0,
+      "revenue": 1299.07
+    }
+  ]
+}

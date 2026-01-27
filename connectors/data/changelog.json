@@ -1,0 +1,55 @@
+[
+  {
+    "id": 1,
+    "timestamp": "2026-01-26T17:29:04.449680",
+    "action_type": "spend_increase",
+    "description": "Increased budget +$25/day (+25.0%)",
+    "channel": "Meta Ads",
+    "campaign": "Retention - Past Customers (ID: 6643115389547)",
+    "amount": 25.4884747706422,
+    "percent_change": 25.0,
+    "notes": "Action Board recommendation. Reason: 4.4x ROAS | 180 orders | 9% new customers",
+    "metrics_snapshot": {
+      "cam_per_order": 24.542693533841472,
+      "total_orders": 3280,
+      "total_ad_spend": 42250.528209,
+      "total_cam": 80500.03479100003
+    }
+  },
+  {
+    "id": 3,
+    "timestamp": "2026-01-27T11:04:54.601224",
+    "action_type": "spend_increase",
+    "description": "Increased budget +$50/day (+10.0%)",
+    "channel": "Meta Ads",
+    "campaign": "TOF Prospecting",
+    "amount": 50.0,
+    "percent_change": 16.7,
+    "notes": "Action Board recommendation. Reason: NCAC $23 (under $50 target) | Test small increase. you mentioned to try $20 and I added $50",
+    "metrics_snapshot": {
+      "cam_per_order": 24.6163815652174,
+      "total_orders": 3266,
+      "total_ad_spend": 42242.284808,
+      "total_cam": 80397.10219200002
+    },
+    "original_budget": 300.0
+  },
+  {
+    "id": 4,
+    "timestamp": "2026-01-27T13:31:21.253309",
+    "action_type": "spend_increase",
+    "description": "Increased budget +$6/day (+32%)",
+    "channel": "Google Ads",
+    "campaign": "Branded Search - TuffWraps",
+    "amount": 6.0,
+    "percent_change": 32,
+    "original_budget": 19.0,
+    "notes": "Signal Triangulation recommendation. Reason: Top performer: 24.6x ROAS, 70 conversions",
+    "metrics_snapshot": {
+      "cam_per_order": 24.62,
+      "total_orders": 3266,
+      "total_ad_spend": 42242.28,
+      "total_cam": 80397.1
+    }
+  }
+]

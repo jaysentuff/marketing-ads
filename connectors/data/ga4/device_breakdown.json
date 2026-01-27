@@ -1,0 +1,20 @@
+[
+  {
+    "device": "mobile",
+    "sessions": 71750,
+    "conversions": 2038.0,
+    "revenue": 130696.54000000001
+  },
+  {
+    "device": "desktop",
+    "sessions": 23598,
+    "conversions": 675.0,
+    "revenue": 33264.24
+  },
+  {
+    "device": "tablet",
+    "sessions": 672,
+    "conversions": 13.0,
+    "revenue": 1299.07
+  }
+]

@@ -1,0 +1,85 @@
+{
+  "summary": {
+    "period": {
+      "start": "2025-12-27",
+      "end": "2026-01-26",
+      "days": 31
+    },
+    "total": {
+      "date": "TOTAL",
+      "total_revenue": 28441.229999999985,
+      "total_orders": 499,
+      "new_customers": 499,
+      "returning_customers": 0,
+      "shipping_collected": 0,
+      "discounts": 0,
+      "cogs": 9954.430499999993,
+      "shipping_cost": 3243.5,
+      "google_ads_spend": 23044.159733000004,
+      "meta_ads_spend": 19173.91,
+      "total_ad_spend": 42218.069733,
+      "google_attributed_revenue": 0,
+      "meta_attributed_revenue": 0,
+      "other_attributed_revenue": 0,
+      "google_platform_conversions": 0,
+      "google_platform_revenue": 131292.42168220298,
+      "meta_platform_conversions": 0,
+      "meta_platform_revenue": 69230.79999999999,
+      "blended_cam": -26974.77023300001,
+      "google_cam": 44301.47738693196,
+      "meta_cam": 18877.610000000008,
+      "cam_per_order": -54.057655777555134
+    },
+    "last_7_days": {
+      "date": "LAST_7D",
+      "total_revenue": 28441.229999999985,
+      "total_orders": 499,
+      "new_customers": 0,
+      "returning_customers": 0,
+      "shipping_collected": 0,
+      "discounts": 0,
+      "cogs": 0,
+      "shipping_cost": 0,
+      "google_ads_spend": 0,
+      "meta_ads_spend": 0,
+      "total_ad_spend": 6571.87427,
+      "google_attributed_revenue": 0,
+      "meta_attributed_revenue": 0,
+      "other_attributed_revenue": 0,
+      "google_platform_conversions": 0,
+      "google_platform_revenue": 0,
+      "meta_platform_conversions": 0,
+      "meta_platform_revenue": 0,
+      "blended_cam": 8671.425229999988,
+      "google_cam": 3965.006383504,
+      "meta_cam": 1840.0880000000004,
+      "cam_per_order": 17.37760567134266
+    },
+    "daily_average": {
+      "revenue": 917.459032258064,
+      "orders": 16.096774193548388,
+      "ad_spend": 1361.8732171935483,
+      "cam": -870.1538784838713
+    },
+    "channel_comparison": {
+      "google": {
+        "spend": 23044.159733000004,
+        "platform_revenue": 131292.42168220298,
+        "cam": 44301.47738693196,
+        "roas": 5.697427166076612
+      },
+      "meta": {
+        "spend": 19173.91,
+        "platform_revenue": 69230.79999999999,
+        "cam": 18877.610000000008,
+        "roas": 3.610677217114297
+      }
+    }
+  },
+  "recommendations": [
+    "CAM per order is NEGATIVE ($-54.06). Urgent: Cut spend on worst performers.",
+    "Google CAM ($44,301) outperforming Meta ($18,878). Consider shifting 10-20% budget from Meta to Google.",
+    "Platform ROAS - Google: 5.70x, Meta: 3.61x (Note: Platforms over-attribute)"
+  ],
+  "generated_at": "2026-01-26T08:08:48.219430"
+}
