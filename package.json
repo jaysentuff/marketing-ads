@@ -4,6 +4,8 @@
   "private": true,
   "scripts": {
     "shopify": "shopify",
-    "dev": "shopify app dev"
+    "dev": "shopify app dev",
+    "build": "cd frontend && npm install && npm run build",
+    "start": "cd frontend && npm run start"
   }
 }
