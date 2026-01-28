@@ -613,7 +613,7 @@ export default function TriSignalPage() {
           {/* Action Cards */}
           <div className="space-y-3">
             {recommendations.recommendations
-              .filter((rec) => !completedActions.has(rec.id))  {/* Hide completed actions */}
+              .filter((rec) => !completedActions.has(rec.id))
               .map((rec) => (
               <div
                 key={rec.id}
