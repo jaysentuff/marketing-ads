@@ -1,6 +1,7 @@
 'use client';
 
 import { useEffect, useState } from 'react';
+import Link from 'next/link';
 import { api, type SpendOutcomeCorrelation, type ChannelCorrelation, type RecommendationsResponse, type BudgetRecommendation } from '@/lib/api';
 import { formatCurrency } from '@/lib/utils';
 import {
@@ -22,6 +23,7 @@ import {
   Zap,
   Check,
   Loader2,
+  Info,
 } from 'lucide-react';
 import { cn } from '@/lib/utils';
 
@@ -217,6 +219,14 @@ export default function TriSignalPage() {
           </p>
         </div>
         <div className="flex items-center gap-3">
+          <Link
+            href="/trisignal/help"
+            className="flex items-center gap-2 px-3 py-2 text-gray-600 hover:text-primary-600 hover:bg-primary-50 rounded-lg transition-colors"
+            title="How to use TriSignal"
+          >
+            <Info size={18} />
+            <span className="text-sm font-medium">Help</span>
+          </Link>
           <div className="flex rounded-lg border border-gray-200 overflow-hidden">
             {([7, 14, 30] as const).map((days) => (
               <button
@@ -401,6 +411,43 @@ export default function TriSignalPage() {
             </div>
           ))}
         </div>
+
+        {/* Context explanation */}
+        <div className={cn(
+          'mt-4 p-4 rounded-lg border',
+          correlation.signal_summary.disagree === 0
+            ? 'bg-green-50 border-green-200'
+            : correlation.signal_summary.disagree > correlation.signal_summary.agree
+            ? 'bg-red-50 border-red-200'
+            : 'bg-yellow-50 border-yellow-200'
+        )}>
+          <p className={cn(
+            'text-sm font-medium',
+            correlation.signal_summary.disagree === 0
+              ? 'text-green-800'
+              : correlation.signal_summary.disagree > correlation.signal_summary.agree
+              ? 'text-red-800'
+              : 'text-yellow-800'
+          )}>
+            {correlation.signal_summary.disagree === 0 ? (
+              <>
+                <strong>What this means:</strong> All metrics moved in the same direction as your ad spend.
+                This confirms your marketing is driving real business results — when you spend {correlation.spend_direction === 'up' ? 'more' : 'less'},
+                you get {correlation.spend_direction === 'up' ? 'more' : 'proportionally less'} revenue and customers.
+              </>
+            ) : correlation.signal_summary.disagree > correlation.signal_summary.agree ? (
+              <>
+                <strong>Warning:</strong> Most metrics moved opposite to your ad spend.
+                This suggests your marketing may not be the primary driver of results, or there are external factors at play.
+              </>
+            ) : (
+              <>
+                <strong>Mixed signals:</strong> Some metrics followed your spend change, others didn't.
+                This warrants investigation into which channels or campaigns are underperforming.
+              </>
+            )}
+          </p>
+        </div>
       </div>
 
       {/* Efficiency Metrics */}
@@ -565,14 +612,14 @@ export default function TriSignalPage() {
 
           {/* Action Cards */}
           <div className="space-y-3">
-            {recommendations.recommendations.map((rec) => (
+            {recommendations.recommendations
+              .filter((rec) => !completedActions.has(rec.id))  {/* Hide completed actions */}
+              .map((rec) => (
               <div
                 key={rec.id}
                 className={cn(
                   'flex items-center justify-between p-4 rounded-lg border transition-all',
-                  completedActions.has(rec.id)
-                    ? 'bg-green-50 border-green-200'
-                    : rec.priority === 'HIGH'
+                  rec.priority === 'HIGH'
                     ? 'bg-red-50 border-red-200'
                     : rec.priority === 'MEDIUM'
                     ? 'bg-yellow-50 border-yellow-200'
@@ -602,43 +649,49 @@ export default function TriSignalPage() {
                   </div>
                 </div>
                 <div className="ml-4 flex-shrink-0">
-                  {completedActions.has(rec.id) ? (
-                    <div className="flex items-center gap-2 text-green-600">
-                      <CheckCircle size={20} />
-                      <span className="text-sm font-medium">Logged</span>
-                    </div>
-                  ) : (
-                    <button
-                      onClick={() => handleCompleteAction(rec)}
-                      disabled={completingActions.has(rec.id)}
-                      className={cn(
-                        'flex items-center gap-2 px-4 py-2 rounded-lg font-medium text-sm transition-colors',
-                        completingActions.has(rec.id)
-                          ? 'bg-gray-100 text-gray-400 cursor-not-allowed'
-                          : 'bg-primary-600 text-white hover:bg-primary-700'
-                      )}
-                    >
-                      {completingActions.has(rec.id) ? (
-                        <>
-                          <Loader2 size={16} className="animate-spin" />
-                          Logging...
-                        </>
-                      ) : (
-                        <>
-                          <Check size={16} />
-                          Complete
-                        </>
-                      )}
-                    </button>
-                  )}
+                  <button
+                    onClick={() => handleCompleteAction(rec)}
+                    disabled={completingActions.has(rec.id)}
+                    className={cn(
+                      'flex items-center gap-2 px-4 py-2 rounded-lg font-medium text-sm transition-colors',
+                      completingActions.has(rec.id)
+                        ? 'bg-gray-100 text-gray-400 cursor-not-allowed'
+                        : 'bg-primary-600 text-white hover:bg-primary-700'
+                    )}
+                  >
+                    {completingActions.has(rec.id) ? (
+                      <>
+                        <Loader2 size={16} className="animate-spin" />
+                        Logging...
+                      </>
+                    ) : (
+                      <>
+                        <Check size={16} />
+                        Complete
+                      </>
+                    )}
+                  </button>
                 </div>
               </div>
             ))}
           </div>
 
-          <p className="mt-4 text-xs text-gray-500">
-            Clicking "Complete" logs the action to your Activity Log for tracking. Review results in the next comparison period.
-          </p>
+          {/* Empty state when all actions completed */}
+          {recommendations.recommendations.filter((rec) => !completedActions.has(rec.id)).length === 0 && (
+            <div className="text-center py-8 bg-green-50 rounded-lg border border-green-200">
+              <CheckCircle className="mx-auto text-green-500 mb-3" size={32} />
+              <p className="font-medium text-green-800">All actions completed!</p>
+              <p className="text-sm text-green-600 mt-1">
+                Check the Activity Log to review what you've done.
+              </p>
+            </div>
+          )}
+
+          {recommendations.recommendations.filter((rec) => !completedActions.has(rec.id)).length > 0 && (
+            <p className="mt-4 text-xs text-gray-500">
+              Clicking "Complete" logs the action to your Activity Log for tracking. Review results in the next comparison period.
+            </p>
+          )}
         </div>
       )}
 

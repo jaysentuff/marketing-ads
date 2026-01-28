@@ -1190,6 +1190,30 @@ def get_channel_correlation(days: int = 14) -> dict:
 
 
 @cached(ttl=CACHE_TTL_HEAVY)
+def get_recently_actioned_items(days: int = 7) -> set:
+    """Get channels/campaigns that have been actioned recently."""
+    from services.changelog import get_recent_entries
+    entries = get_recent_entries(days=days, limit=100)
+    actioned = set()
+    for entry in entries:
+        # Track by channel for channel-level recommendations
+        channel = entry.get("channel", "")
+        if channel:
+            # Normalize channel names
+            if "meta" in channel.lower():
+                actioned.add("Meta")
+            if "google" in channel.lower():
+                actioned.add("Google")
+        # Track by campaign name for specific campaign recommendations
+        campaign = entry.get("campaign", "")
+        if campaign:
+            actioned.add(campaign)
+            # Handle partial matches
+            if len(campaign) > 10:
+                actioned.add(campaign[:50])
+    return actioned
+
+
 def get_budget_recommendations(days: int = 7) -> dict:
     """
     Generate actionable budget recommendations based on triangulation data.
@@ -1202,6 +1226,9 @@ def get_budget_recommendations(days: int = 7) -> dict:
 
     Returns specific dollar-amount recommendations.
     """
+    # Get recently actioned items to filter out
+    actioned_items = get_recently_actioned_items(days=3)  # Last 3 days
+
     # Get all the data we need
     correlation = get_spend_outcome_correlation(days)
     if "error" in correlation:
@@ -1270,12 +1297,14 @@ def get_budget_recommendations(days: int = 7) -> dict:
     else:
         pct_change = 0.05  # 5% test increase
 
-    # Meta recommendation
+    # Meta recommendation (skip if recently actioned)
     meta_daily = meta_spend / days if days > 0 else 0
     meta_new_daily = meta_daily * (1 + pct_change)
     meta_change_amt = (meta_new_daily - meta_daily) * 7  # Weekly impact
 
-    if pct_change > 0:
+    meta_recently_actioned = "Meta" in actioned_items
+
+    if pct_change > 0 and not meta_recently_actioned:
         recommendations.append({
             "id": "meta_budget",
             "priority": "HIGH" if overall_strategy == "scale" else "MEDIUM",
@@ -1288,7 +1317,7 @@ def get_budget_recommendations(days: int = 7) -> dict:
             "weekly_impact": round(meta_change_amt, 2),
             "reason": strategy_reason,
         })
-    elif pct_change == 0 and meta_daily > 0:
+    elif pct_change == 0 and meta_daily > 0 and not meta_recently_actioned:
         recommendations.append({
             "id": "meta_budget",
             "priority": "LOW",
@@ -1302,12 +1331,14 @@ def get_budget_recommendations(days: int = 7) -> dict:
             "reason": strategy_reason,
         })
 
-    # Google recommendation
+    # Google recommendation (skip if recently actioned)
     google_daily = google_spend / days if days > 0 else 0
     google_new_daily = google_daily * (1 + pct_change)
     google_change_amt = (google_new_daily - google_daily) * 7
 
-    if pct_change > 0:
+    google_recently_actioned = "Google" in actioned_items
+
+    if pct_change > 0 and not google_recently_actioned:
         recommendations.append({
             "id": "google_budget",
             "priority": "HIGH" if overall_strategy == "scale" else "MEDIUM",
@@ -1320,7 +1351,7 @@ def get_budget_recommendations(days: int = 7) -> dict:
             "weekly_impact": round(google_change_amt, 2),
             "reason": strategy_reason,
         })
-    elif pct_change == 0 and google_daily > 0:
+    elif pct_change == 0 and google_daily > 0 and not google_recently_actioned:
         recommendations.append({
             "id": "google_budget",
             "priority": "LOW",
@@ -1350,16 +1381,19 @@ def get_budget_recommendations(days: int = 7) -> dict:
             })
     top_meta.sort(key=lambda x: x["roas"], reverse=True)
 
-    # Add specific campaign recommendations for top performers
+    # Add specific campaign recommendations for top performers (skip if recently actioned)
     for i, camp in enumerate(top_meta[:2]):  # Top 2 Meta campaigns
-        if overall_strategy in ["scale", "grow"]:
+        camp_name = camp["name"][:50]
+        # Check if this campaign was recently actioned
+        camp_actioned = any(camp_name in item or item in camp_name for item in actioned_items)
+        if overall_strategy in ["scale", "grow"] and not camp_actioned:
             camp_increase = 0.25 if overall_strategy == "scale" else 0.15
             recommendations.append({
                 "id": f"meta_camp_{i}",
                 "priority": "HIGH",
                 "action_type": "CAMPAIGN_SCALE",
                 "channel": "Meta",
-                "campaign": camp["name"][:50],  # Truncate long names
+                "campaign": camp_name,
                 "action": f"Scale campaign +{int(camp_increase*100)}%",
                 "current_daily": round(camp["spend"] / days, 2),
                 "new_daily": round((camp["spend"] / days) * (1 + camp_increase), 2),
@@ -1383,14 +1417,17 @@ def get_budget_recommendations(days: int = 7) -> dict:
     top_google.sort(key=lambda x: x["roas"], reverse=True)
 
     for i, camp in enumerate(top_google[:2]):
-        if overall_strategy in ["scale", "grow"]:
+        camp_name = camp["name"][:50]
+        # Check if this campaign was recently actioned
+        camp_actioned = any(camp_name in item or item in camp_name for item in actioned_items)
+        if overall_strategy in ["scale", "grow"] and not camp_actioned:
             camp_increase = 0.25 if overall_strategy == "scale" else 0.15
             recommendations.append({
                 "id": f"google_camp_{i}",
                 "priority": "HIGH",
                 "action_type": "CAMPAIGN_SCALE",
                 "channel": "Google",
-                "campaign": camp["name"][:50],
+                "campaign": camp_name,
                 "action": f"Scale campaign +{int(camp_increase*100)}%",
                 "current_daily": round(camp["spend"] / days, 2),
                 "new_daily": round((camp["spend"] / days) * (1 + camp_increase), 2),
