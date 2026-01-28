@@ -9,12 +9,14 @@ import {
   FileText,
   Target,
   Activity,
+  Brain,
 } from 'lucide-react';
 
 const navItems = [
   { href: '/', label: 'Dashboard', icon: LayoutDashboard },
+  { href: '/acmo', label: 'AI CMO', icon: Brain, highlight: true },
   { href: '/trisignal', label: 'TriSignal', icon: Activity },
-  { href: '/ai-chat', label: 'AI Assistant', icon: MessageSquare },
+  { href: '/ai-chat', label: 'AI Chat', icon: MessageSquare },
   { href: '/activity-log', label: 'Activity Log', icon: FileText },
   { href: '/tof-analysis', label: 'TOF Analysis', icon: Target },
 ];

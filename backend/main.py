@@ -15,7 +15,7 @@ from pathlib import Path
 # Add parent directory for imports
 sys.path.insert(0, str(Path(__file__).parent))
 
-from routers import metrics, actions, changelog, ai_chat
+from routers import metrics, actions, changelog, ai_chat, ai_synthesis
 
 
 def get_allowed_origins():
@@ -76,6 +76,7 @@ app.include_router(metrics.router, prefix="/api/metrics", tags=["Metrics"])
 app.include_router(actions.router, prefix="/api/actions", tags=["Actions"])
 app.include_router(changelog.router, prefix="/api/changelog", tags=["Changelog"])
 app.include_router(ai_chat.router, prefix="/api/ai", tags=["AI Chat"])
+app.include_router(ai_synthesis.router, prefix="/api/synthesis", tags=["AI Synthesis"])
 
 
 @app.get("/")
@@ -95,6 +96,7 @@ async def health_check():
             "/api/actions",
             "/api/changelog",
             "/api/ai",
+            "/api/synthesis",
         ]
     }
 

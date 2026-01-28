@@ -435,6 +435,102 @@ export const api = {
     fetchApi<{ success: boolean }>(`/ai/sessions/${sessionId}`, {
       method: 'DELETE',
     }),
+
+  // AI Synthesis (ACMO)
+  getSynthesisStatus: () => fetchApi<{ available: boolean; anthropic_installed: boolean; api_key_configured: boolean }>('/synthesis/status'),
+  analyze: (question?: string, days?: number, saveRecommendations?: boolean) =>
+    fetchApi<{
+      success: boolean;
+      synthesis: string;
+      recommendations_extracted: Array<{
+        type: string;
+        action: string;
+        channel?: string;
+        campaign?: string;
+        reason: string;
+        confidence: string;
+        signals: string[];
+        budget_amount?: number;
+        budget_percent?: number;
+      }>;
+      recommendations_saved: number;
+      context_summary: { days_analyzed: number; context_length: number };
+      usage: { input_tokens: number; output_tokens: number };
+      generated_at: string;
+    }>('/synthesis/analyze', {
+      method: 'POST',
+      body: JSON.stringify({ question, days: days || 30, save_recommendations: saveRecommendations ?? true }),
+    }),
+  getSynthesisContext: (days?: number) =>
+    fetchApi<{ context: string; length: number; days: number }>(`/synthesis/context?days=${days || 30}`),
+  getMultiSignalCampaigns: (platform: 'facebook' | 'google', days?: number, minSpend?: number) =>
+    fetchApi<{
+      platform: string;
+      channel_name: string;
+      period_days: number;
+      campaigns: Array<{
+        campaign_id: string;
+        campaign_name: string;
+        platform: string;
+        funnel_role: string;
+        spend: number;
+        daily_spend: number;
+        platform_roas: number;
+        kendall_lc_roas: number;
+        kendall_fc_roas: number;
+        attribution_gap: { gap_percent: number; trust_level: string; interpretation: string };
+        sessions: number;
+        bounce_rate: number;
+        atc_rate: number;
+        session_quality_score: number;
+        weighted_score: number;
+        confidence: string;
+        signals_summary: {
+          strengths: string[];
+          concerns: string[];
+          signals: string[];
+          recommendation: string;
+        };
+      }>;
+      summary: {
+        total_campaigns: number;
+        total_spend: number;
+        blended_kendall_roas: number;
+        blended_platform_roas: number;
+        overall_attribution_gap_pct: number;
+      };
+    }>(`/synthesis/campaigns/${platform}?days=${days || 30}&min_spend=${minSpend || 50}`),
+  getCrossChannelCorrelation: (days?: number) =>
+    fetchApi<{
+      period_days: number;
+      data_points: number;
+      correlations: Record<string, number>;
+      best_meta_to_branded: { correlation: number; optimal_lag_days: number; strength: string };
+      best_meta_to_google_fc: { correlation: number; optimal_lag_days: number; strength: string };
+      interpretation: string[];
+      implication: string;
+    }>(`/synthesis/correlation/cross-channel?days=${days || 30}`),
+
+  // AI Recommendations Tracking
+  getAiRecommendations: (days?: number, limit?: number) =>
+    fetchApi<{ recommendations: any[]; count: number }>(`/synthesis/recommendations?days=${days || 30}&limit=${limit || 50}`),
+  getPendingRecommendations: (days?: number) =>
+    fetchApi<{ recommendations: any[]; count: number }>(`/synthesis/recommendations/pending?days=${days || 7}`),
+  getRecommendationsSummary: (days?: number) =>
+    fetchApi<{
+      summary: string;
+      total_recommendations: number;
+      acted_upon: number;
+      ignored: number;
+      outcomes: { positive: number; negative: number; neutral: number; pending: number };
+      patterns: string[];
+      examples: any[];
+    }>(`/synthesis/recommendations/summary?days=${days || 30}`),
+  updateRecommendationStatus: (recommendationId: string, status: 'pending' | 'done' | 'ignored' | 'partial', actionTaken?: string, reasonNotFollowed?: string) =>
+    fetchApi<{ success: boolean; recommendation: any }>(`/synthesis/recommendations/${recommendationId}/status`, {
+      method: 'PUT',
+      body: JSON.stringify({ status, action_taken: actionTaken, reason_not_followed: reasonNotFollowed }),
+    }),
 };
 
 export default api;
