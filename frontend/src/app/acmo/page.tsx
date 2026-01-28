@@ -24,7 +24,7 @@ import {
 } from 'lucide-react';
 
 interface Recommendation {
-  id: string;
+  id?: string;
   type: string;
   action: string;
   channel?: string;
