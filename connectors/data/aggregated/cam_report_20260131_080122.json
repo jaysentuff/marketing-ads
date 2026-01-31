@@ -1,0 +1,98 @@
+{
+  "report": {
+    "generated_at": "2026-01-31T08:01:22.725289",
+    "summary": {
+      "total_revenue": 219498.6,
+      "total_orders": 3230,
+      "total_cogs": 7540.191169447411,
+      "cogs_source": "actual",
+      "cogs_percent": 26.948150058559527,
+      "total_shipping": 19827.2900000002,
+      "shipping_source": "actual",
+      "shipping_per_order": 7.24681652046791,
+      "total_ad_spend": 41412.895085,
+      "blended_cam": 150718.2237455524,
+      "blended_cam_per_order": 46.661988775712814
+    },
+    "channels": {
+      "google_ads": {
+        "name": "Google Ads",
+        "orders": 1091,
+        "revenue": 68439.3,
+        "new_customer_orders": 756,
+        "new_customer_revenue": 44490.25,
+        "returning_customer_orders": 335,
+        "returning_customer_revenue": 23949.05,
+        "ad_spend": 22830.365085,
+        "roas": 3,
+        "nc_roas": 1.95,
+        "cam": 19259.53282814178,
+        "cam_per_order": 17.65310066740768
+      },
+      "meta_ads": {
+        "name": "Meta Ads",
+        "orders": 583,
+        "revenue": 40961.15,
+        "new_customer_orders": 347,
+        "new_customer_revenue": 21203.04,
+        "returning_customer_orders": 236,
+        "returning_customer_revenue": 19758.11,
+        "ad_spend": 18582.53,
+        "roas": 2.21,
+        "nc_roas": 1.14,
+        "cam": 7115.453800855554,
+        "cam_per_order": 12.20489502719649
+      },
+      "organic": {
+        "name": "Organic",
+        "orders": 1233,
+        "revenue": 88090.93,
+        "new_customer_orders": 728,
+        "new_customer_revenue": 49757.26,
+        "returning_customer_orders": 505,
+        "returning_customer_revenue": 38333.67,
+        "ad_spend": 0,
+        "roas": 0,
+        "nc_roas": 0,
+        "cam": 55416.72922588243,
+        "cam_per_order": 44.94463035351373
+      },
+      "klaviyo": {
+        "name": "Klaviyo",
+        "orders": 214,
+        "revenue": 14596.3,
+        "new_customer_orders": 113,
+        "new_customer_revenue": 7838.56,
+        "returning_customer_orders": 101,
+        "returning_customer_revenue": 6757.74,
+        "ad_spend": 0,
+        "roas": 0,
+        "nc_roas": 0,
+        "cam": 9112.048437622343,
+        "cam_per_order": 42.57966559636609
+      }
+    },
+    "platform_vs_kendall": {
+      "google_platform_revenue": 131656.106169173,
+      "google_kendall_revenue": 68439.3,
+      "meta_platform_revenue": 69474.88,
+      "meta_kendall_revenue": 40961.15,
+      "platform_total": 201130.986169173,
+      "kendall_total": 109400.45000000001,
+      "over_attribution": 91730.53616917299,
+      "over_attribution_pct": 45.60736160862735
+    },
+    "branded_search": {
+      "clicks": 2665,
+      "impressions": 6468,
+      "branded_pct": 19.74074074074074
+    }
+  },
+  "recommendations": [
+    "HEALTHY: CAM per order is $46.66. Consider scaling spend 10-15%.",
+    "BUDGET SHIFT: Google CAM ($19,260) outperforming Meta ($7,115). Consider shifting 10-20% budget from Meta to Google.",
+    "ATTRIBUTION GAP: Platforms over-claiming revenue by 46%. Don't trust platform ROAS - use Kendall attribution for decisions.",
+    "NEW CUSTOMER ROAS - Google: 1.95x, Meta: 1.14x (New customers are harder to acquire - lower NC ROAS is normal)"
+  ],
+  "generated_at": "2026-01-31T08:01:22.730174"
+}

@@ -1,7 +1,7 @@
 {
   "period": {
-    "start": "2025-12-28",
-    "end": "2026-01-27"
+    "start": "2026-01-01",
+    "end": "2026-01-31"
   },
   "campaigns_sent": 0,
   "flows_active": 33,

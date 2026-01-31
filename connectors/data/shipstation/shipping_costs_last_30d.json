@@ -1,74 +1,62 @@
 {
-  "total_shipping_cost": 21096.12000000018,
-  "shipment_count": 2899,
-  "average_cost_per_shipment": 7.277033459813791,
+  "total_shipping_cost": 19827.2900000002,
+  "shipment_count": 2736,
+  "average_cost_per_shipment": 7.24681652046791,
   "by_carrier": {
     "stamps_com": {
-      "count": 2589,
-      "total_cost": 15904.070000000145,
-      "avg_cost": 6.142939358825857
-    },
-    "ups": {
-      "count": 250,
-      "total_cost": 2549.2499999999945,
-      "avg_cost": 10.196999999999978
+      "count": 2440,
+      "total_cost": 15016.560000000149,
+      "avg_cost": 6.15432786885252
     },
     "fedex": {
-      "count": 60,
-      "total_cost": 2642.7999999999997,
-      "avg_cost": 44.04666666666666
+      "count": 50,
+      "total_cost": 2304.9299999999994,
+      "avg_cost": 46.09859999999999
+    },
+    "ups": {
+      "count": 246,
+      "total_cost": 2505.7999999999975,
+      "avg_cost": 10.186178861788607
     }
   },
   "by_service": {
     "usps_ground_advantage": {
-      "count": 2512,
-      "total_cost": 15161.390000000132,
-      "avg_cost": 6.0355851910828555
-    },
-    "ups_2nd_day_air": {
-      "count": 25,
-      "total_cost": 415.30000000000007,
-      "avg_cost": 16.612000000000002
-    },
-    "usps_priority_mail": {
-      "count": 76,
-      "total_cost": 737.5899999999998,
-      "avg_cost": 9.705131578947366
-    },
-    "fedex_international_connect_plus": {
-      "count": 60,
-      "total_cost": 2642.7999999999997,
-      "avg_cost": 44.04666666666666
-    },
-    "ups_ground": {
-      "count": 218,
-      "total_cost": 1892.479999999999,
-      "avg_cost": 8.681100917431188
+      "count": 2365,
+      "total_cost": 14325.810000000152,
+      "avg_cost": 6.057424947145941
     },
     "usps_first_class_mail": {
-      "count": 1,
-      "total_cost": 5.09,
-      "avg_cost": 5.09
+      "count": 4,
+      "total_cost": 7.3100000000000005,
+      "avg_cost": 1.8275000000000001
+    },
+    "fedex_international_connect_plus": {
+      "count": 50,
+      "total_cost": 2304.9299999999994,
+      "avg_cost": 46.09859999999999
+    },
+    "ups_ground": {
+      "count": 211,
+      "total_cost": 1790.3700000000001,
+      "avg_cost": 8.485165876777252
+    },
+    "usps_priority_mail": {
+      "count": 71,
+      "total_cost": 683.4399999999997,
+      "avg_cost": 9.625915492957743
+    },
+    "ups_2nd_day_air": {
+      "count": 27,
+      "total_cost": 429.4500000000001,
+      "avg_cost": 15.905555555555559
     },
     "ups_next_day_air": {
-      "count": 7,
-      "total_cost": 241.47,
-      "avg_cost": 34.495714285714286
+      "count": 8,
+      "total_cost": 285.98,
+      "avg_cost": 35.7475
     }
   },
   "daily_costs": {
-    "2025-12-29": {
-      "count": 200,
-      "total_cost": 1306.4700000000007
-    },
-    "2025-12-30": {
-      "count": 113,
-      "total_cost": 952.0699999999999
-    },
-    "2025-12-31": {
-      "count": 114,
-      "total_cost": 843.2600000000001
-    },
     "2026-01-02": {
       "count": 233,
       "total_cost": 1709.8199999999977
@@ -142,8 +130,20 @@
       "total_cost": 1129.7899999999993
     },
     "2026-01-27": {
-      "count": 76,
-      "total_cost": 563.18
+      "count": 78,
+      "total_cost": 573.7
+    },
+    "2026-01-28": {
+      "count": 85,
+      "total_cost": 651.6399999999996
+    },
+    "2026-01-29": {
+      "count": 84,
+      "total_cost": 548.6299999999999
+    },
+    "2026-01-30": {
+      "count": 93,
+      "total_cost": 622.1799999999997
     }
   }
 }

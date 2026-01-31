@@ -1,37 +1,5 @@
 [
   {
-    "date": "2025-12-28",
-    "sessions": 2961,
-    "users": 2907,
-    "new_users": 2342,
-    "conversions": 69.0,
-    "revenue": 4204.6900000000005
-  },
-  {
-    "date": "2025-12-29",
-    "sessions": 3178,
-    "users": 3181,
-    "new_users": 2621,
-    "conversions": 81.0,
-    "revenue": 4572.1
-  },
-  {
-    "date": "2025-12-30",
-    "sessions": 4114,
-    "users": 3989,
-    "new_users": 3095,
-    "conversions": 111.0,
-    "revenue": 6022.66
-  },
-  {
-    "date": "2025-12-31",
-    "sessions": 4011,
-    "users": 3900,
-    "new_users": 3116,
-    "conversions": 136.0,
-    "revenue": 8674.22
-  },
-  {
     "date": "2026-01-01",
     "sessions": 3837,
     "users": 3662,
@@ -241,10 +209,42 @@
   },
   {
     "date": "2026-01-27",
-    "sessions": 651,
-    "users": 640,
-    "new_users": 518,
-    "conversions": 12.0,
-    "revenue": 746.13
+    "sessions": 3095,
+    "users": 3038,
+    "new_users": 2507,
+    "conversions": 74.0,
+    "revenue": 4024.08
+  },
+  {
+    "date": "2026-01-28",
+    "sessions": 3081,
+    "users": 3033,
+    "new_users": 2502,
+    "conversions": 102.0,
+    "revenue": 6116.790000000001
+  },
+  {
+    "date": "2026-01-29",
+    "sessions": 2938,
+    "users": 2813,
+    "new_users": 2320,
+    "conversions": 96.0,
+    "revenue": 5686.74
+  },
+  {
+    "date": "2026-01-30",
+    "sessions": 3661,
+    "users": 3521,
+    "new_users": 2883,
+    "conversions": 122.0,
+    "revenue": 7354.42
+  },
+  {
+    "date": "2026-01-31",
+    "sessions": 285,
+    "users": 286,
+    "new_users": 215,
+    "conversions": 5.0,
+    "revenue": 295.66
   }
 ]

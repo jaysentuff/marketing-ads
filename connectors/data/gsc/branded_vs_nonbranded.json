@@ -1,112 +1,112 @@
 {
   "branded": {
-    "clicks": 2762,
-    "impressions": 6505,
+    "clicks": 2665,
+    "impressions": 6468,
     "queries": [
       {
         "query": "tuffwraps",
-        "clicks": 1204,
-        "impressions": 2595,
-        "ctr": 0.4639691714836224,
-        "position": 1.0940269749518305
+        "clicks": 1160,
+        "impressions": 2580,
+        "ctr": 0.4496124031007752,
+        "position": 1.1670542635658916
       },
       {
         "query": "tuff wraps",
-        "clicks": 943,
-        "impressions": 2431,
-        "ctr": 0.3879062114356232,
-        "position": 1.6277252159605102
+        "clicks": 920,
+        "impressions": 2429,
+        "ctr": 0.3787566899958831,
+        "position": 1.6838205022643065
       },
       {
         "query": "tuff wraps uk",
-        "clicks": 245,
-        "impressions": 359,
-        "ctr": 0.6824512534818942,
+        "clicks": 228,
+        "impressions": 331,
+        "ctr": 0.6888217522658611,
         "position": 1
       },
       {
         "query": "tuffwraps uk",
-        "clicks": 83,
-        "impressions": 152,
-        "ctr": 0.5460526315789473,
-        "position": 2.138157894736842
+        "clicks": 77,
+        "impressions": 139,
+        "ctr": 0.5539568345323741,
+        "position": 3.3741007194244603
       },
       {
         "query": "tuff wrap",
-        "clicks": 58,
-        "impressions": 307,
-        "ctr": 0.18892508143322476,
-        "position": 3.42671009771987
+        "clicks": 55,
+        "impressions": 330,
+        "ctr": 0.16666666666666666,
+        "position": 3.5545454545454547
       },
       {
         "query": "tuff wraps knee sleeves",
-        "clicks": 48,
-        "impressions": 73,
-        "ctr": 0.6575342465753424,
-        "position": 1
+        "clicks": 50,
+        "impressions": 84,
+        "ctr": 0.5952380952380952,
+        "position": 2.321428571428571
       },
       {
         "query": "tuff wraps elbow sleeves",
         "clicks": 36,
-        "impressions": 84,
-        "ctr": 0.42857142857142855,
-        "position": 1.0119047619047619
+        "impressions": 79,
+        "ctr": 0.45569620253164556,
+        "position": 1.0253164556962024
       },
       {
         "query": "tuff wraps discount code",
-        "clicks": 30,
-        "impressions": 119,
-        "ctr": 0.25210084033613445,
-        "position": 5.38655462184874
+        "clicks": 25,
+        "impressions": 108,
+        "ctr": 0.23148148148148148,
+        "position": 5.833333333333333
       },
       {
         "query": "tuff wraps wrist wraps",
-        "clicks": 21,
-        "impressions": 122,
-        "ctr": 0.1721311475409836,
-        "position": 5.688524590163935
+        "clicks": 23,
+        "impressions": 124,
+        "ctr": 0.18548387096774194,
+        "position": 6.75
       },
       {
         "query": "tuffwraps discount code",
-        "clicks": 21,
+        "clicks": 19,
         "impressions": 72,
-        "ctr": 0.2916666666666667,
+        "ctr": 0.2638888888888889,
         "position": 2.791666666666667
       },
       {
         "query": "tuff wraps elbow wraps",
-        "clicks": 18,
-        "impressions": 24,
-        "ctr": 0.75,
+        "clicks": 16,
+        "impressions": 22,
+        "ctr": 0.7272727272727273,
         "position": 1
       },
       {
         "query": "tuff wraps lifting straps",
-        "clicks": 16,
-        "impressions": 21,
-        "ctr": 0.7619047619047619,
-        "position": 1
-      },
-      {
-        "query": "tuffwraps.com",
-        "clicks": 7,
+        "clicks": 15,
         "impressions": 20,
-        "ctr": 0.35,
+        "ctr": 0.75,
         "position": 1
       },
       {
         "query": "tuffwraps wrist wraps",
-        "clicks": 5,
-        "impressions": 19,
-        "ctr": 0.2631578947368421,
-        "position": 1.2105263157894737
+        "clicks": 7,
+        "impressions": 24,
+        "ctr": 0.2916666666666667,
+        "position": 1.0416666666666667
+      },
+      {
+        "query": "tuffwraps.com",
+        "clicks": 7,
+        "impressions": 16,
+        "ctr": 0.4375,
+        "position": 1
       },
       {
         "query": "tuff wraps villain",
         "clicks": 4,
-        "impressions": 13,
-        "ctr": 0.3076923076923077,
-        "position": 2.3846153846153846
+        "impressions": 11,
+        "ctr": 0.36363636363636365,
+        "position": 2.6363636363636367
       },
       {
         "query": "tuffwraps villain wraps",
@@ -118,30 +118,16 @@
       {
         "query": "villain tuffwraps",
         "clicks": 4,
-        "impressions": 6,
-        "ctr": 0.6666666666666666,
-        "position": 1
+        "impressions": 8,
+        "ctr": 0.5,
+        "position": 10
       },
       {
         "query": "how to use tuff wraps",
         "clicks": 3,
-        "impressions": 13,
-        "ctr": 0.23076923076923078,
-        "position": 1.8461538461538463
-      },
-      {
-        "query": "tuff wrap australia",
-        "clicks": 2,
-        "impressions": 2,
-        "ctr": 1,
-        "position": 2
-      },
-      {
-        "query": "tuff wraps belt",
-        "clicks": 2,
-        "impressions": 2,
-        "ctr": 1,
-        "position": 1
+        "impressions": 5,
+        "ctr": 0.6,
+        "position": 1.6
       },
       {
         "query": "tuff wraps near me",
@@ -153,9 +139,9 @@
       {
         "query": "tuffwraps elbow sleeves",
         "clicks": 2,
-        "impressions": 3,
-        "ctr": 0.6666666666666666,
-        "position": 1
+        "impressions": 8,
+        "ctr": 0.25,
+        "position": 10.625
       },
       {
         "query": "tuffwraps reviews",
@@ -165,6 +151,34 @@
         "position": 1.8571428571428572
       },
       {
+        "query": "tuffwraps uk ltd",
+        "clicks": 2,
+        "impressions": 6,
+        "ctr": 0.3333333333333333,
+        "position": 1.5
+      },
+      {
+        "query": "tuff wrap australia",
+        "clicks": 1,
+        "impressions": 1,
+        "ctr": 1,
+        "position": 2
+      },
+      {
+        "query": "tuff wraps belt",
+        "clicks": 1,
+        "impressions": 1,
+        "ctr": 1,
+        "position": 1
+      },
+      {
+        "query": "tuff wraps review",
+        "clicks": 1,
+        "impressions": 12,
+        "ctr": 0.08333333333333333,
+        "position": 1.8333333333333335
+      },
+      {
         "query": "tuff wraps wrist straps",
         "clicks": 1,
         "impressions": 3,
@@ -172,88 +186,74 @@
         "position": 1
       },
       {
-        "query": "tuffwraps uk ltd",
-        "clicks": 1,
-        "impressions": 5,
-        "ctr": 0.2,
-        "position": 1.6
-      },
-      {
         "query": "#tuffwraps",
         "clicks": 0,
-        "impressions": 39,
+        "impressions": 34,
         "ctr": 0,
-        "position": 6.82051282051282
+        "position": 6.970588235294118
       }
     ],
-    "ctr": 0.42459646425826286
+    "ctr": 0.41202844774273345
   },
   "non_branded": {
-    "clicks": 10551,
-    "impressions": 1033662,
+    "clicks": 10835,
+    "impressions": 1104436,
     "queries": [
       {
         "query": "tuff",
-        "clicks": 182,
-        "impressions": 62326,
-        "ctr": 0.002920129640920322,
-        "position": 4.305346083496454
+        "clicks": 177,
+        "impressions": 64701,
+        "ctr": 0.0027356609635090646,
+        "position": 4.3620345898826915
       },
       {
         "query": "gym shirts",
-        "clicks": 132,
-        "impressions": 9721,
-        "ctr": 0.013578849912560436,
-        "position": 12.30850735521037
+        "clicks": 139,
+        "impressions": 9743,
+        "ctr": 0.014266652981627836,
+        "position": 11.661397926716617
       },
       {
         "query": "what is gear",
-        "clicks": 127,
-        "impressions": 3883,
-        "ctr": 0.032706670100437804,
-        "position": 5.879474633015709
+        "clicks": 129,
+        "impressions": 3911,
+        "ctr": 0.032983891587829196,
+        "position": 5.881360265916645
       },
       {
         "query": "tuff wrist wraps",
-        "clicks": 124,
-        "impressions": 400,
-        "ctr": 0.31,
-        "position": 2.2824999999999998
+        "clicks": 117,
+        "impressions": 399,
+        "ctr": 0.2932330827067669,
+        "position": 2.556390977443609
       },
       {
         "query": "wrist wraps",
-        "clicks": 88,
-        "impressions": 11713,
-        "ctr": 0.00751301972167677,
-        "position": 9.46247758900367
+        "clicks": 90,
+        "impressions": 11433,
+        "ctr": 0.007871949619522435,
+        "position": 9.682060701478177
       },
       {
         "query": "\u30cf\u30c3\u30af\u30b9\u30af\u30ef\u30c3\u30c8",
-        "clicks": 77,
-        "impressions": 7572,
-        "ctr": 0.01016904384574749,
-        "position": 6.644611727416799
-      },
-      {
-        "query": "tuff shirts",
-        "clicks": 66,
-        "impressions": 1022,
-        "ctr": 0.06457925636007827,
-        "position": 1.824853228962818
-      },
-      {
-        "query": "gym hoodies",
-        "clicks": 63,
-        "impressions": 6302,
-        "ctr": 0.00999682640431609,
-        "position": 17.220882259600128
+        "clicks": 79,
+        "impressions": 8164,
+        "ctr": 0.009676629103380695,
+        "position": 5.788094071533562
       },
       {
         "query": "gym shirts men",
-        "clicks": 61,
-        "impressions": 2882,
-        "ctr": 0.02116585704371964,
-        "position": 3.5829285218598197
+        "clicks": 70,
+        "impressions": 2968,
+        "ctr": 0.02358490566037736,
+        "position": 3.727088948787062
+      },
+      {
+        "query": "\u30e9\u30c3\u30af\u30d7\u30eb",
+        "clicks": 67,
+        "impressions": 590,
+        "ctr": 0.1135593220338983,
+        "position": 1.0033898305084745
       },
       {
         "query": "\u30b9\u30af\u30ef\u30c3\u30c8\u3068\u30c7\u30c3\u30c9\u30ea\u30d5\u30c8\u306f\u3001\u52b9\u7387\u7684\u306a\u5168\u8eab\u7b4b\u529b\u30a2\u30c3\u30d7\u306b\u3002",
@@ -263,288 +263,295 @@
         "position": 1.7665245202558635
       },
       {
-        "query": "\u30e9\u30c3\u30af\u30d7\u30eb",
-        "clicks": 60,
-        "impressions": 576,
-        "ctr": 0.10416666666666667,
-        "position": 1.0052083333333333
+        "query": "gym hoodies",
+        "clicks": 59,
+        "impressions": 6461,
+        "ctr": 0.00913171335706547,
+        "position": 18.29128617861012
+      },
+      {
+        "query": "tuff shirts",
+        "clicks": 57,
+        "impressions": 1040,
+        "ctr": 0.05480769230769231,
+        "position": 2.239423076923077
       },
       {
         "query": "tuff hoodies",
-        "clicks": 57,
-        "impressions": 2410,
-        "ctr": 0.023651452282157676,
-        "position": 2.042323651452282
-      },
-      {
-        "query": "tuff gym wear",
-        "clicks": 48,
-        "impressions": 95,
-        "ctr": 0.5052631578947369,
-        "position": 2.242105263157895
-      },
-      {
-        "query": "p\u00e9ptidos gym",
-        "clicks": 46,
-        "impressions": 984,
-        "ctr": 0.046747967479674794,
-        "position": 4.446138211382114
-      },
-      {
-        "query": "wrist wraps lifting",
-        "clicks": 46,
-        "impressions": 3209,
-        "ctr": 0.014334683702087878,
-        "position": 4.052352757868495
-      },
-      {
-        "query": "wrist straps",
-        "clicks": 45,
-        "impressions": 8184,
-        "ctr": 0.005498533724340176,
-        "position": 7.759286412512219
-      },
-      {
-        "query": "elbow wraps",
-        "clicks": 44,
-        "impressions": 4983,
-        "ctr": 0.008830022075055188,
-        "position": 7.367248645394341
-      },
-      {
-        "query": "tuff elbow sleeves",
-        "clicks": 43,
-        "impressions": 108,
-        "ctr": 0.39814814814814814,
-        "position": 6.101851851851852
-      },
-      {
-        "query": "villain wrist wraps",
-        "clicks": 43,
-        "impressions": 212,
-        "ctr": 0.2028301886792453,
-        "position": 5.797169811320755
+        "clicks": 56,
+        "impressions": 2273,
+        "ctr": 0.024637043554773426,
+        "position": 2.0123185217773867
       },
       {
         "query": "oversized gym shirts",
-        "clicks": 42,
-        "impressions": 2764,
-        "ctr": 0.015195369030390739,
-        "position": 9.607452966714906
+        "clicks": 48,
+        "impressions": 2738,
+        "ctr": 0.017531044558071585,
+        "position": 9.246895544192842
+      },
+      {
+        "query": "tuff gym wear",
+        "clicks": 46,
+        "impressions": 97,
+        "ctr": 0.4742268041237113,
+        "position": 2.154639175257732
+      },
+      {
+        "query": "hack squat vs leg press",
+        "clicks": 45,
+        "impressions": 18158,
+        "ctr": 0.0024782465029188237,
+        "position": 7.142086132834012
+      },
+      {
+        "query": "tuff knee sleeves",
+        "clicks": 45,
+        "impressions": 106,
+        "ctr": 0.42452830188679247,
+        "position": 1.8018867924528301
+      },
+      {
+        "query": "tuff elbow sleeves",
+        "clicks": 44,
+        "impressions": 101,
+        "ctr": 0.43564356435643564,
+        "position": 1.9306930693069306
       },
       {
         "query": "weight lifting belt",
-        "clicks": 42,
-        "impressions": 11413,
-        "ctr": 0.003680014019101025,
-        "position": 10.287216332252694
+        "clicks": 44,
+        "impressions": 12144,
+        "ctr": 0.0036231884057971015,
+        "position": 10.114706851119895
+      },
+      {
+        "query": "wrist wraps lifting",
+        "clicks": 44,
+        "impressions": 3173,
+        "ctr": 0.013867002836432399,
+        "position": 4.116293728332808
+      },
+      {
+        "query": "wrist straps",
+        "clicks": 41,
+        "impressions": 8040,
+        "ctr": 0.005099502487562189,
+        "position": 8.415049751243782
+      },
+      {
+        "query": "elbow wraps",
+        "clicks": 40,
+        "impressions": 4636,
+        "ctr": 0.008628127696289905,
+        "position": 7.944564279551337
       },
       {
         "query": "gym hoodies for men",
         "clicks": 40,
-        "impressions": 1403,
-        "ctr": 0.02851033499643621,
-        "position": 12.002851033499644
+        "impressions": 1434,
+        "ctr": 0.02789400278940028,
+        "position": 11.588563458856346
       },
       {
-        "query": "tuff knee sleeves",
+        "query": "p\u00e9ptidos gym",
         "clicks": 40,
-        "impressions": 102,
-        "ctr": 0.39215686274509803,
-        "position": 2.049019607843137
+        "impressions": 1048,
+        "ctr": 0.03816793893129771,
+        "position": 4.913167938931298
       },
       {
         "query": "\u30d1\u30ef\u30fc\u30af\u30ea\u30fc\u30f3",
         "clicks": 40,
-        "impressions": 1576,
-        "ctr": 0.025380710659898477,
-        "position": 1.3711928934010151
+        "impressions": 1658,
+        "ctr": 0.024125452352231604,
+        "position": 1.3353437876960192
+      },
+      {
+        "query": "gear workout",
+        "clicks": 39,
+        "impressions": 274,
+        "ctr": 0.14233576642335766,
+        "position": 1.2956204379562044
       },
       {
         "query": "\u30cf\u30c3\u30af\u30b9\u30af\u30ef\u30c3\u30c8 \u91cd\u91cf",
         "clicks": 39,
-        "impressions": 1112,
-        "ctr": 0.03507194244604316,
-        "position": 5.642985611510792
+        "impressions": 1148,
+        "ctr": 0.03397212543554007,
+        "position": 5.604529616724738
       },
       {
-        "query": "hack squat vs leg press",
+        "query": "tuff clothes",
         "clicks": 38,
-        "impressions": 17237,
-        "ctr": 0.0022045599582293904,
-        "position": 7.230144456692
+        "impressions": 664,
+        "ctr": 0.0572289156626506,
+        "position": 1.572289156626506
       },
       {
         "query": "what is gear in gym",
-        "clicks": 37,
-        "impressions": 968,
-        "ctr": 0.038223140495867766,
-        "position": 2.9979338842975207
+        "clicks": 38,
+        "impressions": 987,
+        "ctr": 0.03850050658561297,
+        "position": 3.0081053698074975
       },
       {
-        "query": "gear workout",
+        "query": "villain wrist wraps",
+        "clicks": 37,
+        "impressions": 223,
+        "ctr": 0.16591928251121077,
+        "position": 5.739910313901345
+      },
+      {
+        "query": "\u30cf\u30c3\u30af\u30b9\u30af\u30ef\u30c3\u30c8 \u30ec\u30c3\u30b0\u30d7\u30ec\u30b9 \u9055\u3044",
         "clicks": 36,
-        "impressions": 266,
-        "ctr": 0.13533834586466165,
-        "position": 1.3458646616541352
+        "impressions": 179,
+        "ctr": 0.2011173184357542,
+        "position": 1.2067039106145252
+      },
+      {
+        "query": "peptidos culturismo",
+        "clicks": 35,
+        "impressions": 141,
+        "ctr": 0.24822695035460993,
+        "position": 1.8936170212765957
       },
       {
         "query": "smith machine deadlift",
         "clicks": 35,
-        "impressions": 3721,
-        "ctr": 0.009406073636119323,
-        "position": 6.855146466003762
-      },
-      {
-        "query": "tuff clothes",
-        "clicks": 34,
-        "impressions": 697,
-        "ctr": 0.04878048780487805,
-        "position": 1.4619799139167862
-      },
-      {
-        "query": "\u30cf\u30c3\u30af\u30b9\u30af\u30ef\u30c3\u30c8 \u30ec\u30c3\u30b0\u30d7\u30ec\u30b9 \u9055\u3044",
-        "clicks": 33,
-        "impressions": 157,
-        "ctr": 0.21019108280254778,
-        "position": 1.2547770700636942
+        "impressions": 3873,
+        "ctr": 0.009036922282468371,
+        "position": 6.827523883294604
       },
       {
         "query": "tuff clothing",
+        "clicks": 34,
+        "impressions": 342,
+        "ctr": 0.09941520467836257,
+        "position": 2.678362573099415
+      },
+      {
+        "query": "workout shirts for men",
+        "clicks": 34,
+        "impressions": 2503,
+        "ctr": 0.013583699560527367,
+        "position": 6.282860567319217
+      },
+      {
+        "query": "gear supplement",
+        "clicks": 33,
+        "impressions": 931,
+        "ctr": 0.03544575725026853,
+        "position": 3.8421052631578947
+      },
+      {
+        "query": "lifting straps",
         "clicks": 32,
-        "impressions": 348,
-        "ctr": 0.09195402298850575,
-        "position": 2.7270114942528734
+        "impressions": 18677,
+        "ctr": 0.0017133372597312201,
+        "position": 12.41425282432939
       },
       {
         "query": "tuff straps",
         "clicks": 32,
-        "impressions": 180,
-        "ctr": 0.17777777777777778,
-        "position": 5.616666666666666
-      },
-      {
-        "query": "gear supplement",
-        "clicks": 31,
-        "impressions": 950,
-        "ctr": 0.03263157894736842,
-        "position": 3.876842105263158
-      },
-      {
-        "query": "peptidos culturismo",
-        "clicks": 31,
-        "impressions": 133,
-        "ctr": 0.23308270676691728,
-        "position": 1.9022556390977443
-      },
-      {
-        "query": "tuff apparel",
-        "clicks": 31,
-        "impressions": 309,
-        "ctr": 0.10032362459546926,
-        "position": 4.300970873786408
-      },
-      {
-        "query": "workout shirts for men",
-        "clicks": 30,
-        "impressions": 2425,
-        "ctr": 0.012371134020618556,
-        "position": 6.59381443298969
-      },
-      {
-        "query": "\u30cf\u30c3\u30af\u30b9\u30af\u30ef\u30c3\u30c8 \u52b9\u679c",
-        "clicks": 29,
-        "impressions": 132,
-        "ctr": 0.2196969696969697,
-        "position": 1.803030303030303
-      },
-      {
-        "query": "lifting straps",
-        "clicks": 27,
-        "impressions": 15626,
-        "ctr": 0.0017278894150774351,
-        "position": 13.458978625367976
+        "impressions": 181,
+        "ctr": 0.17679558011049723,
+        "position": 6.088397790055248
       },
       {
         "query": "sbd\u30d9\u30eb\u30c8 10mm 13mm \u9055\u3044",
-        "clicks": 27,
-        "impressions": 64,
-        "ctr": 0.421875,
-        "position": 1.21875
+        "clicks": 29,
+        "impressions": 72,
+        "ctr": 0.4027777777777778,
+        "position": 1.1944444444444444
       },
       {
-        "query": "tuff beanies",
+        "query": "tuff apparel",
+        "clicks": 29,
+        "impressions": 296,
+        "ctr": 0.09797297297297297,
+        "position": 4.408783783783784
+      },
+      {
+        "query": "tuffnup clothing",
+        "clicks": 28,
+        "impressions": 246,
+        "ctr": 0.11382113821138211,
+        "position": 2.8983739837398375
+      },
+      {
+        "query": "\u30cf\u30c3\u30af\u30b9\u30af\u30ef\u30c3\u30c8 \u52b9\u679c",
+        "clicks": 28,
+        "impressions": 139,
+        "ctr": 0.2014388489208633,
+        "position": 1.9424460431654675
+      },
+      {
+        "query": "elbow sleeves for lifting",
         "clicks": 27,
-        "impressions": 429,
-        "ctr": 0.06293706293706294,
-        "position": 1.2470862470862472
+        "impressions": 1564,
+        "ctr": 0.017263427109974423,
+        "position": 8.916879795396419
       },
       {
         "query": "tuff workout gear",
         "clicks": 27,
-        "impressions": 42,
-        "ctr": 0.6428571428571429,
-        "position": 1.0238095238095237
+        "impressions": 45,
+        "ctr": 0.6,
+        "position": 1.0222222222222221
       },
       {
-        "query": "villain clothing",
+        "query": "workout shirts",
         "clicks": 27,
-        "impressions": 891,
-        "ctr": 0.030303030303030304,
-        "position": 7.601571268237935
+        "impressions": 4013,
+        "ctr": 0.00672813356591079,
+        "position": 7.995265387490655
       },
       {
-        "query": "elbow sleeves for lifting",
+        "query": "\u30d1\u30ef\u30fc\u30ea\u30d5\u30c6\u30a3\u30f3\u30b0 \u30d7\u30ed\u30b0\u30e9\u30e0",
         "clicks": 26,
-        "impressions": 1495,
-        "ctr": 0.017391304347826087,
-        "position": 8.65819397993311
+        "impressions": 234,
+        "ctr": 0.1111111111111111,
+        "position": 3.769230769230769
       },
       {
         "query": "gym wrist straps",
-        "clicks": 26,
-        "impressions": 2056,
-        "ctr": 0.01264591439688716,
-        "position": 8.474708171206226
+        "clicks": 25,
+        "impressions": 2098,
+        "ctr": 0.011916110581506196,
+        "position": 8.90181124880839
       },
       {
         "query": "tuff clothing brands",
         "clicks": 25,
-        "impressions": 341,
-        "ctr": 0.07331378299120235,
-        "position": 1.9618768328445748
+        "impressions": 324,
+        "ctr": 0.07716049382716049,
+        "position": 1.9814814814814814
       },
       {
-        "query": "workout shirts",
+        "query": "villain clothing",
         "clicks": 25,
-        "impressions": 3761,
-        "ctr": 0.006647168306301516,
-        "position": 7.909598511034299
+        "impressions": 838,
+        "ctr": 0.029832935560859187,
+        "position": 7.455847255369928
       },
       {
-        "query": "gym wrist wraps",
+        "query": "mens gym shirts",
         "clicks": 24,
-        "impressions": 1021,
-        "ctr": 0.023506366307541625,
-        "position": 8.018609206660138
+        "impressions": 1832,
+        "ctr": 0.013100436681222707,
+        "position": 5.557860262008734
       },
       {
-        "query": "tuff grips",
+        "query": "\u30c7\u30c3\u30c9\u30ea\u30d5\u30c8 \u30d9\u30eb\u30c8\u306a\u3057",
         "clicks": 24,
-        "impressions": 73,
-        "ctr": 0.3287671232876712,
-        "position": 1.4246575342465753
-      },
-      {
-        "query": "\u30cf\u30f3\u30b0\u30af\u30ea\u30fc\u30f3",
-        "clicks": 24,
-        "impressions": 764,
-        "ctr": 0.031413612565445025,
-        "position": 1.106020942408377
+        "impressions": 93,
+        "ctr": 0.25806451612903225,
+        "position": 1.903225806451613
       }
     ],
-    "ctr": 0.010207398550009577
+    "ctr": 0.009810437182417088
   },
-  "total_clicks": 13313,
-  "branded_percentage": 20.74663862390145
+  "total_clicks": 13500,
+  "branded_percentage": 19.74074074074074
 }
