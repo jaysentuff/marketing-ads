@@ -387,6 +387,7 @@ export const api = {
     percent_change?: number;
     notes?: string;
     metrics_snapshot?: Record<string, number>;
+    timestamp?: string;
   }) => fetchApi<{ success: boolean; entry: ChangelogEntry }>('/changelog/entries', {
     method: 'POST',
     body: JSON.stringify(entry),
@@ -402,6 +403,7 @@ export const api = {
     notes?: string;
     channel?: string;
     campaign?: string;
+    timestamp?: string;
   }) => fetchApi<{ success: boolean; entry: ChangelogEntry }>(`/changelog/entries/${id}`, {
     method: 'PUT',
     body: JSON.stringify(updates),
@@ -530,6 +532,52 @@ export const api = {
     fetchApi<{ success: boolean; recommendation: any }>(`/synthesis/recommendations/${recommendationId}/status`, {
       method: 'PUT',
       body: JSON.stringify({ status, action_taken: actionTaken, reason_not_followed: reasonNotFollowed }),
+    }),
+
+  // Analysis History
+  getAnalysisHistory: (limit?: number, offset?: number) =>
+    fetchApi<{
+      entries: Array<{
+        id: string;
+        timestamp: string;
+        timestamp_display: string;
+        question?: string;
+        days_analyzed: number;
+        summary: string;
+        recommendations_count: number;
+        recommendations_by_type: Record<string, number>;
+      }>;
+      total: number;
+      limit: number;
+      offset: number;
+      has_more: boolean;
+    }>(`/synthesis/history?limit=${limit || 20}&offset=${offset || 0}`),
+  getAnalysisById: (entryId: string) =>
+    fetchApi<{
+      id: string;
+      timestamp: string;
+      timestamp_display: string;
+      question?: string;
+      days_analyzed: number;
+      summary: string;
+      synthesis: string;
+      recommendations_count: number;
+      recommendations_by_type: Record<string, number>;
+      recommendations: Array<{
+        type: string;
+        action: string;
+        channel?: string;
+        reason: string;
+        confidence: string;
+        signals: string[];
+        budget_amount?: number;
+        budget_percent?: number;
+      }>;
+      usage: { input_tokens: number; output_tokens: number };
+    }>(`/synthesis/history/${entryId}`),
+  deleteAnalysis: (entryId: string) =>
+    fetchApi<{ success: boolean }>(`/synthesis/history/${entryId}`, {
+      method: 'DELETE',
     }),
 };
 

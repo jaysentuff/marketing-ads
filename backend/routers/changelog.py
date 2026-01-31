@@ -17,6 +17,7 @@ from services.changelog import (
     update_entry,
     ACTION_TYPES,
 )
+from services.campaign_matcher import search_campaigns, get_all_campaigns
 
 router = APIRouter()
 
@@ -31,6 +32,7 @@ class NewEntryRequest(BaseModel):
     percent_change: Optional[float] = None
     notes: Optional[str] = None
     metrics_snapshot: Optional[dict] = None
+    timestamp: Optional[str] = None
 
 
 class UpdateEntryRequest(BaseModel):
@@ -42,6 +44,7 @@ class UpdateEntryRequest(BaseModel):
     notes: Optional[str] = None
     channel: Optional[str] = None
     campaign: Optional[str] = None
+    timestamp: Optional[str] = None
 
 
 @router.get("/entries")
@@ -83,6 +86,7 @@ async def create_entry(request: NewEntryRequest):
         percent_change=request.percent_change,
         notes=request.notes,
         metrics_snapshot=request.metrics_snapshot,
+        timestamp=request.timestamp,
     )
     return {"success": True, "entry": entry}
 
@@ -99,6 +103,7 @@ async def edit_entry(entry_id: int, request: UpdateEntryRequest):
         notes=request.notes,
         channel=request.channel,
         campaign=request.campaign,
+        timestamp=request.timestamp,
     )
     if not updated:
         raise HTTPException(status_code=404, detail=f"Entry {entry_id} not found")
@@ -112,3 +117,30 @@ async def remove_entry(entry_id: int):
     if not success:
         raise HTTPException(status_code=404, detail=f"Entry {entry_id} not found")
     return {"success": True, "deleted_id": entry_id}
+
+
+@router.get("/campaigns/search")
+async def search_campaign_names(
+    q: str,
+    channel: Optional[str] = None,
+    limit: int = 10,
+):
+    """
+    Search for campaign names with fuzzy matching.
+
+    Use this for autocomplete when entering changelog entries.
+    """
+    if len(q) < 2:
+        return {"campaigns": [], "query": q}
+
+    results = search_campaigns(q, channel=channel, limit=limit)
+    return {"campaigns": results, "query": q}
+
+
+@router.get("/campaigns/all")
+async def list_all_campaigns(channel: Optional[str] = None):
+    """Get all unique campaign names from Meta and Google Ads."""
+    campaigns = get_all_campaigns()
+    if channel:
+        campaigns = [c for c in campaigns if c["channel"].lower() == channel.lower()]
+    return {"campaigns": campaigns, "count": len(campaigns)}

@@ -56,6 +56,23 @@ interface PastRecommendation {
   reason?: string;
 }
 
+interface AnalysisHistoryEntry {
+  id: string;
+  timestamp: string;
+  timestamp_display: string;
+  question?: string;
+  days_analyzed: number;
+  summary: string;
+  recommendations_count: number;
+  recommendations_by_type: Record<string, number>;
+}
+
+interface FullAnalysisEntry extends AnalysisHistoryEntry {
+  synthesis: string;
+  recommendations: Recommendation[];
+  usage: { input_tokens: number; output_tokens: number };
+}
+
 export default function ACMOPage() {
   const [loading, setLoading] = useState(false);
   const [status, setStatus] = useState<{ available: boolean } | null>(null);
@@ -65,19 +82,24 @@ export default function ACMOPage() {
   const [showRecommendations, setShowRecommendations] = useState(true);
   const [pastRecommendations, setPastRecommendations] = useState<PastRecommendation[]>([]);
   const [recommendationsSummary, setRecommendationsSummary] = useState<any>(null);
-  const [activeTab, setActiveTab] = useState<'analysis' | 'history' | 'patterns'>('analysis');
+  const [activeTab, setActiveTab] = useState<'analysis' | 'analysisHistory' | 'history' | 'patterns'>('analysis');
+  const [analysisHistory, setAnalysisHistory] = useState<AnalysisHistoryEntry[]>([]);
+  const [selectedAnalysis, setSelectedAnalysis] = useState<FullAnalysisEntry | null>(null);
+  const [loadingAnalysis, setLoadingAnalysis] = useState(false);
 
   useEffect(() => {
     const init = async () => {
       try {
-        const [statusData, summaryData, pastData] = await Promise.all([
+        const [statusData, summaryData, pastData, historyData] = await Promise.all([
           api.getSynthesisStatus(),
           api.getRecommendationsSummary(30).catch(() => null),
           api.getAiRecommendations(30, 20).catch(() => ({ recommendations: [] })),
+          api.getAnalysisHistory(20).catch(() => ({ entries: [] })),
         ]);
         setStatus(statusData);
         setRecommendationsSummary(summaryData);
         setPastRecommendations(pastData.recommendations || []);
+        setAnalysisHistory(historyData.entries || []);
       } catch (err) {
         console.error('Failed to init ACMO:', err);
       }
@@ -93,9 +115,13 @@ export default function ACMOPage() {
       const result = await api.analyze(question, 30, true);
       if (result.success) {
         setSynthesis(result);
-        // Refresh past recommendations after new analysis
-        const pastData = await api.getAiRecommendations(30, 20).catch(() => ({ recommendations: [] }));
+        // Refresh past recommendations and analysis history after new analysis
+        const [pastData, historyData] = await Promise.all([
+          api.getAiRecommendations(30, 20).catch(() => ({ recommendations: [] })),
+          api.getAnalysisHistory(20).catch(() => ({ entries: [] })),
+        ]);
         setPastRecommendations(pastData.recommendations || []);
+        setAnalysisHistory(historyData.entries || []);
       } else {
         setError('Analysis failed');
       }
@@ -103,6 +129,18 @@ export default function ACMOPage() {
       setError(err instanceof Error ? err.message : 'Analysis failed');
     } finally {
       setLoading(false);
+    }
+  };
+
+  const loadFullAnalysis = async (entryId: string) => {
+    setLoadingAnalysis(true);
+    try {
+      const entry = await api.getAnalysisById(entryId);
+      setSelectedAnalysis(entry);
+    } catch (err) {
+      console.error('Failed to load analysis:', err);
+    } finally {
+      setLoadingAnalysis(false);
     }
   };
 
@@ -170,6 +208,24 @@ export default function ACMOPage() {
           </div>
         </button>
         <button
+          onClick={() => { setActiveTab('analysisHistory'); setSelectedAnalysis(null); }}
+          className={`px-4 py-2 font-medium transition-colors border-b-2 -mb-px ${
+            activeTab === 'analysisHistory'
+              ? 'text-purple-600 border-purple-600'
+              : 'text-gray-500 border-transparent hover:text-gray-700'
+          }`}
+        >
+          <div className="flex items-center gap-2">
+            <Clock size={18} />
+            Analysis History
+            {analysisHistory.length > 0 && (
+              <span className="text-xs bg-purple-100 text-purple-700 px-1.5 py-0.5 rounded-full">
+                {analysisHistory.length}
+              </span>
+            )}
+          </div>
+        </button>
+        <button
           onClick={() => setActiveTab('history')}
           className={`px-4 py-2 font-medium transition-colors border-b-2 -mb-px ${
             activeTab === 'history'
@@ -179,7 +235,7 @@ export default function ACMOPage() {
         >
           <div className="flex items-center gap-2">
             <History size={18} />
-            Recommendation History
+            Recommendations
           </div>
         </button>
         <button
@@ -354,8 +410,36 @@ export default function ACMOPage() {
                     {synthesis.usage.input_tokens.toLocaleString()} input / {synthesis.usage.output_tokens.toLocaleString()} output tokens
                   </div>
                 </div>
-                <div className="prose prose-sm max-w-none prose-headings:text-gray-900 prose-p:text-gray-700 prose-strong:text-gray-900 prose-ul:text-gray-700 prose-li:text-gray-700">
-                  <ReactMarkdown>{synthesis.synthesis}</ReactMarkdown>
+                <div className="prose prose-sm max-w-none">
+                  <ReactMarkdown
+                    components={{
+                      ul: ({ children }) => <ul className="list-disc pl-6 my-4 space-y-2">{children}</ul>,
+                      ol: ({ children }) => <ol className="list-decimal pl-6 my-4 space-y-2">{children}</ol>,
+                      li: ({ children }) => <li className="text-gray-700 pl-1 leading-relaxed">{children}</li>,
+                      h3: ({ children }) => <h3 className="text-lg font-semibold text-gray-900 mt-8 mb-4 pt-4 border-t border-gray-100">{children}</h3>,
+                      h2: ({ children }) => <h2 className="text-xl font-bold text-gray-900 mt-10 mb-4 pb-2 border-b-2 border-purple-200">{children}</h2>,
+                      h4: ({ children }) => <h4 className="text-base font-semibold text-gray-800 mt-6 mb-2">{children}</h4>,
+                      p: ({ children }) => {
+                        // Handle paragraphs that contain inline bullets (• character)
+                        const text = String(children);
+                        if (text.includes(' • ') || text.includes('• ')) {
+                          const items = text.split(/\s*•\s*/).filter(Boolean);
+                          return (
+                            <ul className="list-disc pl-6 my-4 space-y-2">
+                              {items.map((item, i) => (
+                                <li key={i} className="text-gray-700 leading-relaxed">{item}</li>
+                              ))}
+                            </ul>
+                          );
+                        }
+                        return <p className="text-gray-700 my-3 leading-relaxed">{children}</p>;
+                      },
+                      strong: ({ children }) => <strong className="font-semibold text-gray-900">{children}</strong>,
+                      hr: () => <hr className="my-8 border-gray-200" />,
+                    }}
+                  >
+                    {synthesis.synthesis}
+                  </ReactMarkdown>
                 </div>
               </div>
             </div>
@@ -378,6 +462,180 @@ export default function ACMOPage() {
                 <Brain className="h-5 w-5" />
                 Start Analysis
               </button>
+            </div>
+          )}
+        </div>
+      )}
+
+      {/* Analysis History Tab */}
+      {activeTab === 'analysisHistory' && (
+        <div className="space-y-6">
+          {selectedAnalysis ? (
+            // Show full analysis detail
+            <div className="space-y-6">
+              <div className="flex items-center justify-between">
+                <button
+                  onClick={() => setSelectedAnalysis(null)}
+                  className="flex items-center gap-2 text-gray-600 hover:text-gray-900"
+                >
+                  <ChevronRight className="h-5 w-5 rotate-180" />
+                  Back to History
+                </button>
+                <div className="text-sm text-gray-500">
+                  {selectedAnalysis.timestamp_display}
+                </div>
+              </div>
+
+              {selectedAnalysis.question && (
+                <div className="bg-purple-50 border border-purple-200 rounded-xl p-4">
+                  <div className="text-sm text-purple-600 font-medium mb-1">Question Asked:</div>
+                  <div className="text-gray-900">{selectedAnalysis.question}</div>
+                </div>
+              )}
+
+              {/* Recommendations Summary */}
+              {selectedAnalysis.recommendations && selectedAnalysis.recommendations.length > 0 && (
+                <div className="bg-white rounded-xl border border-gray-200 overflow-hidden">
+                  <div className="px-6 py-4 bg-gradient-to-r from-purple-50 to-indigo-50 border-b border-gray-200">
+                    <div className="flex items-center gap-3">
+                      <Sparkles className="h-5 w-5 text-purple-600" />
+                      <span className="font-semibold text-gray-900">
+                        {selectedAnalysis.recommendations.length} Recommendations
+                      </span>
+                    </div>
+                  </div>
+                  <div className="divide-y divide-gray-100">
+                    {selectedAnalysis.recommendations.map((rec, i) => (
+                      <div key={i} className="p-4 hover:bg-gray-50">
+                        <div className="flex items-center gap-2 mb-1">
+                          {rec.type === 'scale' && <TrendingUp className="h-4 w-4 text-green-500" />}
+                          {rec.type === 'cut' && <TrendingDown className="h-4 w-4 text-red-500" />}
+                          {rec.type === 'hold' && <Minus className="h-4 w-4 text-gray-500" />}
+                          {rec.type === 'test' && <Target className="h-4 w-4 text-blue-500" />}
+                          <span className="font-medium text-gray-900">{rec.action}</span>
+                          <span className={`text-xs px-2 py-0.5 rounded-full ${
+                            rec.confidence === 'high' ? 'bg-green-100 text-green-700' :
+                            rec.confidence === 'low' ? 'bg-yellow-100 text-yellow-700' :
+                            'bg-gray-100 text-gray-700'
+                          }`}>
+                            {rec.confidence}
+                          </span>
+                        </div>
+                        {rec.reason && (
+                          <p className="text-sm text-gray-600">{rec.reason}</p>
+                        )}
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              )}
+
+              {/* Full Analysis */}
+              <div className="bg-white rounded-xl border border-gray-200 p-6">
+                <div className="flex items-center justify-between mb-4">
+                  <h3 className="text-lg font-semibold text-gray-900">Full Analysis</h3>
+                  {selectedAnalysis.usage && (
+                    <div className="text-xs text-gray-500">
+                      {selectedAnalysis.usage.input_tokens?.toLocaleString()} input / {selectedAnalysis.usage.output_tokens?.toLocaleString()} output tokens
+                    </div>
+                  )}
+                </div>
+                <div className="prose prose-sm max-w-none">
+                  <ReactMarkdown
+                    components={{
+                      ul: ({ children }) => <ul className="list-disc pl-6 my-4 space-y-2">{children}</ul>,
+                      ol: ({ children }) => <ol className="list-decimal pl-6 my-4 space-y-2">{children}</ol>,
+                      li: ({ children }) => <li className="text-gray-700 pl-1 leading-relaxed">{children}</li>,
+                      h3: ({ children }) => <h3 className="text-lg font-semibold text-gray-900 mt-8 mb-4 pt-4 border-t border-gray-100">{children}</h3>,
+                      h2: ({ children }) => <h2 className="text-xl font-bold text-gray-900 mt-10 mb-4 pb-2 border-b-2 border-purple-200">{children}</h2>,
+                      h4: ({ children }) => <h4 className="text-base font-semibold text-gray-800 mt-6 mb-2">{children}</h4>,
+                      p: ({ children }) => {
+                        // Handle paragraphs that contain inline bullets (• character)
+                        const text = String(children);
+                        if (text.includes(' • ') || text.includes('• ')) {
+                          const items = text.split(/\s*•\s*/).filter(Boolean);
+                          return (
+                            <ul className="list-disc pl-6 my-4 space-y-2">
+                              {items.map((item, i) => (
+                                <li key={i} className="text-gray-700 leading-relaxed">{item}</li>
+                              ))}
+                            </ul>
+                          );
+                        }
+                        return <p className="text-gray-700 my-3 leading-relaxed">{children}</p>;
+                      },
+                      strong: ({ children }) => <strong className="font-semibold text-gray-900">{children}</strong>,
+                      hr: () => <hr className="my-8 border-gray-200" />,
+                    }}
+                  >
+                    {selectedAnalysis.synthesis}
+                  </ReactMarkdown>
+                </div>
+              </div>
+            </div>
+          ) : (
+            // Show history list
+            <div className="bg-white rounded-xl border border-gray-200">
+              <div className="px-6 py-4 border-b border-gray-200">
+                <h2 className="text-lg font-semibold text-gray-900">Analysis History</h2>
+                <p className="text-sm text-gray-500">View past AI analyses and when they were run</p>
+              </div>
+
+              {analysisHistory.length === 0 ? (
+                <div className="p-12 text-center text-gray-500">
+                  <Clock className="h-12 w-12 mx-auto mb-4 text-gray-300" />
+                  <p>No analysis history yet. Run an analysis to get started.</p>
+                </div>
+              ) : (
+                <div className="divide-y divide-gray-100">
+                  {analysisHistory.map((entry) => (
+                    <button
+                      key={entry.id}
+                      onClick={() => loadFullAnalysis(entry.id)}
+                      disabled={loadingAnalysis}
+                      className="w-full p-4 hover:bg-gray-50 text-left transition-colors"
+                    >
+                      <div className="flex items-start justify-between gap-4">
+                        <div className="flex-1 min-w-0">
+                          <div className="flex items-center gap-2 mb-1">
+                            <Clock className="h-4 w-4 text-purple-500 flex-shrink-0" />
+                            <span className="font-medium text-gray-900">{entry.timestamp_display}</span>
+                          </div>
+                          {entry.question && (
+                            <p className="text-sm text-purple-600 mb-1 truncate">
+                              Q: {entry.question}
+                            </p>
+                          )}
+                          <p className="text-sm text-gray-600 line-clamp-2">
+                            {entry.summary}
+                          </p>
+                          <div className="flex items-center gap-4 mt-2">
+                            <span className="text-xs text-gray-500">
+                              {entry.days_analyzed} days analyzed
+                            </span>
+                            {entry.recommendations_count > 0 && (
+                              <span className="text-xs bg-purple-100 text-purple-700 px-2 py-0.5 rounded-full">
+                                {entry.recommendations_count} recommendations
+                              </span>
+                            )}
+                            {entry.recommendations_by_type && Object.entries(entry.recommendations_by_type).map(([type, count]) => (
+                              <span key={type} className={`text-xs px-2 py-0.5 rounded-full ${
+                                type === 'scale' ? 'bg-green-100 text-green-700' :
+                                type === 'cut' ? 'bg-red-100 text-red-700' :
+                                type === 'hold' ? 'bg-gray-100 text-gray-700' :
+                                'bg-blue-100 text-blue-700'
+                              }`}>
+                                {count} {type}
+                              </span>
+                            ))}
+                          </div>
+                        </div>
+                        <ChevronRight className="h-5 w-5 text-gray-400 flex-shrink-0" />
+                      </div>
+                    </button>
+                  ))}
+                </div>
+              )}
             </div>
           )}
         </div>
@@ -463,20 +721,20 @@ export default function ACMOPage() {
               {/* Summary Stats */}
               <div className="grid grid-cols-4 gap-4">
                 <div className="bg-white rounded-xl border border-gray-200 p-4">
-                  <div className="text-2xl font-bold text-gray-900">{recommendationsSummary.total_recommendations}</div>
+                  <div className="text-2xl font-bold text-gray-900">{recommendationsSummary.total_recommendations || 0}</div>
                   <div className="text-sm text-gray-500">Total Recommendations</div>
                 </div>
                 <div className="bg-white rounded-xl border border-gray-200 p-4">
-                  <div className="text-2xl font-bold text-green-600">{recommendationsSummary.acted_upon}</div>
+                  <div className="text-2xl font-bold text-green-600">{recommendationsSummary.acted_upon || 0}</div>
                   <div className="text-sm text-gray-500">Acted Upon</div>
                 </div>
                 <div className="bg-white rounded-xl border border-gray-200 p-4">
-                  <div className="text-2xl font-bold text-gray-400">{recommendationsSummary.ignored}</div>
+                  <div className="text-2xl font-bold text-gray-400">{recommendationsSummary.ignored || 0}</div>
                   <div className="text-sm text-gray-500">Ignored</div>
                 </div>
                 <div className="bg-white rounded-xl border border-gray-200 p-4">
                   <div className="text-2xl font-bold text-blue-600">
-                    {recommendationsSummary.outcomes.positive}/{recommendationsSummary.acted_upon || 1}
+                    {recommendationsSummary.outcomes?.positive || 0}/{recommendationsSummary.acted_upon || 1}
                   </div>
                   <div className="text-sm text-gray-500">Success Rate</div>
                 </div>
@@ -488,19 +746,19 @@ export default function ACMOPage() {
                 <div className="flex gap-4">
                   <div className="flex items-center gap-2">
                     <div className="w-4 h-4 bg-green-500 rounded"></div>
-                    <span className="text-sm text-gray-700">Positive: {recommendationsSummary.outcomes.positive}</span>
+                    <span className="text-sm text-gray-700">Positive: {recommendationsSummary.outcomes?.positive || 0}</span>
                   </div>
                   <div className="flex items-center gap-2">
                     <div className="w-4 h-4 bg-red-500 rounded"></div>
-                    <span className="text-sm text-gray-700">Negative: {recommendationsSummary.outcomes.negative}</span>
+                    <span className="text-sm text-gray-700">Negative: {recommendationsSummary.outcomes?.negative || 0}</span>
                   </div>
                   <div className="flex items-center gap-2">
                     <div className="w-4 h-4 bg-gray-400 rounded"></div>
-                    <span className="text-sm text-gray-700">Neutral: {recommendationsSummary.outcomes.neutral}</span>
+                    <span className="text-sm text-gray-700">Neutral: {recommendationsSummary.outcomes?.neutral || 0}</span>
                   </div>
                   <div className="flex items-center gap-2">
                     <div className="w-4 h-4 bg-yellow-400 rounded"></div>
-                    <span className="text-sm text-gray-700">Pending: {recommendationsSummary.outcomes.pending}</span>
+                    <span className="text-sm text-gray-700">Pending: {recommendationsSummary.outcomes?.pending || 0}</span>
                   </div>
                 </div>
               </div>

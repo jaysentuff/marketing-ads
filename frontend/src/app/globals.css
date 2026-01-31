@@ -32,6 +32,13 @@ body {
   }
 }
 
+/* Fix select dropdown text color in dark mode */
+select,
+select option {
+  color: #1f2937;
+  background-color: white;
+}
+
 /* Custom scrollbar */
 ::-webkit-scrollbar {
   width: 8px;

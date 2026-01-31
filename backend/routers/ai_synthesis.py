@@ -15,6 +15,18 @@ from services.ai_synthesis import (
     get_synthesis_status,
     build_synthesis_context,
 )
+from services.analysis_history import (
+    get_history,
+    get_analysis_by_id,
+    delete_analysis,
+)
+from services.funnel_impact import (
+    get_all_change_impacts,
+    get_items_in_cooling_off,
+    get_changes_needing_followup,
+    get_funnel_health_snapshot,
+    analyze_signal_predictiveness,
+)
 from services.multi_signal import (
     get_multi_signal_campaign_view,
     get_cross_channel_correlation,
@@ -38,6 +50,7 @@ class SynthesisRequest(BaseModel):
     question: Optional[str] = None
     days: int = 30
     save_recommendations: bool = True
+    analysis_type: str = "full"  # "full" for Monday, "quick" for Thursday
 
 
 class UpdateRecommendationRequest(BaseModel):
@@ -72,11 +85,16 @@ async def analyze(request: SynthesisRequest):
     2. Includes past recommendations and outcomes (feedback loop)
     3. Calls Claude to reason over everything
     4. Returns synthesis with actionable recommendations
+
+    Analysis types:
+    - "full" (default): Full Monday analysis with change follow-ups + new recommendations
+    - "quick": Thursday quick check on recent changes (3-day impact)
     """
     result = await generate_synthesis(
         user_question=request.question,
         days=request.days,
         save_recommendations=request.save_recommendations,
+        analysis_type=request.analysis_type,
     )
 
     if "error" in result:
@@ -86,18 +104,74 @@ async def analyze(request: SynthesisRequest):
 
 
 @router.get("/context")
-async def get_context(days: int = 30):
+async def get_context(days: int = 30, analysis_type: str = "full"):
     """
     Get the raw context that would be sent to the LLM.
 
     Useful for debugging and understanding what data the AI sees.
     """
-    context = build_synthesis_context(days)
+    context = build_synthesis_context(days, analysis_type)
     return {
         "context": context,
         "length": len(context),
         "days": days,
+        "analysis_type": analysis_type,
     }
+
+
+# =============================================================================
+# Funnel Impact Tracking Endpoints
+# =============================================================================
+
+@router.get("/funnel-impact")
+async def get_funnel_impact(days: int = 30):
+    """
+    Get funnel impact data for all recent changes.
+
+    Shows how each change affected the full funnel:
+    - Revenue, orders, new customers
+    - Branded search, Amazon halo
+    - Multi-timeframe assessment (3d, 7d, 14d, 30d)
+    """
+    impacts = get_all_change_impacts(days)
+    return {
+        "impacts": impacts,
+        "count": len(impacts),
+    }
+
+
+@router.get("/funnel-impact/health")
+async def get_funnel_health():
+    """
+    Get current funnel health snapshot.
+
+    Shows week-over-week funnel performance.
+    """
+    return get_funnel_health_snapshot()
+
+
+@router.get("/funnel-impact/cooling-off")
+async def get_cooling_off_items():
+    """
+    Get items currently in cooling off period.
+
+    These items were changed in the last 3 days and should
+    not receive new recommendations yet.
+    """
+    return get_items_in_cooling_off()
+
+
+@router.get("/funnel-impact/followups")
+async def get_followups(analysis_type: str = "full"):
+    """
+    Get changes that need follow-up based on analysis type.
+
+    Returns:
+    - action_ready: Changes with 3d/7d data ready for scaling decisions
+    - validation_ready: Changes with 14d/30d data for strategy validation
+    - pending: Changes still waiting for enough data
+    """
+    return get_changes_needing_followup(analysis_type)
 
 
 # =============================================================================
@@ -163,6 +237,35 @@ async def get_spend_outcome_analysis(days: int = 14):
     in the same direction as spend.
     """
     result = get_spend_outcome_correlation(days)
+
+    if "error" in result:
+        raise HTTPException(status_code=400, detail=result["error"])
+
+    return result
+
+
+@router.get("/correlation/signal-predictiveness")
+async def get_signal_predictiveness(days: int = 60):
+    """
+    Analyze which signals actually predict revenue.
+
+    Answers: "Does branded search predict revenue? Does Amazon?"
+
+    Tests correlations between leading indicators and revenue:
+    - Branded search → Revenue (with various lag periods)
+    - Amazon sales → Shopify revenue
+    - New customers → Revenue
+    - Meta spend → Revenue
+
+    Returns:
+    - Correlation strengths for each signal
+    - Best predictive lag period for each signal
+    - Weight adjustment suggestions based on observed predictiveness
+
+    This helps validate whether current weights are appropriate
+    and informs future weight calibration.
+    """
+    result = analyze_signal_predictiveness(days)
 
     if "error" in result:
         raise HTTPException(status_code=400, detail=result["error"])
@@ -270,6 +373,50 @@ async def get_recommendations_for_outcome_check():
     return {
         "recommendations": get_recommendations_needing_outcome_check()
     }
+
+
+# =============================================================================
+# Analysis History Endpoints
+# =============================================================================
+
+@router.get("/history")
+async def list_analysis_history(limit: int = 20, offset: int = 0):
+    """
+    Get analysis history.
+
+    Returns a list of past analyses with timestamps, summaries,
+    and recommendation counts for quick browsing.
+    """
+    return get_history(limit=limit, offset=offset)
+
+
+@router.get("/history/{entry_id}")
+async def get_analysis_detail(entry_id: str):
+    """
+    Get a specific analysis by ID.
+
+    Returns the full analysis including synthesis text
+    and all recommendations.
+    """
+    entry = get_analysis_by_id(entry_id)
+
+    if not entry:
+        raise HTTPException(status_code=404, detail="Analysis not found")
+
+    return entry
+
+
+@router.delete("/history/{entry_id}")
+async def delete_analysis_entry(entry_id: str):
+    """
+    Delete an analysis from history.
+    """
+    success = delete_analysis(entry_id)
+
+    if not success:
+        raise HTTPException(status_code=404, detail="Analysis not found")
+
+    return {"success": True}
 
 
 @router.post("/recommendations/{recommendation_id}/record-outcome")

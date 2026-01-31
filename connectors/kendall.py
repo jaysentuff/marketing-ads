@@ -146,11 +146,23 @@ class KendallConnector:
         })
         return self._extract_content(result)
 
-    def get_ads_report(self, start_date: str, end_date: str) -> dict:
-        """Get ads performance report (top 50 by spend)."""
+    def get_ads_report(self, platform: str, start_date: str, end_date: str,
+                       level: str = "campaign", limit: int = 50) -> dict:
+        """Get ads performance report with Kendall attribution.
+
+        Args:
+            platform: "facebook" or "google"
+            start_date: YYYY-MM-DD
+            end_date: YYYY-MM-DD
+            level: "campaign", "adset", or "ad"
+            limit: Max campaigns to return
+        """
         result = self.call_tool("get_ads_report", {
-            "start_date": start_date,
-            "end_date": end_date
+            "platform": platform,
+            "date_start": start_date,
+            "date_end": end_date,
+            "level": level,
+            "limit": limit
         })
         return self._extract_content(result)
 
@@ -161,6 +173,67 @@ class KendallConnector:
             json.dump(data, f, indent=2, default=str)
         print(f"Saved to {filepath}")
         return filepath
+
+    def pull_multi_timeframe_ads(self) -> dict:
+        """Pull ads reports for multiple timeframes (7d, 30d) for trend detection.
+
+        This enables:
+        - Trend detection (comparing 7d vs 30d performance)
+        - Momentum analysis (is ROAS improving or declining?)
+        - Confidence levels (30d data is more reliable than 7d)
+        """
+        end_date = datetime.now().strftime("%Y-%m-%d")
+        timeframes = [7, 30]
+        results = {}
+
+        print("\n  Fetching multi-timeframe ads data...")
+
+        for days in timeframes:
+            start_date = (datetime.now() - timedelta(days=days)).strftime("%Y-%m-%d")
+
+            # Meta ads - campaign level
+            print(f"    Meta ads ({days}d)...")
+            meta_campaign = self.get_ads_report("facebook", start_date, end_date,
+                                                 level="campaign", limit=50)
+            self.save_data(meta_campaign, f"meta_ads_report_{days}d.json")
+
+            # Meta ads - adset level (for budget concentration detection)
+            print(f"    Meta adsets ({days}d)...")
+            meta_adset = self.get_ads_report("facebook", start_date, end_date,
+                                              level="adset", limit=100)
+            self.save_data(meta_adset, f"meta_adsets_{days}d.json")
+
+            # Google ads - campaign level
+            print(f"    Google ads ({days}d)...")
+            google_campaign = self.get_ads_report("google", start_date, end_date,
+                                                   level="campaign", limit=50)
+            self.save_data(google_campaign, f"google_ads_report_{days}d.json")
+
+            # TikTok ads - campaign level (if supported by Kendall)
+            tiktok_campaign = {}
+            try:
+                print(f"    TikTok ads ({days}d)...")
+                tiktok_campaign = self.get_ads_report("tiktok", start_date, end_date,
+                                                       level="campaign", limit=50)
+                self.save_data(tiktok_campaign, f"tiktok_ads_report_{days}d.json")
+            except Exception as e:
+                print(f"    TikTok ads: Not available ({e})")
+
+            results[f"{days}d"] = {
+                "meta_campaigns": meta_campaign,
+                "meta_adsets": meta_adset,
+                "google_campaigns": google_campaign,
+                "tiktok_campaigns": tiktok_campaign
+            }
+
+        # Also save the 30d data as the default files for backwards compatibility
+        if "30d" in results:
+            self.save_data(results["30d"]["meta_campaigns"], "meta_ads_report.json")
+            self.save_data(results["30d"]["google_campaigns"], "google_ads_report.json")
+            if results["30d"].get("tiktok_campaigns"):
+                self.save_data(results["30d"]["tiktok_campaigns"], "tiktok_ads_report.json")
+
+        return results
 
     def pull_data(self, days: int = 60) -> dict:
         """Pull all attribution data for specified number of days.
@@ -188,6 +261,9 @@ class KendallConnector:
         metrics = self.get_historical_metrics(start_date, end_date)
         self.save_data(metrics, "historical_metrics.json")
 
+        # Get multi-timeframe ads data (7d, 30d) for trend detection
+        multi_tf_ads = self.pull_multi_timeframe_ads()
+
         # Print summary
         print("\n" + "=" * 50)
         print("KENDALL ATTRIBUTION SUMMARY")
@@ -208,6 +284,7 @@ class KendallConnector:
             "attribution": attribution,
             "pnl": pnl,
             "metrics": metrics,
+            "multi_timeframe_ads": multi_tf_ads,
             "days_pulled": days
         }
 

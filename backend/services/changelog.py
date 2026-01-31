@@ -36,13 +36,17 @@ def add_entry(
     original_budget: Optional[float] = None,
     notes: Optional[str] = None,
     metrics_snapshot: Optional[dict] = None,
+    timestamp: Optional[str] = None,
 ) -> dict:
     """Add a new entry to the changelog."""
     entries = load_changelog()
 
+    # Get max existing ID to avoid duplicates
+    max_id = max((e.get("id", 0) for e in entries), default=0)
+
     entry = {
-        "id": len(entries) + 1,
-        "timestamp": datetime.now().isoformat(),
+        "id": max_id + 1,
+        "timestamp": timestamp or datetime.now().isoformat(),
         "action_type": action_type,
         "description": description,
         "channel": channel,
@@ -124,6 +128,7 @@ def update_entry(
     notes: Optional[str] = None,
     channel: Optional[str] = None,
     campaign: Optional[str] = None,
+    timestamp: Optional[str] = None,
 ) -> Optional[dict]:
     """Update an existing changelog entry."""
     entries = load_changelog()
@@ -144,6 +149,8 @@ def update_entry(
                 entry["channel"] = channel
             if campaign is not None:
                 entry["campaign"] = campaign
+            if timestamp is not None:
+                entry["timestamp"] = timestamp
 
             save_changelog(entries)
             return entry

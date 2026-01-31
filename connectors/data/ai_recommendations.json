@@ -1,0 +1,34 @@
+[
+  {
+    "id": "rec_20260131_122747_702250",
+    "created_at": "2026-01-31T12:27:47.702235-05:00",
+    "recommendation_type": "test",
+    "action": "Launch new ad sets within TOF Testing campaign with fresh creative angles",
+    "channel": null,
+    "campaign": null,
+    "campaign_id": null,
+    "budget_change_amount": 75.0,
+    "budget_change_percent": null,
+    "reason": "Campaign has high spend ($337/day) but declining session quality and efficiency - may have creative fatigue",
+    "confidence": "medium",
+    "signals_used": [
+      "High spend concentration, lower session quality, stable but underwhelming performance"
+    ],
+    "metrics_at_recommendation": {
+      "cam_per_order": 46.661988775712814,
+      "mer": 4.05,
+      "ncac": 22.95,
+      "total_spend": 41412.895085,
+      "total_revenue": 219498.6
+    },
+    "llm_reasoning": "**TEST**: Creative/Audience Refresh for TOF Testing**\n- What: Launch new ad sets within TOF Testing campaign with fresh creative angles\n- Why: Campaign has high spend ($337/day) but declining session quality and efficiency - may have creative fatigue\n- Confidence: Medium\n- Signals considered: High spend concentration, lower session quality, stable but underwhelming performance\n- Risk: Additional testing spend without guaranteed improvement\n- Monitor: Compare new ad sets' session quality and conversion metrics vs. existing sets\n\n### Learning from Past Decisions\nThis is your first recorded analysis, but I note you recently increased Meta budgets by $75/day. The data suggests this scaling hasn't yet improved TOF efficiency, indicating a need for optimization before further expansion.\n\n### Questions/Uncertainties\n\u2022 **Creative fatigue timeline**: How long has the current TOF creative been running? This would inform refresh urgency\n\u2022 **Audience overlap**: Are the two TOF campaigns targeting similar audiences, potentially cannibalizing each other?\n\u2022 **Attribution window**: The 14-day lag in Meta-to-branded search correlation suggests we should wait 2+ weeks to see the full impact of recent budget increases\n\nThe TOF ecosystem is functioning (driving awareness) but needs efficiency optimization before scaling further.\n",
+    "status": "pending",
+    "status_updated_at": null,
+    "action_taken": null,
+    "reason_not_followed": null,
+    "metrics_after_7d": null,
+    "metrics_after_14d": null,
+    "outcome": "pending",
+    "outcome_notes": null
+  }
+]

@@ -38,10 +38,10 @@
     "id": 4,
     "timestamp": "2026-01-27T13:31:21.253309",
     "action_type": "spend_increase",
-    "description": "Increased budget +$6/day (+32%)",
-    "channel": "Google Ads",
-    "campaign": "Branded Search - TuffWraps",
-    "amount": 6.0,
+    "description": "Started new TOF campaign",
+    "channel": "Meta Ads",
+    "campaign": "New TOF Campaign",
+    "amount": 150.0,
     "percent_change": 32,
     "original_budget": 19.0,
     "notes": "Signal Triangulation recommendation. Reason: Top performer: 24.6x ROAS, 70 conversions",
@@ -51,5 +51,18 @@
       "total_ad_spend": 42242.28,
       "total_cam": 80397.1
     }
+  },
+  {
+    "id": 5,
+    "timestamp": "2026-01-29T12:00:00.000000",
+    "action_type": "campaign_launched",
+    "description": "Started a new campaign",
+    "channel": "TikTok",
+    "campaign": "Product GMV Max_9_Videos",
+    "amount": 150.0,
+    "percent_change": null,
+    "original_budget": null,
+    "notes": null,
+    "metrics_snapshot": {}
   }
 ]

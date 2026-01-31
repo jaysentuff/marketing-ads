@@ -61,6 +61,198 @@ BOUNCE_TARGET = 0.65     # Target max bounce rate
 ATC_TARGET = 0.08        # Target add-to-cart rate
 ORDER_RATE_TARGET = 0.02 # Target order rate
 
+# Confidence thresholds based on order volume
+CONFIDENCE_THRESHOLDS = {
+    "high": 20,      # 20+ orders = high confidence
+    "medium": 10,    # 10-19 orders = medium confidence
+    "low": 3,        # 3-9 orders = low confidence
+    # < 3 orders = very low confidence
+}
+
+# Budget concentration threshold for CBO campaigns
+BUDGET_CONCENTRATION_THRESHOLD = 0.60  # Alert if one adset gets >60% of budget
+
+
+def load_multi_timeframe_ads(platform: str) -> dict:
+    """
+    Load ads data for multiple timeframes (7d, 30d).
+
+    Returns dict with '7d' and '30d' keys containing campaign data.
+    Supports: facebook, google, tiktok
+    """
+    if platform == "facebook":
+        prefix = "meta"
+    elif platform == "tiktok":
+        prefix = "tiktok"
+    else:
+        prefix = "google"
+
+    result = {}
+
+    for days in [7, 30]:
+        filename = f"{prefix}_ads_report_{days}d.json"
+        filepath = DATA_DIR / "kendall" / filename
+        data = load_json(filepath)
+        if data:
+            result[f"{days}d"] = data
+
+    # Fallback to single file if multi-timeframe not available
+    if not result:
+        filename = f"{prefix}_ads_report.json"
+        filepath = DATA_DIR / "kendall" / filename
+        data = load_json(filepath)
+        if data:
+            result["30d"] = data
+
+    return result
+
+
+def load_adset_data(platform: str, days: int = 7) -> dict:
+    """
+    Load adset-level data for budget concentration detection.
+
+    Returns dict keyed by campaign_id with list of adsets.
+    """
+    prefix = "meta" if platform == "facebook" else "google"
+    filename = f"{prefix}_adsets_{days}d.json"
+    filepath = DATA_DIR / "kendall" / filename
+
+    data = load_json(filepath)
+    if not data or "adsets" not in data:
+        return {}
+
+    # Group adsets by campaign
+    by_campaign = {}
+    for adset_id, adset_data in data.get("adsets", {}).items():
+        camp_id = adset_data.get("campaign_id", "unknown")
+        if camp_id not in by_campaign:
+            by_campaign[camp_id] = []
+        by_campaign[camp_id].append({
+            "adset_id": adset_id,
+            "name": adset_data.get("name", "Unknown"),
+            "spend": adset_data.get("spend", 0),
+            "roas": adset_data.get("roas", 0),
+            "orders": adset_data.get("orders", 0),
+        })
+
+    return by_campaign
+
+
+def calculate_confidence_from_volume(orders: int) -> str:
+    """
+    Calculate confidence level based on conversion volume.
+
+    More orders = more statistical confidence in ROAS.
+    """
+    if orders >= CONFIDENCE_THRESHOLDS["high"]:
+        return "high"
+    elif orders >= CONFIDENCE_THRESHOLDS["medium"]:
+        return "medium"
+    elif orders >= CONFIDENCE_THRESHOLDS["low"]:
+        return "low"
+    else:
+        return "very_low"
+
+
+def calculate_trend_from_timeframes(roas_7d: float, roas_30d: float) -> dict:
+    """
+    Calculate trend by comparing 7d vs 30d ROAS.
+
+    Returns:
+        dict with trend direction, magnitude, and score
+    """
+    if roas_30d == 0:
+        return {
+            "direction": "unknown",
+            "change_pct": 0,
+            "score": 0.5,
+            "interpretation": "No 30d baseline"
+        }
+
+    change_pct = ((roas_7d - roas_30d) / roas_30d) * 100
+
+    # Determine direction
+    if change_pct > 10:
+        direction = "improving"
+    elif change_pct < -10:
+        direction = "declining"
+    else:
+        direction = "stable"
+
+    # Calculate trend score (0-1)
+    # Map -30% to +30% change to 0 to 1 score
+    score = max(0, min(1, (change_pct + 30) / 60))
+
+    # Interpretation
+    if change_pct > 25:
+        interpretation = f"Strong momentum: +{change_pct:.0f}% vs 30d avg"
+    elif change_pct > 10:
+        interpretation = f"Improving: +{change_pct:.0f}% vs 30d avg"
+    elif change_pct < -25:
+        interpretation = f"Sharp decline: {change_pct:.0f}% vs 30d avg"
+    elif change_pct < -10:
+        interpretation = f"Declining: {change_pct:.0f}% vs 30d avg"
+    else:
+        interpretation = f"Stable: {change_pct:+.0f}% vs 30d avg"
+
+    return {
+        "direction": direction,
+        "change_pct": round(change_pct, 1),
+        "score": round(score, 2),
+        "interpretation": interpretation,
+        "roas_7d": round(roas_7d, 2),
+        "roas_30d": round(roas_30d, 2),
+    }
+
+
+def detect_budget_concentration(adsets: list, campaign_name: str) -> dict | None:
+    """
+    Detect if budget is concentrated in one adset (CBO concern).
+
+    In CBO campaigns, Meta may push too much budget to one adset,
+    limiting testing of other creatives/audiences.
+
+    Returns warning dict if concentration detected, None otherwise.
+    """
+    if not adsets or len(adsets) < 2:
+        return None
+
+    total_spend = sum(a["spend"] for a in adsets)
+    if total_spend == 0:
+        return None
+
+    # Calculate concentration
+    spend_shares = [(a["name"], a["spend"] / total_spend) for a in adsets]
+    spend_shares.sort(key=lambda x: x[1], reverse=True)
+
+    top_adset_name, top_adset_share = spend_shares[0]
+
+    if top_adset_share > BUDGET_CONCENTRATION_THRESHOLD:
+        # Calculate what share "should" be for even distribution
+        even_share = 1 / len(adsets)
+        over_concentration = top_adset_share - even_share
+
+        # Check if the concentrated adset is the best performer
+        sorted_by_roas = sorted(adsets, key=lambda x: x.get("roas", 0), reverse=True)
+        is_best_performer = sorted_by_roas[0]["name"] == top_adset_name
+
+        return {
+            "warning": True,
+            "campaign_name": campaign_name,
+            "top_adset": top_adset_name,
+            "top_adset_share": round(top_adset_share * 100, 1),
+            "adset_count": len(adsets),
+            "is_best_performer": is_best_performer,
+            "recommendation": (
+                f"CBO concentrating {top_adset_share*100:.0f}% on '{top_adset_name}'. "
+                + ("This is the best performer, so it's optimal." if is_best_performer
+                   else "Consider ABO to test other adsets equally.")
+            ),
+            "spend_distribution": spend_shares[:3],  # Top 3
+        }
+
+    return None
+
 
 def normalize_score(value: float, target: float, higher_is_better: bool = True) -> float:
     """
@@ -245,6 +437,7 @@ def get_multi_signal_campaign_view(
     Get a comprehensive multi-signal view of all campaigns for a platform.
 
     This is the main function that aggregates all data points for LLM analysis.
+    Uses multi-timeframe Kendall ads reports (7d, 30d) for trend detection.
 
     Args:
         platform: "facebook" or "google"
@@ -255,21 +448,167 @@ def get_multi_signal_campaign_view(
     Returns:
         Dictionary with campaigns and their multi-signal scores
     """
-    # Load local campaign data for trend comparison
+    # Load multi-timeframe ads data
+    multi_tf_data = load_multi_timeframe_ads(platform)
+
+    # Use 30d data as primary, 7d for trend detection
+    ads_report_30d = multi_tf_data.get("30d", {})
+    ads_report_7d = multi_tf_data.get("7d", {})
+
+    # Load adset data for budget concentration detection
+    adset_data = load_adset_data(platform, days=7)
+
+    channel_name = "Meta Ads" if platform == "facebook" else "Google Ads"
+    campaigns = []
+    budget_warnings = []
+
+    # Build 7d ROAS lookup for trend calculation
+    roas_7d_by_id = {}
+    if ads_report_7d and "camps" in ads_report_7d:
+        for camp_id, camp_data in ads_report_7d["camps"].items():
+            roas_7d_by_id[camp_id] = camp_data.get("roas", 0)
+
+    # If we have Kendall ads report, use it directly (preferred)
+    if ads_report_30d and "camps" in ads_report_30d:
+        for camp_id, camp_data in ads_report_30d["camps"].items():
+            spend = camp_data.get("spend", 0)
+            if spend < min_spend:
+                continue
+
+            name = camp_data.get("c_name", "Unknown")
+            kendall_lc_roas_30d = camp_data.get("roas", 0)
+            kendall_lc_roas_7d = roas_7d_by_id.get(camp_id, kendall_lc_roas_30d)
+            platform_roas = camp_data.get("plat_roas", 0)
+
+            # Estimate first-click ROAS (TOF campaigns will be higher)
+            kendall_fc_roas = kendall_lc_roas_30d * 0.8  # Conservative estimate
+
+            # Session quality from Kendall data
+            bounce_rate = camp_data.get("bounce", 0.7)
+            atc_rate = camp_data.get("atc_rate", 0.05)
+            checkout_rate = camp_data.get("co_rate", 0.02)
+            order_rate = camp_data.get("order_rate", 0.01)
+
+            session_quality = calculate_session_quality_score(
+                bounce_rate, atc_rate, checkout_rate, order_rate
+            )
+
+            # Calculate trend from multi-timeframe data (7d vs 30d)
+            trend_data = calculate_trend_from_timeframes(kendall_lc_roas_7d, kendall_lc_roas_30d)
+            trend_score = trend_data["score"]
+
+            # Get order count for confidence calculation
+            orders = camp_data.get("orders", 0)
+
+            # Calculate confidence based on order volume (not just signal agreement)
+            volume_confidence = calculate_confidence_from_volume(orders)
+
+            # Calculate weighted composite score
+            weighted_score, signal_confidence = calculate_weighted_score(
+                platform_roas, kendall_lc_roas_30d, kendall_fc_roas,
+                session_quality, trend_score
+            )
+
+            # Use the lower of volume confidence and signal confidence
+            confidence_order = {"very_low": 0, "low": 1, "medium": 2, "high": 3}
+            final_confidence = min(
+                [volume_confidence, signal_confidence],
+                key=lambda x: confidence_order.get(x, 0)
+            )
+
+            # Classify campaign role
+            nc_percent = camp_data.get("attributed_newcust_percent", 0.5)
+            role = classify_campaign_role(name, kendall_fc_roas, kendall_lc_roas_30d, nc_percent)
+
+            # Platform vs Kendall gap
+            attribution_gap = get_platform_vs_kendall_gap(platform_roas, kendall_lc_roas_30d)
+
+            # Check for budget concentration in this campaign's adsets
+            camp_adsets = adset_data.get(camp_id, [])
+            concentration_warning = detect_budget_concentration(camp_adsets, name)
+            if concentration_warning:
+                budget_warnings.append(concentration_warning)
+
+            campaigns.append({
+                "campaign_id": camp_id,
+                "campaign_name": name,
+                "platform": platform,
+                "funnel_role": role,
+
+                # Spend & scale
+                "spend": round(spend, 2),
+                "daily_spend": round(spend / max(1, days), 2),
+                "days_active": days,
+
+                # Multi-signal ROAS (using 30d as primary)
+                "platform_roas": round(platform_roas, 2),
+                "kendall_lc_roas": round(kendall_lc_roas_30d, 2),
+                "kendall_fc_roas": round(kendall_fc_roas, 2),
+                "attribution_gap": attribution_gap,
+
+                # Multi-timeframe ROAS for trend analysis
+                "roas_7d": round(kendall_lc_roas_7d, 2),
+                "roas_30d": round(kendall_lc_roas_30d, 2),
+                "trend": trend_data,
+
+                # Revenue & orders
+                "platform_revenue": round(camp_data.get("plat_sales", 0), 2),
+                "platform_orders": camp_data.get("plat_orders", 0),
+                "kendall_revenue": round(camp_data.get("sales", 0), 2),
+                "kendall_orders": orders,
+
+                # Customer acquisition
+                "new_customer_percent": round(nc_percent * 100, 1),
+                "nc_roas": round(camp_data.get("nc_roas", 0), 2),
+
+                # Session quality
+                "sessions": camp_data.get("sessions", 0),
+                "bounce_rate": round(bounce_rate * 100, 1),
+                "atc_rate": round(atc_rate * 100, 1),
+                "checkout_rate": round(checkout_rate * 100, 1),
+                "order_rate": round(order_rate * 100, 1),
+                "session_quality_score": round(session_quality, 2),
+
+                # Composite scoring
+                "weighted_score": round(weighted_score, 2),
+                "confidence": final_confidence,
+                "volume_confidence": volume_confidence,
+                "signal_confidence": signal_confidence,
+                "trend_score": round(trend_score, 2),
+
+                # Budget concentration
+                "budget_concentration_warning": concentration_warning,
+
+                # Decision support
+                "signals_summary": _generate_signals_summary(
+                    platform_roas, kendall_lc_roas_30d, kendall_fc_roas,
+                    session_quality, role, attribution_gap, trend_data
+                ),
+            })
+
+        # Sort by weighted score descending
+        campaigns.sort(key=lambda x: x["weighted_score"], reverse=True)
+
+        return {
+            "platform": platform,
+            "channel_name": channel_name,
+            "period_days": days,
+            "min_spend_filter": min_spend,
+            "campaigns": campaigns,
+            "summary": _generate_platform_summary(campaigns),
+            "budget_concentration_warnings": budget_warnings,
+            "timeframes_available": list(multi_tf_data.keys()),
+        }
+
+    # Fallback to old method if no Kendall ads report
+    attribution = get_kendall_attribution()
+    historical = get_kendall_historical()
+
     if platform == "facebook":
         local_campaigns = get_meta_ads_campaigns()
     else:
         local_campaigns = get_google_ads_campaigns()
 
-    # Get current period data (we'll use the data from Kendall via MCP in the API layer)
-    # For now, use local data and Kendall attribution file
-    attribution = get_kendall_attribution()
-    historical = get_kendall_historical()
-
-    campaigns = []
-
-    # Get channel-specific attribution data
-    channel_name = "Meta Ads" if platform == "facebook" else "Google Ads"
     channel_data = attribution.get(channel_name, {}) if attribution else {}
     breakdowns = channel_data.get("breakdowns", {})
 
@@ -425,7 +764,8 @@ def _generate_signals_summary(
     kendall_fc_roas: float,
     session_quality: float,
     role: str,
-    attribution_gap: dict
+    attribution_gap: dict,
+    trend_data: dict = None
 ) -> dict:
     """Generate a human-readable summary of the signals for this campaign."""
     signals = []
@@ -447,6 +787,22 @@ def _generate_signals_summary(
         else:
             signals.append(f"Awareness campaign - measure by NCAC, not direct ROAS")
 
+    # Trend signals (7d vs 30d)
+    if trend_data:
+        direction = trend_data.get("direction", "unknown")
+        change_pct = trend_data.get("change_pct", 0)
+
+        if direction == "improving" and change_pct > 20:
+            strengths.append(f"Strong momentum (+{change_pct:.0f}% 7d vs 30d)")
+        elif direction == "improving":
+            strengths.append(f"Improving trend (+{change_pct:.0f}% 7d vs 30d)")
+        elif direction == "declining" and change_pct < -20:
+            concerns.append(f"Sharp decline ({change_pct:.0f}% 7d vs 30d)")
+        elif direction == "declining":
+            concerns.append(f"Declining trend ({change_pct:.0f}% 7d vs 30d)")
+        else:
+            signals.append("Stable performance (7d ≈ 30d avg)")
+
     # Attribution gap
     if attribution_gap["gap_percent"] > 50:
         concerns.append(f"Platform over-claiming by {attribution_gap['gap_percent']:.0f}%")
@@ -462,7 +818,7 @@ def _generate_signals_summary(
         "concerns": concerns,
         "signals": signals,
         "recommendation": _infer_recommendation(
-            kendall_lc_roas, role, session_quality, attribution_gap
+            kendall_lc_roas, role, session_quality, attribution_gap, trend_data
         )
     }
 
@@ -471,24 +827,48 @@ def _infer_recommendation(
     kendall_lc_roas: float,
     role: str,
     session_quality: float,
-    attribution_gap: dict
+    attribution_gap: dict,
+    trend_data: dict = None
 ) -> str:
-    """Infer a preliminary recommendation based on signals."""
+    """Infer a preliminary recommendation based on signals including trend."""
+    trend_direction = trend_data.get("direction", "stable") if trend_data else "stable"
+    trend_pct = trend_data.get("change_pct", 0) if trend_data else 0
+
     # Awareness campaigns have different rules
     if role == "awareness":
         if session_quality >= 0.5:
+            if trend_direction == "declining" and trend_pct < -20:
+                return "Review creative - awareness campaign with declining performance"
             return "Maintain - awareness campaign with decent traffic quality"
         else:
             return "Review creative - awareness campaign with poor traffic quality"
 
-    # Standard ROAS-based recommendations for other campaigns
+    # Factor in trend for standard recommendations
+    # Strong performers with positive momentum
     if kendall_lc_roas >= 3.0 and session_quality >= 0.5:
+        if trend_direction == "improving":
+            return "Scale aggressively - strong performer with positive momentum"
+        elif trend_direction == "declining":
+            return "Maintain - strong performer but declining trend, watch closely"
         return "Scale - strong performer across signals"
+
     elif kendall_lc_roas >= 2.0:
+        if trend_direction == "improving" and trend_pct > 15:
+            return "Consider scaling - meeting targets with improving trend"
+        elif trend_direction == "declining" and trend_pct < -15:
+            return "Watch closely - meeting targets but declining trend"
         return "Maintain - meeting targets"
+
     elif kendall_lc_roas >= 1.0:
+        if trend_direction == "improving" and trend_pct > 20:
+            return "Maintain - below target but strong improvement trend"
+        elif trend_direction == "declining":
+            return "Review - below target and declining, consider reducing budget"
         return "Watch - below target, monitor for improvement"
+
     elif kendall_lc_roas > 0:
+        if trend_direction == "improving" and trend_pct > 30:
+            return "Watch - underperforming but strong recovery trend"
         return "Review - underperforming, consider reducing budget"
     else:
         return "Cut - no attributed revenue"
@@ -743,6 +1123,7 @@ def get_campaign_for_llm_context(
     Get a text summary of campaign performance suitable for LLM context.
 
     This formats the multi-signal data in a way the LLM can reason about.
+    Includes trend data (7d vs 30d) and confidence levels.
     """
     data = get_multi_signal_campaign_view(platform, days)
 
@@ -761,15 +1142,31 @@ def get_campaign_for_llm_context(
 
     for camp in data["campaigns"][:15]:
         signals = camp["signals_summary"]
-        strengths_str = ", ".join(signals["strengths"][:2]) if signals["strengths"] else "None"
-        concerns_str = ", ".join(signals["concerns"][:2]) if signals["concerns"] else "None"
+        strengths_str = ", ".join(signals["strengths"][:3]) if signals["strengths"] else "None"
+        concerns_str = ", ".join(signals["concerns"][:3]) if signals["concerns"] else "None"
+
+        # Get trend data
+        trend = camp.get("trend", {})
+        trend_str = trend.get("interpretation", "No trend data")
+
+        # Get confidence info
+        vol_conf = camp.get("volume_confidence", camp.get("confidence", "unknown"))
+        orders = camp.get("kendall_orders", 0)
 
         lines.append(f"### {camp['campaign_name']}")
         lines.append(f"- Role: {camp['funnel_role']}")
         lines.append(f"- Spend: ${camp['spend']:,.2f} (${camp['daily_spend']:.2f}/day)")
-        lines.append(f"- Platform ROAS: {camp['platform_roas']:.2f}x | Kendall LC ROAS: {camp['kendall_lc_roas']:.2f}x")
-        lines.append(f"- Weighted Score: {camp['weighted_score']:.2f} ({camp['confidence']} confidence)")
+        lines.append(f"- **ROAS**: Platform {camp['platform_roas']:.2f}x | Kendall LC {camp['kendall_lc_roas']:.2f}x")
+        lines.append(f"- **Trend (7d vs 30d)**: {trend_str}")
+        lines.append(f"- **Confidence**: {camp['confidence']} ({orders} orders - {vol_conf} volume confidence)")
+        lines.append(f"- Weighted Score: {camp['weighted_score']:.2f}")
         lines.append(f"- Session Quality: {camp['session_quality_score']:.2f} (bounce {camp['bounce_rate']:.0f}%, ATC {camp['atc_rate']:.1f}%)")
+
+        # Add budget concentration warning if present
+        concentration = camp.get("budget_concentration_warning")
+        if concentration:
+            lines.append(f"- **⚠️ Budget Concentration**: {concentration['recommendation']}")
+
         lines.append(f"- Strengths: {strengths_str}")
         lines.append(f"- Concerns: {concerns_str}")
         lines.append(f"- Initial assessment: {signals['recommendation']}")

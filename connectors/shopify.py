@@ -359,8 +359,14 @@ class ShopifyConnector:
             "cogs_per_order": total_cogs / len(orders) if orders else 0,
         }
 
-    def calculate_order_metrics(self, orders: list[dict]) -> dict:
-        """Calculate metrics from orders."""
+    def calculate_order_metrics(self, orders: list[dict], date_range_start: datetime = None) -> dict:
+        """Calculate metrics from orders.
+
+        Args:
+            orders: List of order dicts from Shopify API
+            date_range_start: Start of date range for determining new vs returning customers.
+                             Customers created before this date are considered returning.
+        """
         total_revenue = 0
         total_orders = len(orders)
         total_discounts = 0
@@ -370,6 +376,9 @@ class ShopifyConnector:
         returning_customers = 0
 
         daily_stats = {}
+
+        # Track unique customers to avoid double-counting
+        seen_customers = {}  # customer_id -> {created_at, order_count_in_period}
 
         for order in orders:
             revenue = float(order.get("total_price", 0) or 0)
@@ -394,14 +403,36 @@ class ShopifyConnector:
                 daily_stats[date]["orders"] += 1
                 daily_stats[date]["revenue"] += revenue
 
-            # Customer tracking
+            # Customer tracking - use customer ID and created_at to determine new vs returning
             customer = order.get("customer")
             if customer:
-                orders_count = customer.get("orders_count", 1) or 1
-                if int(orders_count) == 1:
+                customer_id = customer.get("id")
+                if customer_id and customer_id not in seen_customers:
+                    customer_created = customer.get("created_at", "")
+                    seen_customers[customer_id] = customer_created
+
+        # Now classify customers as new vs returning based on when they were created
+        # If customer account was created within the date range, they're new
+        # If created before the date range, they're returning
+        for customer_id, customer_created in seen_customers.items():
+            if customer_created and date_range_start:
+                try:
+                    # Parse customer created_at (format: "2026-01-17T02:18:02-05:00")
+                    created_dt = datetime.fromisoformat(customer_created.replace('Z', '+00:00'))
+                    # Make date_range_start timezone-aware if needed for comparison
+                    if created_dt.tzinfo and date_range_start.tzinfo is None:
+                        created_dt = created_dt.replace(tzinfo=None)
+
+                    if created_dt >= date_range_start:
+                        new_customers += 1
+                    else:
+                        returning_customers += 1
+                except (ValueError, TypeError):
+                    # If we can't parse the date, count as new
                     new_customers += 1
-                else:
-                    returning_customers += 1
+            else:
+                # No date info, count as new
+                new_customers += 1
 
         return {
             "total_revenue": total_revenue,
@@ -412,6 +443,7 @@ class ShopifyConnector:
             "aov": total_revenue / total_orders if total_orders > 0 else 0,
             "new_customers": new_customers,
             "returning_customers": returning_customers,
+            "unique_customers": len(seen_customers),
             "daily_stats": daily_stats,
         }
 
@@ -436,7 +468,7 @@ class ShopifyConnector:
 
         self.save_data(orders, "orders_last_30d.json")
 
-        metrics = self.calculate_order_metrics(orders)
+        metrics = self.calculate_order_metrics(orders, date_range_start=start_date)
         self.save_data(metrics, "metrics_last_30d.json")
 
         print("\n" + "=" * 50)
@@ -445,8 +477,9 @@ class ShopifyConnector:
         print(f"Total Revenue:    ${metrics['total_revenue']:,.2f}")
         print(f"Total Orders:     {metrics['total_orders']:,}")
         print(f"AOV:              ${metrics['aov']:.2f}")
-        print(f"New Customers:    {metrics['new_customers']:,}")
-        print(f"Returning:        {metrics['returning_customers']:,}")
+        print(f"Unique Customers: {metrics['unique_customers']:,}")
+        print(f"  New:            {metrics['new_customers']:,}")
+        print(f"  Returning:      {metrics['returning_customers']:,}")
         print("=" * 50)
 
         return metrics

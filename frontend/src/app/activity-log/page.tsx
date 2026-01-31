@@ -21,6 +21,7 @@ export default function ActivityLog() {
     amount: '',
     percent_change: '',
     notes: '',
+    date: new Date().toISOString().split('T')[0],
   });
 
   const fetchData = async () => {
@@ -54,6 +55,7 @@ export default function ActivityLog() {
         amount: formData.amount ? parseFloat(formData.amount) : undefined,
         percent_change: formData.percent_change ? parseFloat(formData.percent_change) : undefined,
         notes: formData.notes || undefined,
+        timestamp: formData.date ? `${formData.date}T12:00:00.000000` : undefined,
       });
       setShowForm(false);
       setFormData({
@@ -64,6 +66,7 @@ export default function ActivityLog() {
         amount: '',
         percent_change: '',
         notes: '',
+        date: new Date().toISOString().split('T')[0],
       });
       fetchData();
     } catch (err) {
@@ -183,6 +186,15 @@ export default function ActivityLog() {
                 value={formData.channel}
                 onChange={(e) => setFormData({ ...formData, channel: e.target.value })}
                 placeholder="e.g., Google Ads, Meta Ads"
+                className="w-full px-3 py-2 border border-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary-500"
+              />
+            </div>
+            <div>
+              <label className="block text-sm font-medium text-gray-700 mb-1">Date</label>
+              <input
+                type="date"
+                value={formData.date}
+                onChange={(e) => setFormData({ ...formData, date: e.target.value })}
                 className="w-full px-3 py-2 border border-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary-500"
               />
             </div>

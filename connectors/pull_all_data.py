@@ -5,6 +5,7 @@ Pulls data from all connected sources:
 - Shopify (orders, revenue)
 - Google Ads (spend, conversions)
 - Meta Ads (spend, conversions)
+- TikTok Ads (spend, conversions)
 - Kendall.ai (de-duplicated attribution)
 - Google Search Console (branded search trends)
 - Amazon Seller Central (Amazon sales)
@@ -37,7 +38,12 @@ def pull_shopify():
 
 
 def pull_shopify_costs():
-    """Pull Shopify product costs (COGS)."""
+    """Pull Shopify product costs (COGS).
+
+    NOTE: This is expensive (fetches all products/inventory items).
+    Only run manually when product costs change, not daily.
+    Kendall.ai has cost data via get_profit_loss_report.
+    """
     print("\n" + "=" * 60)
     print("SHOPIFY PRODUCT COSTS")
     print("=" * 60)
@@ -89,6 +95,23 @@ def pull_meta_ads():
     try:
         from meta_ads import MetaAdsConnector
         connector = MetaAdsConnector()
+        return connector.pull_last_30_days()
+    except Exception as e:
+        print(f"Error: {e}")
+        return {"error": str(e)}
+
+
+def pull_tiktok_ads():
+    """Pull TikTok Ads data."""
+    print("\n" + "=" * 60)
+    print("TIKTOK ADS")
+    print("=" * 60)
+    try:
+        from tiktok_ads import TikTokAdsConnector
+        connector = TikTokAdsConnector()
+        if not connector.configured:
+            print("TikTok Ads not configured. Skipping.")
+            return {"error": "Not configured"}
         return connector.pull_last_30_days()
     except Exception as e:
         print(f"Error: {e}")
@@ -189,12 +212,13 @@ def main():
     # Shopify - primary revenue source
     results["shopify"] = pull_shopify()
 
-    # Shopify product costs - actual COGS data
-    results["shopify_costs"] = pull_shopify_costs()
+    # NOTE: Product costs removed from daily pull - Kendall has cost data
+    # Run pull_shopify_costs() manually only when product costs change
 
     # Ad platforms - spend data
     results["google_ads"] = pull_google_ads()
     results["meta_ads"] = pull_meta_ads()
+    results["tiktok_ads"] = pull_tiktok_ads()
 
     # Kendall - de-duplicated attribution
     results["kendall"] = pull_kendall()
