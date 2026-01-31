@@ -179,11 +179,14 @@ async def get_timeframe_metrics(days: int):
         )
 
     data = get_timeframe_summary(days)
+    # Return empty structure instead of 404 when no data available
     if not data.get("summary", {}).get("total_orders"):
-        raise HTTPException(
-            status_code=404,
-            detail=f"No data available for last {days} days"
-        )
+        return {
+            "summary": {"total_orders": 0, "total_revenue": 0, "total_spend": 0},
+            "channels": {},
+            "timeframe": days,
+            "message": f"No data available for last {days} days"
+        }
 
     return data
 
